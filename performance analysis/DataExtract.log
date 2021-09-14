@@ -1,0 +1,697 @@
+2021-09-08 15:37:56.743 (10100): -----------------------------------------------------------------------------
+2021-09-08 15:37:56.743 (10100): Initializing fault reporting
+2021-09-08 15:37:56.743 (10100): Fault reporting log pathname: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\Stats\tdeserver64-error_8920_21-0908-153756.log
+2021-09-08 15:37:56.746 (10100): Initializing MiniDump
+2021-09-08 15:37:56.746 (10100): Loading 'DbgHelp.dll'
+2021-09-08 15:37:56.746 (10100): Loaded 'C:\WINDOWS\SYSTEM32\dbghelp.dll'
+2021-09-08 15:37:56.747 (10100):   Product Name: Microsoft® Windows® Operating System
+2021-09-08 15:37:56.747 (10100):   File Version: 10.0.18362.1440 (WinBuild.160101.0800)
+2021-09-08 15:37:56.747 (10100):   Product Version: 10.0.18362.1440
+2021-09-08 15:37:56.747 (10100): Finding function 'MiniDumpWriteDump'
+2021-09-08 15:37:56.747 (10100): Success
+2021-09-08 15:37:56.747 (10100): Registering unhandled exception filter
+2021-09-08 15:37:56.747 (10100): -----------------------------------------------------------------------------
+2021-09-08 15:37:56.747 (10100): argv[0]="C:\Program Files\Alteryx\bin\Tableau\tde\tdeserver64.exe"
+2021-09-08 15:37:56.747 (10100): argv[1]="--callback"
+2021-09-08 15:37:56.747 (10100): argv[2]="tab.pipe://./pipe/{B89293C6-A9EC-419E-845C-D2B2F31B5B60}"
+2021-09-08 15:37:56.747 (10100): argv[3]="--listen"
+2021-09-08 15:37:56.747 (10100): argv[4]="tab.pipe://./pipe/auto"
+2021-09-08 15:37:56.747 (10100): argv[5]="--desktop"
+2021-09-08 15:37:56.747 (10100): argv[6]="--log"
+2021-09-08 15:37:56.747 (10100): argv[7]="C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\Stats\DataExtract.log"
+2021-09-08 15:37:56.747 (10100): pid=8920
+2021-09-08 15:37:56.747 (10100): Machine Configuration
+2021-09-08 15:37:56.747 (10100):   Max Descriptors: -1
+2021-09-08 15:37:56.747 (10100): Vectorization Support
+2021-09-08 15:37:56.747 (10100):   Supports SSE:    Yes
+2021-09-08 15:37:56.747 (10100):   Supports SSE2:   Yes
+2021-09-08 15:37:56.747 (10100):   Supports SSE3:   Yes
+2021-09-08 15:37:56.747 (10100):   Supports SSE4.1: Yes
+2021-09-08 15:37:56.747 (10100):   Supports SSE4.2: Yes
+2021-09-08 15:37:56.747 (10100):   Supports AVX:    Yes
+2021-09-08 15:37:56.747 (10100):   Supports AVX2:   Yes
+2021-09-08 15:37:56.747 (10100): Adjusted Values
+2021-09-08 15:37:56.747 (10100):   Physical RAM:              17015201792
+2021-09-08 15:37:56.747 (10100):   CPUs available to process: 8
+2021-09-08 15:37:56.747 (10100):   worker-threads:            8
+2021-09-08 15:37:56.747 (10100):   max-concurrency:           4
+2021-09-08 15:37:56.747 (10100):   query-parallelism:         4
+2021-09-08 15:37:56.747 (10100):   min-query-parallelism:     2
+2021-09-08 15:37:56.747 (10100):   work-buffer-size:          64
+2021-09-08 15:37:56.747 (10100):   TrackingMappedFiles :      1
+2021-09-08 15:37:56.747 (10100):   MemoryMapEntireFile:       1
+2021-09-08 15:37:56.747 (10100):   use-openfile-cache:        1
+2021-09-08 15:37:56.747 (10100): tdeserver: server listening for incoming connections at: tab.pipe://./pipe/{42D59A45-960E-4274-AB27-76843A5468FA}
+2021-09-08 15:37:56.748 (10100): tdeserver: new connection, connection=tab.pipe://./pipe/{42D59A45-960E-4274-AB27-76843A5468FA}
+2021-09-08 15:37:56.748 (9848): tdeserver: open session1, connection=tab.pipe://./pipe/{42D59A45-960E-4274-AB27-76843A5468FA}
+2021-09-08 15:37:56.748 (13668): Session1: QueryExecute:
+2021-09-08 15:37:56.748 (13668): (create database "C:\\OneDrive - Deakin University\\OD\\calle test\\Disun Applications\\Gurobi Applications\\output\\Time Data Reading.tde")
+2021-09-08 15:37:57.440 (13668): Compiling query with Memory Budget=5459009536 MemoryAvailable=5459009536
+2021-09-08 15:37:57.440 (13668): Session1: QueryExecute: OK, Elapsed time:0.693s, Compilation time:0.692s, Execution time:0.000s
+2021-09-08 15:37:57.440 (1424): Session1: QueryExecute:
+2021-09-08 15:37:57.440 (1424): (create schema [Extract])
+2021-09-08 15:37:57.441 (1424): Compiling query with Memory Budget=5458935808 MemoryAvailable=5458935808
+2021-09-08 15:37:57.477 (1424): Session1: QueryExecute: OK, Elapsed time:0.036s, Compilation time:0.000s, Execution time:0.036s
+2021-09-08 15:37:57.477 (10876): Session1: QueryExecute:
+2021-09-08 15:37:57.477 (10876): (create table [Extract].[Extract])
+2021-09-08 15:37:57.477 (10876): Compiling query with Memory Budget=5458030592 MemoryAvailable=5458030592
+2021-09-08 15:37:57.517 (10876): Session1: QueryExecute: OK, Elapsed time:0.040s, Compilation time:0.000s, Execution time:0.040s
+2021-09-08 15:37:57.517 (7416): Session1: QueryExecute:
+2021-09-08 15:37:57.517 (7416): (create column [Extract].[Extract].[input file] ( ( "collation" "binary" ) ( "compression" "heap" ) ( "factory" "varchar" ) ( "ordinal" "0" ) ( "scale" "1" ) ( "storagewidth" "8" ) ))
+2021-09-08 15:37:57.522 (7416): Compiling query with Memory Budget=5457670144 MemoryAvailable=5457670144
+2021-09-08 15:37:57.567 (7416): Session1: QueryExecute: OK, Elapsed time:0.049s, Compilation time:0.004s, Execution time:0.045s
+2021-09-08 15:37:57.567 (11864): Session1: QueryExecute:
+2021-09-08 15:37:57.567 (11864): (create column [Extract].[Extract].[Scenario] ( ( "collation" "binary" ) ( "compression" "heap" ) ( "factory" "varchar" ) ( "ordinal" "1" ) ( "scale" "1" ) ( "storagewidth" "8" ) ))
+2021-09-08 15:37:57.567 (11864): Compiling query with Memory Budget=5457317888 MemoryAvailable=5457317888
+2021-09-08 15:37:57.582 (11864): Session1: QueryExecute: OK, Elapsed time:0.015s, Compilation time:0.000s, Execution time:0.015s
+2021-09-08 15:37:57.582 (22144): Session1: QueryExecute:
+2021-09-08 15:37:57.582 (22144): (create column [Extract].[Extract].[Name] ( ( "collation" "binary" ) ( "compression" "heap" ) ( "factory" "varchar" ) ( "ordinal" "2" ) ( "scale" "1" ) ( "storagewidth" "8" ) ))
+2021-09-08 15:37:57.582 (22144): Compiling query with Memory Budget=5456936960 MemoryAvailable=5456936960
+2021-09-08 15:37:57.596 (22144): Session1: QueryExecute: OK, Elapsed time:0.015s, Compilation time:0.000s, Execution time:0.014s
+2021-09-08 15:37:57.597 (2312): Session1: QueryExecute:
+2021-09-08 15:37:57.597 (2312): (create column [Extract].[Extract].[Value] ( ( "builtin" "double" ) ( "factory" "builtin" ) ( "ordinal" "3" ) ))
+2021-09-08 15:37:57.597 (2312): Compiling query with Memory Budget=5456986112 MemoryAvailable=5456986112
+2021-09-08 15:37:57.611 (2312): Session1: QueryExecute: OK, Elapsed time:0.014s, Compilation time:0.000s, Execution time:0.014s
+2021-09-08 15:37:57.611 (13808): Session1: QueryExecute:
+2021-09-08 15:37:57.611 (13808): (create column [Extract].[Extract].[Stat_Type] ( ( "collation" "binary" ) ( "compression" "heap" ) ( "factory" "varchar" ) ( "ordinal" "4" ) ( "scale" "2" ) ( "storagewidth" "8" ) ))
+2021-09-08 15:37:57.611 (13808): Compiling query with Memory Budget=5456687104 MemoryAvailable=5456687104
+2021-09-08 15:37:57.626 (13808): Session1: QueryExecute: OK, Elapsed time:0.015s, Compilation time:0.000s, Execution time:0.015s
+2021-09-08 15:37:57.627 (13668): Session1: InsertOpen: table="Extract" schema="Extract"
+2021-09-08 15:37:57.627 (13668):   column[0]="input file"
+2021-09-08 15:37:57.627 (13668):   column[1]="Scenario"
+2021-09-08 15:37:57.627 (13668):   column[2]="Name"
+2021-09-08 15:37:57.627 (13668):   column[3]="Value"
+2021-09-08 15:37:57.627 (13668):   column[4]="Stat_Type"
+2021-09-08 15:37:57.629 (1424): Session1: InsertPutValues: total_calls=1 total_message_size=37576
+2021-09-08 15:37:57.698 (10876): Session1: InsertCommit: insert_guid=1 total_calls=1 total_message_size=37576
+2021-09-08 15:37:57.698 (10876): Session1: InsertCommit: OK
+2021-09-08 15:37:57.699 (7416): Session1: InsertClose: insert_guid=1
+2021-09-08 15:37:57.699 (7416): Session1: InsertClose: OK
+2021-09-08 15:37:57.699 (11864): Session1: QueryExecute:
+2021-09-08 15:37:57.699 (11864): (package)
+2021-09-08 15:37:57.699 (11864): Compiling query with Memory Budget=5454626816 MemoryAvailable=5454626816
+2021-09-08 15:37:57.699 (11864): PackageDatabase: in-place package of "C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\Time Data Reading.tde"
+2021-09-08 15:37:57.997 (11864): PackageDatabase: finished
+2021-09-08 15:37:57.997 (11864): Session1: QueryExecute: OK, Elapsed time:0.298s, Compilation time:0.000s, Execution time:0.298s
+2021-09-08 15:37:57.997 (22144): Session1: QueryExecute:
+2021-09-08 15:37:57.997 (22144): (database "C:\\OneDrive - Deakin University\\OD\\calle test\\Disun Applications\\Gurobi Applications\\output\\Time Data Reading.tde")
+2021-09-08 15:37:57.998 (22144): Compiling query with Memory Budget=5455417344 MemoryAvailable=5455417344
+2021-09-08 15:37:57.998 (22144): Session1: QueryExecute: OK, Elapsed time:0.001s, Compilation time:0.001s, Execution time:0.000s
+2021-09-08 15:37:57.998 (2312): Session1: QueryExecute:
+2021-09-08 15:37:57.998 (2312): (show schemas)
+2021-09-08 15:37:57.998 (2312): Compiling query with Memory Budget=5455421440 MemoryAvailable=5455421440
+2021-09-08 15:37:57.998 (2312): Session1: QueryExecute: OK rowset_guid=2 n_columns=1, Elapsed time:0.000s, Compilation time:0.000s, Execution time:0.000s
+2021-09-08 15:37:57.998 (13808): Session1: RowsetGetValues: rowset_guid=2
+2021-09-08 15:37:57.999 (13668): Session1: RowsetGetValues: rowset_guid=2
+2021-09-08 15:37:57.999 (1424): Session1: RowsetClose: rowset_guid=2
+2021-09-08 15:37:57.999 (10876): Session1: QueryExecute:
+2021-09-08 15:37:57.999 (10876): (show tables [Extract])
+2021-09-08 15:37:57.999 (10876): Compiling query with Memory Budget=5455421440 MemoryAvailable=5455421440
+2021-09-08 15:37:58.000 (10876): Session1: QueryExecute: OK rowset_guid=3 n_columns=1, Elapsed time:0.001s, Compilation time:0.000s, Execution time:0.001s
+2021-09-08 15:37:58.001 (7416): Session1: RowsetGetValues: rowset_guid=3
+2021-09-08 15:37:58.001 (11864): Session1: RowsetGetValues: rowset_guid=3
+2021-09-08 15:37:58.001 (22144): Session1: RowsetClose: rowset_guid=3
+2021-09-08 15:37:58.001 (2312): Session1: QueryExecute:
+2021-09-08 15:37:58.001 (2312): (top (table [Extract].[Extract]) () 0)
+2021-09-08 15:37:58.008 (2312): Compiling query with DOP=4
+2021-09-08 15:37:58.008 (2312): Compiling query with Memory Budget=5455421440 MemoryAvailable=5455421440
+2021-09-08 15:37:58.009 (2312): Session1: QueryExecute: OK rowset_guid=4 n_columns=5, Elapsed time:0.007s, Compilation time:0.007s, Execution time:0.000s
+2021-09-08 15:37:58.009 (13808): Session1: RowsetClose: rowset_guid=4
+2021-09-08 15:37:58.009 (13668): Session1: QueryExecute:
+2021-09-08 15:37:58.009 (13668): (alter column [Extract].[Extract].[input file] ( ( "comparable" "comparable" ) ( "compression" "array" ) ( "storagewidth" "0" ) ) )
+2021-09-08 15:37:58.010 (13668): Compiling query with Memory Budget=5455421440 MemoryAvailable=5455421440
+2021-09-08 15:37:58.037 (13668): Session1: QueryExecute: OK, Elapsed time:0.028s, Compilation time:0.000s, Execution time:0.028s
+2021-09-08 15:37:58.038 (1424): Session1: QueryExecute:
+2021-09-08 15:37:58.038 (1424): (alter column [Extract].[Extract].[Scenario] ( ( "comparable" "comparable" ) ( "compression" "array" ) ( "storagewidth" "0" ) ) )
+2021-09-08 15:37:58.038 (1424): Compiling query with Memory Budget=5455179776 MemoryAvailable=5455179776
+2021-09-08 15:37:58.053 (1424): Session1: QueryExecute: OK, Elapsed time:0.015s, Compilation time:0.000s, Execution time:0.015s
+2021-09-08 15:37:58.053 (10876): Session1: QueryExecute:
+2021-09-08 15:37:58.053 (10876): (alter column [Extract].[Extract].[Name] ( ( "comparable" "comparable" ) ( "compression" "array" ) ( "storagewidth" "0" ) ) )
+2021-09-08 15:37:58.053 (10876): Compiling query with Memory Budget=5455175680 MemoryAvailable=5455175680
+2021-09-08 15:37:58.067 (10876): Session1: QueryExecute: OK, Elapsed time:0.014s, Compilation time:0.000s, Execution time:0.014s
+2021-09-08 15:37:58.067 (7416): Session1: QueryExecute:
+2021-09-08 15:37:58.067 (7416): (alter column [Extract].[Extract].[Value] ( ( "comparable" "comparable" ) ( "compression" "array" ) ( "storagewidth" "0" ) ) )
+2021-09-08 15:37:58.068 (7416): Compiling query with Memory Budget=5455110144 MemoryAvailable=5455110144
+2021-09-08 15:37:58.086 (7416): Session1: QueryExecute: OK, Elapsed time:0.019s, Compilation time:0.000s, Execution time:0.019s
+2021-09-08 15:37:58.087 (11864): Session1: QueryExecute:
+2021-09-08 15:37:58.087 (11864): (alter column [Extract].[Extract].[Stat_Type] ( ( "comparable" "comparable" ) ( "compression" "array" ) ( "storagewidth" "0" ) ) )
+2021-09-08 15:37:58.087 (11864): Compiling query with Memory Budget=5454655488 MemoryAvailable=5454655488
+2021-09-08 15:37:58.100 (11864): Session1: QueryExecute: OK, Elapsed time:0.014s, Compilation time:0.000s, Execution time:0.014s
+2021-09-08 15:37:58.100 (22144): Session1: QueryExecute:
+2021-09-08 15:37:58.100 (22144): (top (table [Extract].[Extract]) () 0)
+2021-09-08 15:37:58.101 (22144): Compiling query with DOP=4
+2021-09-08 15:37:58.101 (22144): Compiling query with Memory Budget=5454598144 MemoryAvailable=5454598144
+2021-09-08 15:37:58.103 (22144): Session1: QueryExecute: OK rowset_guid=5 n_columns=5, Elapsed time:0.002s, Compilation time:0.001s, Execution time:0.001s
+2021-09-08 15:37:58.103 (2312): Session1: RowsetClose: rowset_guid=5
+2021-09-08 15:37:58.103 (13808): Session1: QueryExecute:
+2021-09-08 15:37:58.103 (13808): (sort [Extract].[Extract] ( ( [Scenario] asc) ( [Stat_Type] asc) ( [Name] asc) ( [Value] asc) ) )
+2021-09-08 15:37:58.103 (13808): Compiling query with Memory Budget=5454598144 MemoryAvailable=5454598144
+2021-09-08 15:37:58.159 (13808): Session1: QueryExecute: OK, Elapsed time:0.056s, Compilation time:0.000s, Execution time:0.056s
+2021-09-08 15:37:58.159 (13668): Session1: QueryExecute:
+2021-09-08 15:37:58.159 (13668): (package)
+2021-09-08 15:37:58.159 (13668): Compiling query with Memory Budget=5453639680 MemoryAvailable=5453639680
+2021-09-08 15:37:58.159 (13668): PackageDatabase: in-place package of "C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\Time Data Reading.tde"
+2021-09-08 15:37:58.400 (13668): PackageDatabase: finished
+2021-09-08 15:37:58.400 (13668): Session1: QueryExecute: OK, Elapsed time:0.240s, Compilation time:0.000s, Execution time:0.240s
+2021-09-08 15:37:58.400 (9848): tdeserver: close session1, connection=tab.pipe://./pipe/{42D59A45-960E-4274-AB27-76843A5468FA}
+2021-09-08 15:37:58.400 (10100): tdeserver: closing connection=tab.pipe://./pipe/{42D59A45-960E-4274-AB27-76843A5468FA}
+2021-09-08 15:37:58.401 (9848): tdeserver: disconnected connection=tab.pipe://./pipe/{42D59A45-960E-4274-AB27-76843A5468FA}: IPC_NamedPipeConnection::Read(len=16, connection=tab.pipe://./pipe/{42D59A45-960E-4274-AB27-76843A5468FA}): The pipe has been ended.
+2021-09-08 15:37:58.401 (10100): tdeserver: exit (0)
+2021-09-08 15:39:03.290 (3368): -----------------------------------------------------------------------------
+2021-09-08 15:39:03.290 (3368): Initializing fault reporting
+2021-09-08 15:39:03.290 (3368): Fault reporting log pathname: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\Stats\tdeserver64-error_19264_21-0908-153903.log
+2021-09-08 15:39:03.293 (3368): Initializing MiniDump
+2021-09-08 15:39:03.293 (3368): Loading 'DbgHelp.dll'
+2021-09-08 15:39:03.293 (3368): Loaded 'C:\WINDOWS\SYSTEM32\dbghelp.dll'
+2021-09-08 15:39:03.294 (3368):   Product Name: Microsoft® Windows® Operating System
+2021-09-08 15:39:03.294 (3368):   File Version: 10.0.18362.1440 (WinBuild.160101.0800)
+2021-09-08 15:39:03.294 (3368):   Product Version: 10.0.18362.1440
+2021-09-08 15:39:03.294 (3368): Finding function 'MiniDumpWriteDump'
+2021-09-08 15:39:03.294 (3368): Success
+2021-09-08 15:39:03.294 (3368): Registering unhandled exception filter
+2021-09-08 15:39:03.294 (3368): -----------------------------------------------------------------------------
+2021-09-08 15:39:03.294 (3368): argv[0]="C:\Program Files\Alteryx\bin\Tableau\tde\tdeserver64.exe"
+2021-09-08 15:39:03.294 (3368): argv[1]="--callback"
+2021-09-08 15:39:03.294 (3368): argv[2]="tab.pipe://./pipe/{D28524FA-76DE-458E-9E59-1507277E6154}"
+2021-09-08 15:39:03.294 (3368): argv[3]="--listen"
+2021-09-08 15:39:03.294 (3368): argv[4]="tab.pipe://./pipe/auto"
+2021-09-08 15:39:03.294 (3368): argv[5]="--desktop"
+2021-09-08 15:39:03.294 (3368): argv[6]="--log"
+2021-09-08 15:39:03.294 (3368): argv[7]="C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\Stats\DataExtract.log"
+2021-09-08 15:39:03.294 (3368): pid=19264
+2021-09-08 15:39:03.294 (3368): Machine Configuration
+2021-09-08 15:39:03.294 (3368):   Max Descriptors: -1
+2021-09-08 15:39:03.294 (3368): Vectorization Support
+2021-09-08 15:39:03.294 (3368):   Supports SSE:    Yes
+2021-09-08 15:39:03.294 (3368):   Supports SSE2:   Yes
+2021-09-08 15:39:03.294 (3368):   Supports SSE3:   Yes
+2021-09-08 15:39:03.294 (3368):   Supports SSE4.1: Yes
+2021-09-08 15:39:03.294 (3368):   Supports SSE4.2: Yes
+2021-09-08 15:39:03.294 (3368):   Supports AVX:    Yes
+2021-09-08 15:39:03.294 (3368):   Supports AVX2:   Yes
+2021-09-08 15:39:03.294 (3368): Adjusted Values
+2021-09-08 15:39:03.294 (3368):   Physical RAM:              17015201792
+2021-09-08 15:39:03.294 (3368):   CPUs available to process: 8
+2021-09-08 15:39:03.294 (3368):   worker-threads:            8
+2021-09-08 15:39:03.294 (3368):   max-concurrency:           4
+2021-09-08 15:39:03.294 (3368):   query-parallelism:         4
+2021-09-08 15:39:03.294 (3368):   min-query-parallelism:     2
+2021-09-08 15:39:03.294 (3368):   work-buffer-size:          64
+2021-09-08 15:39:03.294 (3368):   TrackingMappedFiles :      1
+2021-09-08 15:39:03.294 (3368):   MemoryMapEntireFile:       1
+2021-09-08 15:39:03.294 (3368):   use-openfile-cache:        1
+2021-09-08 15:39:03.295 (3368): tdeserver: server listening for incoming connections at: tab.pipe://./pipe/{7CD97FF3-F249-4BF3-9A04-C0206A71BB74}
+2021-09-08 15:39:03.295 (3368): tdeserver: new connection, connection=tab.pipe://./pipe/{7CD97FF3-F249-4BF3-9A04-C0206A71BB74}
+2021-09-08 15:39:03.295 (5720): tdeserver: open session1, connection=tab.pipe://./pipe/{7CD97FF3-F249-4BF3-9A04-C0206A71BB74}
+2021-09-08 15:39:03.295 (12184): Session1: QueryExecute:
+2021-09-08 15:39:03.295 (12184): (create database "C:\\OneDrive - Deakin University\\OD\\calle test\\Disun Applications\\Gurobi Applications\\performance analysis\\Time Data Reading.tde")
+2021-09-08 15:39:03.833 (12184): Compiling query with Memory Budget=5421383680 MemoryAvailable=5421383680
+2021-09-08 15:39:03.833 (12184): Session1: QueryExecute: OK, Elapsed time:0.538s, Compilation time:0.538s, Execution time:0.000s
+2021-09-08 15:39:03.833 (22336): Session1: QueryExecute:
+2021-09-08 15:39:03.833 (22336): (create schema [Extract])
+2021-09-08 15:39:03.833 (22336): Compiling query with Memory Budget=5421297664 MemoryAvailable=5421297664
+2021-09-08 15:39:03.866 (22336): Session1: QueryExecute: OK, Elapsed time:0.033s, Compilation time:0.000s, Execution time:0.033s
+2021-09-08 15:39:03.866 (7340): Session1: QueryExecute:
+2021-09-08 15:39:03.866 (7340): (create table [Extract].[Extract])
+2021-09-08 15:39:03.866 (7340): Compiling query with Memory Budget=5421211648 MemoryAvailable=5421211648
+2021-09-08 15:39:03.913 (7340): Session1: QueryExecute: OK, Elapsed time:0.047s, Compilation time:0.000s, Execution time:0.046s
+2021-09-08 15:39:03.913 (16680): Session1: QueryExecute:
+2021-09-08 15:39:03.913 (16680): (create column [Extract].[Extract].[input file] ( ( "collation" "binary" ) ( "compression" "heap" ) ( "factory" "varchar" ) ( "ordinal" "0" ) ( "scale" "1" ) ( "storagewidth" "8" ) ))
+2021-09-08 15:39:03.917 (16680): Compiling query with Memory Budget=5421256704 MemoryAvailable=5421256704
+2021-09-08 15:39:03.975 (16680): Session1: QueryExecute: OK, Elapsed time:0.062s, Compilation time:0.004s, Execution time:0.058s
+2021-09-08 15:39:03.975 (20668): Session1: QueryExecute:
+2021-09-08 15:39:03.975 (20668): (create column [Extract].[Extract].[Scenario] ( ( "collation" "binary" ) ( "compression" "heap" ) ( "factory" "varchar" ) ( "ordinal" "1" ) ( "scale" "1" ) ( "storagewidth" "8" ) ))
+2021-09-08 15:39:03.976 (20668): Compiling query with Memory Budget=5420474368 MemoryAvailable=5420474368
+2021-09-08 15:39:03.991 (20668): Session1: QueryExecute: OK, Elapsed time:0.016s, Compilation time:0.000s, Execution time:0.015s
+2021-09-08 15:39:03.991 (17052): Session1: QueryExecute:
+2021-09-08 15:39:03.991 (17052): (create column [Extract].[Extract].[Name] ( ( "collation" "binary" ) ( "compression" "heap" ) ( "factory" "varchar" ) ( "ordinal" "2" ) ( "scale" "1" ) ( "storagewidth" "8" ) ))
+2021-09-08 15:39:03.991 (17052): Compiling query with Memory Budget=5420425216 MemoryAvailable=5420425216
+2021-09-08 15:39:04.005 (17052): Session1: QueryExecute: OK, Elapsed time:0.015s, Compilation time:0.000s, Execution time:0.015s
+2021-09-08 15:39:04.006 (19780): Session1: QueryExecute:
+2021-09-08 15:39:04.006 (19780): (create column [Extract].[Extract].[Value] ( ( "builtin" "double" ) ( "factory" "builtin" ) ( "ordinal" "3" ) ))
+2021-09-08 15:39:04.006 (19780): Compiling query with Memory Budget=5420158976 MemoryAvailable=5420158976
+2021-09-08 15:39:04.020 (19780): Session1: QueryExecute: OK, Elapsed time:0.014s, Compilation time:0.000s, Execution time:0.014s
+2021-09-08 15:39:04.020 (21176): Session1: QueryExecute:
+2021-09-08 15:39:04.020 (21176): (create column [Extract].[Extract].[Stat_Type] ( ( "collation" "binary" ) ( "compression" "heap" ) ( "factory" "varchar" ) ( "ordinal" "4" ) ( "scale" "2" ) ( "storagewidth" "8" ) ))
+2021-09-08 15:39:04.021 (21176): Compiling query with Memory Budget=5420105728 MemoryAvailable=5420105728
+2021-09-08 15:39:04.036 (21176): Session1: QueryExecute: OK, Elapsed time:0.015s, Compilation time:0.000s, Execution time:0.015s
+2021-09-08 15:39:04.037 (12184): Session1: InsertOpen: table="Extract" schema="Extract"
+2021-09-08 15:39:04.037 (12184):   column[0]="input file"
+2021-09-08 15:39:04.037 (12184):   column[1]="Scenario"
+2021-09-08 15:39:04.037 (12184):   column[2]="Name"
+2021-09-08 15:39:04.037 (12184):   column[3]="Value"
+2021-09-08 15:39:04.037 (12184):   column[4]="Stat_Type"
+2021-09-08 15:39:04.039 (22336): Session1: InsertPutValues: total_calls=1 total_message_size=37576
+2021-09-08 15:39:04.116 (7340): Session1: InsertCommit: insert_guid=1 total_calls=1 total_message_size=37576
+2021-09-08 15:39:04.116 (7340): Session1: InsertCommit: OK
+2021-09-08 15:39:04.116 (16680): Session1: InsertClose: insert_guid=1
+2021-09-08 15:39:04.116 (16680): Session1: InsertClose: OK
+2021-09-08 15:39:04.116 (20668): Session1: QueryExecute:
+2021-09-08 15:39:04.116 (20668): (package)
+2021-09-08 15:39:04.117 (20668): Compiling query with Memory Budget=5419462656 MemoryAvailable=5419462656
+2021-09-08 15:39:04.117 (20668): PackageDatabase: in-place package of "C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\performance analysis\Time Data Reading.tde"
+2021-09-08 15:39:04.308 (20668): PackageDatabase: finished
+2021-09-08 15:39:04.308 (20668): Session1: QueryExecute: OK, Elapsed time:0.191s, Compilation time:0.000s, Execution time:0.191s
+2021-09-08 15:39:04.308 (17052): Session1: QueryExecute:
+2021-09-08 15:39:04.308 (17052): (database "C:\\OneDrive - Deakin University\\OD\\calle test\\Disun Applications\\Gurobi Applications\\performance analysis\\Time Data Reading.tde")
+2021-09-08 15:39:04.309 (17052): Compiling query with Memory Budget=5421088768 MemoryAvailable=5421088768
+2021-09-08 15:39:04.309 (17052): Session1: QueryExecute: OK, Elapsed time:0.001s, Compilation time:0.001s, Execution time:0.000s
+2021-09-08 15:39:04.309 (19780): Session1: QueryExecute:
+2021-09-08 15:39:04.309 (19780): (show schemas)
+2021-09-08 15:39:04.309 (19780): Compiling query with Memory Budget=5421076480 MemoryAvailable=5421076480
+2021-09-08 15:39:04.309 (19780): Session1: QueryExecute: OK rowset_guid=2 n_columns=1, Elapsed time:0.000s, Compilation time:0.000s, Execution time:0.000s
+2021-09-08 15:39:04.310 (21176): Session1: RowsetGetValues: rowset_guid=2
+2021-09-08 15:39:04.310 (12184): Session1: RowsetGetValues: rowset_guid=2
+2021-09-08 15:39:04.310 (22336): Session1: RowsetClose: rowset_guid=2
+2021-09-08 15:39:04.310 (7340): Session1: QueryExecute:
+2021-09-08 15:39:04.310 (7340): (show tables [Extract])
+2021-09-08 15:39:04.310 (7340): Compiling query with Memory Budget=5421019136 MemoryAvailable=5421019136
+2021-09-08 15:39:04.311 (7340): Session1: QueryExecute: OK rowset_guid=3 n_columns=1, Elapsed time:0.001s, Compilation time:0.000s, Execution time:0.001s
+2021-09-08 15:39:04.311 (16680): Session1: RowsetGetValues: rowset_guid=3
+2021-09-08 15:39:04.311 (20668): Session1: RowsetGetValues: rowset_guid=3
+2021-09-08 15:39:04.311 (17052): Session1: RowsetClose: rowset_guid=3
+2021-09-08 15:39:04.311 (19780): Session1: QueryExecute:
+2021-09-08 15:39:04.311 (19780): (top (table [Extract].[Extract]) () 0)
+2021-09-08 15:39:04.319 (19780): Compiling query with DOP=4
+2021-09-08 15:39:04.319 (19780): Compiling query with Memory Budget=5420400640 MemoryAvailable=5420400640
+2021-09-08 15:39:04.319 (19780): Session1: QueryExecute: OK rowset_guid=4 n_columns=5, Elapsed time:0.008s, Compilation time:0.007s, Execution time:0.000s
+2021-09-08 15:39:04.320 (21176): Session1: RowsetClose: rowset_guid=4
+2021-09-08 15:39:04.320 (12184): Session1: QueryExecute:
+2021-09-08 15:39:04.320 (12184): (alter column [Extract].[Extract].[input file] ( ( "comparable" "comparable" ) ( "compression" "array" ) ( "storagewidth" "0" ) ) )
+2021-09-08 15:39:04.320 (12184): Compiling query with Memory Budget=5420335104 MemoryAvailable=5420335104
+2021-09-08 15:39:04.345 (12184): Session1: QueryExecute: OK, Elapsed time:0.025s, Compilation time:0.000s, Execution time:0.025s
+2021-09-08 15:39:04.345 (22336): Session1: QueryExecute:
+2021-09-08 15:39:04.345 (22336): (alter column [Extract].[Extract].[Scenario] ( ( "comparable" "comparable" ) ( "compression" "array" ) ( "storagewidth" "0" ) ) )
+2021-09-08 15:39:04.345 (22336): Compiling query with Memory Budget=5420056576 MemoryAvailable=5420056576
+2021-09-08 15:39:04.359 (22336): Session1: QueryExecute: OK, Elapsed time:0.013s, Compilation time:0.000s, Execution time:0.013s
+2021-09-08 15:39:04.359 (7340): Session1: QueryExecute:
+2021-09-08 15:39:04.359 (7340): (alter column [Extract].[Extract].[Name] ( ( "comparable" "comparable" ) ( "compression" "array" ) ( "storagewidth" "0" ) ) )
+2021-09-08 15:39:04.359 (7340): Compiling query with Memory Budget=5419995136 MemoryAvailable=5419995136
+2021-09-08 15:39:04.372 (7340): Session1: QueryExecute: OK, Elapsed time:0.014s, Compilation time:0.000s, Execution time:0.013s
+2021-09-08 15:39:04.373 (16680): Session1: QueryExecute:
+2021-09-08 15:39:04.373 (16680): (alter column [Extract].[Extract].[Value] ( ( "comparable" "comparable" ) ( "compression" "array" ) ( "storagewidth" "0" ) ) )
+2021-09-08 15:39:04.373 (16680): Compiling query with Memory Budget=5424275456 MemoryAvailable=5424275456
+2021-09-08 15:39:04.391 (16680): Session1: QueryExecute: OK, Elapsed time:0.018s, Compilation time:0.000s, Execution time:0.018s
+2021-09-08 15:39:04.391 (20668): Session1: QueryExecute:
+2021-09-08 15:39:04.391 (20668): (alter column [Extract].[Extract].[Stat_Type] ( ( "comparable" "comparable" ) ( "compression" "array" ) ( "storagewidth" "0" ) ) )
+2021-09-08 15:39:04.391 (20668): Compiling query with Memory Budget=5426327552 MemoryAvailable=5426327552
+2021-09-08 15:39:04.405 (20668): Session1: QueryExecute: OK, Elapsed time:0.014s, Compilation time:0.000s, Execution time:0.013s
+2021-09-08 15:39:04.405 (17052): Session1: QueryExecute:
+2021-09-08 15:39:04.405 (17052): (top (table [Extract].[Extract]) () 0)
+2021-09-08 15:39:04.406 (17052): Compiling query with DOP=4
+2021-09-08 15:39:04.406 (17052): Compiling query with Memory Budget=5426315264 MemoryAvailable=5426315264
+2021-09-08 15:39:04.407 (17052): Session1: QueryExecute: OK rowset_guid=5 n_columns=5, Elapsed time:0.002s, Compilation time:0.001s, Execution time:0.001s
+2021-09-08 15:39:04.407 (19780): Session1: RowsetClose: rowset_guid=5
+2021-09-08 15:39:04.408 (21176): Session1: QueryExecute:
+2021-09-08 15:39:04.408 (21176): (sort [Extract].[Extract] ( ( [Scenario] asc) ( [Stat_Type] asc) ( [Name] asc) ( [Value] asc) ) )
+2021-09-08 15:39:04.408 (21176): Compiling query with Memory Budget=5426311168 MemoryAvailable=5426311168
+2021-09-08 15:39:04.471 (21176): Session1: QueryExecute: OK, Elapsed time:0.063s, Compilation time:0.000s, Execution time:0.063s
+2021-09-08 15:39:04.471 (12184): Session1: QueryExecute:
+2021-09-08 15:39:04.471 (12184): (package)
+2021-09-08 15:39:04.471 (12184): Compiling query with Memory Budget=5425508352 MemoryAvailable=5425508352
+2021-09-08 15:39:04.471 (12184): PackageDatabase: in-place package of "C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\performance analysis\Time Data Reading.tde"
+2021-09-08 15:39:04.856 (12184): PackageDatabase: finished
+2021-09-08 15:39:04.856 (12184): Session1: QueryExecute: OK, Elapsed time:0.385s, Compilation time:0.000s, Execution time:0.385s
+2021-09-08 15:39:04.856 (5720): tdeserver: close session1, connection=tab.pipe://./pipe/{7CD97FF3-F249-4BF3-9A04-C0206A71BB74}
+2021-09-08 15:39:04.856 (3368): tdeserver: closing connection=tab.pipe://./pipe/{7CD97FF3-F249-4BF3-9A04-C0206A71BB74}
+2021-09-08 15:39:04.857 (5720): tdeserver: disconnected connection=tab.pipe://./pipe/{7CD97FF3-F249-4BF3-9A04-C0206A71BB74}: IPC_NamedPipeConnection::Read(len=16, connection=tab.pipe://./pipe/{7CD97FF3-F249-4BF3-9A04-C0206A71BB74}): The pipe has been ended.
+2021-09-08 15:39:04.857 (3368): tdeserver: exit (0)
+2021-09-10 10:04:39.665 (25800): -----------------------------------------------------------------------------
+2021-09-10 10:04:39.665 (25800): Initializing fault reporting
+2021-09-10 10:04:39.665 (25800): Fault reporting log pathname: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\performance analysis\tdeserver64-error_25060_21-0910-100439.log
+2021-09-10 10:04:39.669 (25800): Initializing MiniDump
+2021-09-10 10:04:39.669 (25800): Loading 'DbgHelp.dll'
+2021-09-10 10:04:39.669 (25800): Loaded 'C:\WINDOWS\SYSTEM32\dbghelp.dll'
+2021-09-10 10:04:39.670 (25800):   Product Name: Microsoft® Windows® Operating System
+2021-09-10 10:04:39.670 (25800):   File Version: 10.0.18362.1440 (WinBuild.160101.0800)
+2021-09-10 10:04:39.670 (25800):   Product Version: 10.0.18362.1440
+2021-09-10 10:04:39.670 (25800): Finding function 'MiniDumpWriteDump'
+2021-09-10 10:04:39.670 (25800): Success
+2021-09-10 10:04:39.671 (25800): Registering unhandled exception filter
+2021-09-10 10:04:39.671 (25800): -----------------------------------------------------------------------------
+2021-09-10 10:04:39.671 (25800): argv[0]="C:\Program Files\Alteryx\bin\Tableau\tde\tdeserver64.exe"
+2021-09-10 10:04:39.671 (25800): argv[1]="--callback"
+2021-09-10 10:04:39.671 (25800): argv[2]="tab.pipe://./pipe/{2D446487-CA81-4DDA-951D-EA3FD456645E}"
+2021-09-10 10:04:39.671 (25800): argv[3]="--listen"
+2021-09-10 10:04:39.671 (25800): argv[4]="tab.pipe://./pipe/auto"
+2021-09-10 10:04:39.671 (25800): argv[5]="--desktop"
+2021-09-10 10:04:39.671 (25800): argv[6]="--log"
+2021-09-10 10:04:39.671 (25800): argv[7]="C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\performance analysis\DataExtract.log"
+2021-09-10 10:04:39.671 (25800): pid=25060
+2021-09-10 10:04:39.671 (25800): Machine Configuration
+2021-09-10 10:04:39.671 (25800):   Max Descriptors: -1
+2021-09-10 10:04:39.671 (25800): Vectorization Support
+2021-09-10 10:04:39.671 (25800):   Supports SSE:    Yes
+2021-09-10 10:04:39.671 (25800):   Supports SSE2:   Yes
+2021-09-10 10:04:39.671 (25800):   Supports SSE3:   Yes
+2021-09-10 10:04:39.671 (25800):   Supports SSE4.1: Yes
+2021-09-10 10:04:39.671 (25800):   Supports SSE4.2: Yes
+2021-09-10 10:04:39.671 (25800):   Supports AVX:    Yes
+2021-09-10 10:04:39.671 (25800):   Supports AVX2:   Yes
+2021-09-10 10:04:39.671 (25800): Adjusted Values
+2021-09-10 10:04:39.671 (25800):   Physical RAM:              17015201792
+2021-09-10 10:04:39.671 (25800):   CPUs available to process: 8
+2021-09-10 10:04:39.671 (25800):   worker-threads:            8
+2021-09-10 10:04:39.671 (25800):   max-concurrency:           4
+2021-09-10 10:04:39.671 (25800):   query-parallelism:         4
+2021-09-10 10:04:39.671 (25800):   min-query-parallelism:     2
+2021-09-10 10:04:39.671 (25800):   work-buffer-size:          64
+2021-09-10 10:04:39.671 (25800):   TrackingMappedFiles :      1
+2021-09-10 10:04:39.671 (25800):   MemoryMapEntireFile:       1
+2021-09-10 10:04:39.671 (25800):   use-openfile-cache:        1
+2021-09-10 10:04:39.672 (25800): tdeserver: server listening for incoming connections at: tab.pipe://./pipe/{D49DE086-DD9B-41EA-A6AE-197A7FDB7196}
+2021-09-10 10:04:39.672 (25800): tdeserver: new connection, connection=tab.pipe://./pipe/{D49DE086-DD9B-41EA-A6AE-197A7FDB7196}
+2021-09-10 10:04:39.672 (20600): tdeserver: open session1, connection=tab.pipe://./pipe/{D49DE086-DD9B-41EA-A6AE-197A7FDB7196}
+2021-09-10 10:04:39.673 (8832): Session1: QueryExecute:
+2021-09-10 10:04:39.673 (8832): (database "C:\\OneDrive - Deakin University\\OD\\calle test\\Disun Applications\\Gurobi Applications\\performance analysis\\Time Data Reading.tde")
+2021-09-10 10:04:39.679 (8832): Compiling query with Memory Budget=8229552128 MemoryAvailable=8229552128
+2021-09-10 10:04:39.679 (8832): Session1: QueryExecute: OK, Elapsed time:0.006s, Compilation time:0.006s, Execution time:0.000s
+2021-09-10 10:04:39.680 (29476): Session1: QueryExecute:
+2021-09-10 10:04:39.680 (29476): (show schemas)
+2021-09-10 10:04:39.680 (29476): Compiling query with Memory Budget=8229552128 MemoryAvailable=8229552128
+2021-09-10 10:04:39.680 (29476): Session1: QueryExecute: OK rowset_guid=1 n_columns=1, Elapsed time:0.001s, Compilation time:0.000s, Execution time:0.001s
+2021-09-10 10:04:39.681 (28952): Session1: RowsetGetValues: rowset_guid=1
+2021-09-10 10:04:39.681 (3292): Session1: RowsetGetValues: rowset_guid=1
+2021-09-10 10:04:39.681 (18972): Session1: RowsetClose: rowset_guid=1
+2021-09-10 10:04:39.682 (17188): Session1: QueryExecute:
+2021-09-10 10:04:39.682 (17188): (show tables [Extract])
+2021-09-10 10:04:39.682 (17188): Compiling query with Memory Budget=8229552128 MemoryAvailable=8229552128
+2021-09-10 10:04:39.683 (17188): Session1: QueryExecute: OK rowset_guid=2 n_columns=1, Elapsed time:0.001s, Compilation time:0.000s, Execution time:0.001s
+2021-09-10 10:04:39.683 (7448): Session1: RowsetGetValues: rowset_guid=2
+2021-09-10 10:04:39.684 (25860): Session1: RowsetGetValues: rowset_guid=2
+2021-09-10 10:04:39.684 (8832): Session1: RowsetClose: rowset_guid=2
+2021-09-10 10:04:39.684 (29476): Session1: QueryExecute:
+2021-09-10 10:04:39.684 (29476): (top (table [Extract].[Extract]) () 0)
+2021-09-10 10:04:39.693 (29476): Compiling query with DOP=4
+2021-09-10 10:04:39.693 (29476): Compiling query with Memory Budget=8229543936 MemoryAvailable=8229543936
+2021-09-10 10:04:39.693 (29476): Session1: QueryExecute: OK rowset_guid=3 n_columns=5, Elapsed time:0.009s, Compilation time:0.008s, Execution time:0.000s
+2021-09-10 10:04:39.694 (28952): Session1: RowsetClose: rowset_guid=3
+2021-09-10 10:04:39.695 (3292): Session1: QueryExecute:
+2021-09-10 10:04:39.695 (3292): (package)
+2021-09-10 10:04:39.695 (3292): Compiling query with Memory Budget=8229531648 MemoryAvailable=8229531648
+2021-09-10 10:04:39.695 (3292): PackageDatabase: in-place package of "C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\performance analysis\Time Data Reading.tde"
+2021-09-10 10:04:40.062 (3292): TDE error=401: PackageDatabase: failed, src="C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\performance analysis\Time Data Reading.tde", dst="C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\performance analysis\Time Data Reading.tde.pkg", errno=32, error="The process cannot access the file because it is being used by another process.", exception="C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\performance analysis\Time Data Reading.tde"
+2021-09-10 10:04:40.062 (3292): Session1: QueryExecute: FAILED, error=PackageDatabase: failed, src="C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\performance analysis\Time Data Reading.tde", dst="C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\performance analysis\Time Data Reading.tde.pkg", errno=32, error="The process cannot access the file because it is being used by another process.", exception="C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\performance analysis\Time Data Reading.tde", Elapsed time:0.367s, Compilation time:0.000s, Execution time:0.367s
+2021-09-10 10:04:40.063 (20600): tdeserver: close session1, connection=tab.pipe://./pipe/{D49DE086-DD9B-41EA-A6AE-197A7FDB7196}
+2021-09-10 10:04:40.063 (25800): tdeserver: closing connection=tab.pipe://./pipe/{D49DE086-DD9B-41EA-A6AE-197A7FDB7196}
+2021-09-10 10:04:40.063 (20600): tdeserver: disconnected connection=tab.pipe://./pipe/{D49DE086-DD9B-41EA-A6AE-197A7FDB7196}: IPC_NamedPipeConnection::Read(len=16, connection=tab.pipe://./pipe/{D49DE086-DD9B-41EA-A6AE-197A7FDB7196}): The pipe has been ended.
+2021-09-10 10:04:40.063 (25800): tdeserver: exit (0)
+2021-09-10 10:05:07.231 (27484): -----------------------------------------------------------------------------
+2021-09-10 10:05:07.231 (27484): Initializing fault reporting
+2021-09-10 10:05:07.231 (27484): Fault reporting log pathname: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\performance analysis\tdeserver64-error_26508_21-0910-100507.log
+2021-09-10 10:05:07.234 (27484): Initializing MiniDump
+2021-09-10 10:05:07.234 (27484): Loading 'DbgHelp.dll'
+2021-09-10 10:05:07.234 (27484): Loaded 'C:\WINDOWS\SYSTEM32\dbghelp.dll'
+2021-09-10 10:05:07.235 (27484):   Product Name: Microsoft® Windows® Operating System
+2021-09-10 10:05:07.235 (27484):   File Version: 10.0.18362.1440 (WinBuild.160101.0800)
+2021-09-10 10:05:07.235 (27484):   Product Version: 10.0.18362.1440
+2021-09-10 10:05:07.235 (27484): Finding function 'MiniDumpWriteDump'
+2021-09-10 10:05:07.235 (27484): Success
+2021-09-10 10:05:07.235 (27484): Registering unhandled exception filter
+2021-09-10 10:05:07.235 (27484): -----------------------------------------------------------------------------
+2021-09-10 10:05:07.235 (27484): argv[0]="C:\Program Files\Alteryx\bin\Tableau\tde\tdeserver64.exe"
+2021-09-10 10:05:07.235 (27484): argv[1]="--callback"
+2021-09-10 10:05:07.235 (27484): argv[2]="tab.pipe://./pipe/{EC978E95-D7E3-4B0D-88C1-35A582EC5942}"
+2021-09-10 10:05:07.235 (27484): argv[3]="--listen"
+2021-09-10 10:05:07.235 (27484): argv[4]="tab.pipe://./pipe/auto"
+2021-09-10 10:05:07.235 (27484): argv[5]="--desktop"
+2021-09-10 10:05:07.235 (27484): argv[6]="--log"
+2021-09-10 10:05:07.235 (27484): argv[7]="C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\performance analysis\DataExtract.log"
+2021-09-10 10:05:07.235 (27484): pid=26508
+2021-09-10 10:05:07.235 (27484): Machine Configuration
+2021-09-10 10:05:07.235 (27484):   Max Descriptors: -1
+2021-09-10 10:05:07.235 (27484): Vectorization Support
+2021-09-10 10:05:07.235 (27484):   Supports SSE:    Yes
+2021-09-10 10:05:07.235 (27484):   Supports SSE2:   Yes
+2021-09-10 10:05:07.235 (27484):   Supports SSE3:   Yes
+2021-09-10 10:05:07.235 (27484):   Supports SSE4.1: Yes
+2021-09-10 10:05:07.235 (27484):   Supports SSE4.2: Yes
+2021-09-10 10:05:07.235 (27484):   Supports AVX:    Yes
+2021-09-10 10:05:07.235 (27484):   Supports AVX2:   Yes
+2021-09-10 10:05:07.235 (27484): Adjusted Values
+2021-09-10 10:05:07.235 (27484):   Physical RAM:              17015201792
+2021-09-10 10:05:07.235 (27484):   CPUs available to process: 8
+2021-09-10 10:05:07.235 (27484):   worker-threads:            8
+2021-09-10 10:05:07.235 (27484):   max-concurrency:           4
+2021-09-10 10:05:07.235 (27484):   query-parallelism:         4
+2021-09-10 10:05:07.235 (27484):   min-query-parallelism:     2
+2021-09-10 10:05:07.235 (27484):   work-buffer-size:          64
+2021-09-10 10:05:07.235 (27484):   TrackingMappedFiles :      1
+2021-09-10 10:05:07.235 (27484):   MemoryMapEntireFile:       1
+2021-09-10 10:05:07.235 (27484):   use-openfile-cache:        1
+2021-09-10 10:05:07.236 (27484): tdeserver: server listening for incoming connections at: tab.pipe://./pipe/{41148FE8-A3C1-4BC0-BE8E-5E8F763BF744}
+2021-09-10 10:05:07.236 (27484): tdeserver: new connection, connection=tab.pipe://./pipe/{41148FE8-A3C1-4BC0-BE8E-5E8F763BF744}
+2021-09-10 10:05:07.236 (23484): tdeserver: open session1, connection=tab.pipe://./pipe/{41148FE8-A3C1-4BC0-BE8E-5E8F763BF744}
+2021-09-10 10:05:07.236 (16824): Session1: QueryExecute:
+2021-09-10 10:05:07.236 (16824): (database "C:\\OneDrive - Deakin University\\OD\\calle test\\Disun Applications\\Gurobi Applications\\performance analysis\\Time Data Reading.tde")
+2021-09-10 10:05:07.237 (16824): Compiling query with Memory Budget=8244367360 MemoryAvailable=8244367360
+2021-09-10 10:05:07.237 (16824): Session1: QueryExecute: OK, Elapsed time:0.001s, Compilation time:0.001s, Execution time:0.000s
+2021-09-10 10:05:07.237 (9604): Session1: QueryExecute:
+2021-09-10 10:05:07.237 (9604): (show schemas)
+2021-09-10 10:05:07.237 (9604): Compiling query with Memory Budget=8244305920 MemoryAvailable=8244305920
+2021-09-10 10:05:07.238 (9604): Session1: QueryExecute: OK rowset_guid=1 n_columns=1, Elapsed time:0.000s, Compilation time:0.000s, Execution time:0.000s
+2021-09-10 10:05:07.238 (13912): Session1: RowsetGetValues: rowset_guid=1
+2021-09-10 10:05:07.238 (26320): Session1: RowsetGetValues: rowset_guid=1
+2021-09-10 10:05:07.238 (14172): Session1: RowsetClose: rowset_guid=1
+2021-09-10 10:05:07.238 (19920): Session1: QueryExecute:
+2021-09-10 10:05:07.238 (19920): (show tables [Extract])
+2021-09-10 10:05:07.238 (19920): Compiling query with Memory Budget=8244072448 MemoryAvailable=8244072448
+2021-09-10 10:05:07.239 (19920): Session1: QueryExecute: OK rowset_guid=2 n_columns=1, Elapsed time:0.001s, Compilation time:0.000s, Execution time:0.001s
+2021-09-10 10:05:07.239 (24304): Session1: RowsetGetValues: rowset_guid=2
+2021-09-10 10:05:07.239 (28512): Session1: RowsetGetValues: rowset_guid=2
+2021-09-10 10:05:07.240 (16824): Session1: RowsetClose: rowset_guid=2
+2021-09-10 10:05:07.240 (9604): Session1: QueryExecute:
+2021-09-10 10:05:07.240 (9604): (top (table [Extract].[Extract]) () 0)
+2021-09-10 10:05:07.246 (9604): Compiling query with DOP=4
+2021-09-10 10:05:07.247 (9604): Compiling query with Memory Budget=8243105792 MemoryAvailable=8243105792
+2021-09-10 10:05:07.247 (9604): Session1: QueryExecute: OK rowset_guid=3 n_columns=5, Elapsed time:0.007s, Compilation time:0.007s, Execution time:0.000s
+2021-09-10 10:05:07.248 (13912): Session1: RowsetClose: rowset_guid=3
+2021-09-10 10:05:07.248 (26320): Session1: QueryExecute:
+2021-09-10 10:05:07.248 (26320): (package)
+2021-09-10 10:05:07.248 (26320): Compiling query with Memory Budget=8242819072 MemoryAvailable=8242819072
+2021-09-10 10:05:07.248 (26320): PackageDatabase: in-place package of "C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\performance analysis\Time Data Reading.tde"
+2021-09-10 10:05:07.433 (26320): PackageDatabase: finished
+2021-09-10 10:05:07.433 (26320): Session1: QueryExecute: OK, Elapsed time:0.185s, Compilation time:0.000s, Execution time:0.185s
+2021-09-10 10:05:07.433 (14172): Session1: QueryExecute:
+2021-09-10 10:05:07.433 (14172): (database "C:\\OneDrive - Deakin University\\OD\\calle test\\Disun Applications\\Gurobi Applications\\performance analysis\\Time Data Reading.tde")
+2021-09-10 10:05:07.434 (14172): Compiling query with Memory Budget=8242077696 MemoryAvailable=8242077696
+2021-09-10 10:05:07.434 (14172): Session1: QueryExecute: OK, Elapsed time:0.001s, Compilation time:0.001s, Execution time:0.000s
+2021-09-10 10:05:07.434 (19920): Session1: QueryExecute:
+2021-09-10 10:05:07.434 (19920): (show schemas)
+2021-09-10 10:05:07.434 (19920): Compiling query with Memory Budget=8242077696 MemoryAvailable=8242077696
+2021-09-10 10:05:07.435 (19920): Session1: QueryExecute: OK rowset_guid=4 n_columns=1, Elapsed time:0.001s, Compilation time:0.000s, Execution time:0.001s
+2021-09-10 10:05:07.435 (24304): Session1: RowsetGetValues: rowset_guid=4
+2021-09-10 10:05:07.435 (28512): Session1: RowsetGetValues: rowset_guid=4
+2021-09-10 10:05:07.435 (16824): Session1: RowsetClose: rowset_guid=4
+2021-09-10 10:05:07.435 (9604): Session1: QueryExecute:
+2021-09-10 10:05:07.435 (9604): (show tables [Extract])
+2021-09-10 10:05:07.436 (9604): Compiling query with Memory Budget=8242069504 MemoryAvailable=8242069504
+2021-09-10 10:05:07.437 (9604): Session1: QueryExecute: OK rowset_guid=5 n_columns=1, Elapsed time:0.001s, Compilation time:0.000s, Execution time:0.001s
+2021-09-10 10:05:07.437 (13912): Session1: RowsetGetValues: rowset_guid=5
+2021-09-10 10:05:07.437 (26320): Session1: RowsetGetValues: rowset_guid=5
+2021-09-10 10:05:07.437 (14172): Session1: RowsetClose: rowset_guid=5
+2021-09-10 10:05:07.437 (19920): Session1: QueryExecute:
+2021-09-10 10:05:07.437 (19920): (top (table [Extract].[Extract]) () 0)
+2021-09-10 10:05:07.445 (19920): Compiling query with DOP=4
+2021-09-10 10:05:07.445 (19920): Compiling query with Memory Budget=8242065408 MemoryAvailable=8242065408
+2021-09-10 10:05:07.446 (19920): Session1: QueryExecute: OK rowset_guid=6 n_columns=5, Elapsed time:0.008s, Compilation time:0.008s, Execution time:0.000s
+2021-09-10 10:05:07.446 (24304): Session1: RowsetClose: rowset_guid=6
+2021-09-10 10:05:07.446 (28512): Session1: QueryExecute:
+2021-09-10 10:05:07.446 (28512): (alter column [Extract].[Extract].[input file] ( ( "comparable" "comparable" ) ( "compression" "array" ) ( "storagewidth" "0" ) ) )
+2021-09-10 10:05:07.446 (28512): Compiling query with Memory Budget=8242065408 MemoryAvailable=8242065408
+2021-09-10 10:05:07.448 (28512): Session1: QueryExecute: OK, Elapsed time:0.001s, Compilation time:0.000s, Execution time:0.001s
+2021-09-10 10:05:07.448 (16824): Session1: QueryExecute:
+2021-09-10 10:05:07.448 (16824): (alter column [Extract].[Extract].[Scenario] ( ( "comparable" "comparable" ) ( "compression" "array" ) ( "storagewidth" "0" ) ) )
+2021-09-10 10:05:07.448 (16824): Compiling query with Memory Budget=8242065408 MemoryAvailable=8242065408
+2021-09-10 10:05:07.449 (16824): Session1: QueryExecute: OK, Elapsed time:0.001s, Compilation time:0.000s, Execution time:0.001s
+2021-09-10 10:05:07.449 (9604): Session1: QueryExecute:
+2021-09-10 10:05:07.449 (9604): (alter column [Extract].[Extract].[Name] ( ( "comparable" "comparable" ) ( "compression" "array" ) ( "storagewidth" "0" ) ) )
+2021-09-10 10:05:07.449 (9604): Compiling query with Memory Budget=8242065408 MemoryAvailable=8242065408
+2021-09-10 10:05:07.450 (9604): Session1: QueryExecute: OK, Elapsed time:0.001s, Compilation time:0.000s, Execution time:0.001s
+2021-09-10 10:05:07.450 (13912): Session1: QueryExecute:
+2021-09-10 10:05:07.450 (13912): (alter column [Extract].[Extract].[Value] ( ( "comparable" "comparable" ) ( "compression" "array" ) ( "storagewidth" "0" ) ) )
+2021-09-10 10:05:07.450 (13912): Compiling query with Memory Budget=8242065408 MemoryAvailable=8242065408
+2021-09-10 10:05:07.451 (13912): Session1: QueryExecute: OK, Elapsed time:0.001s, Compilation time:0.000s, Execution time:0.001s
+2021-09-10 10:05:07.451 (26320): Session1: QueryExecute:
+2021-09-10 10:05:07.451 (26320): (alter column [Extract].[Extract].[Stat_Type] ( ( "comparable" "comparable" ) ( "compression" "array" ) ( "storagewidth" "0" ) ) )
+2021-09-10 10:05:07.451 (26320): Compiling query with Memory Budget=8242696192 MemoryAvailable=8242696192
+2021-09-10 10:05:07.452 (26320): Session1: QueryExecute: OK, Elapsed time:0.001s, Compilation time:0.000s, Execution time:0.001s
+2021-09-10 10:05:07.453 (14172): Session1: QueryExecute:
+2021-09-10 10:05:07.453 (14172): (top (table [Extract].[Extract]) () 0)
+2021-09-10 10:05:07.453 (14172): Compiling query with DOP=4
+2021-09-10 10:05:07.453 (14172): Compiling query with Memory Budget=8242536448 MemoryAvailable=8242536448
+2021-09-10 10:05:07.454 (14172): Session1: QueryExecute: OK rowset_guid=7 n_columns=5, Elapsed time:0.001s, Compilation time:0.001s, Execution time:0.000s
+2021-09-10 10:05:07.454 (19920): Session1: RowsetClose: rowset_guid=7
+2021-09-10 10:05:07.454 (24304): Session1: QueryExecute:
+2021-09-10 10:05:07.454 (24304): (sort [Extract].[Extract] ( ( [Scenario] asc) ( [Stat_Type] asc) ( [Name] asc) ( [Value] asc) ) )
+2021-09-10 10:05:07.454 (24304): Compiling query with Memory Budget=8242540544 MemoryAvailable=8242540544
+2021-09-10 10:05:07.572 (24304): Session1: QueryExecute: OK, Elapsed time:0.118s, Compilation time:0.000s, Execution time:0.118s
+2021-09-10 10:05:07.572 (28512): Session1: QueryExecute:
+2021-09-10 10:05:07.572 (28512): (package)
+2021-09-10 10:05:07.572 (28512): Compiling query with Memory Budget=8238280704 MemoryAvailable=8238280704
+2021-09-10 10:05:07.573 (28512): PackageDatabase: in-place package of "C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\performance analysis\Time Data Reading.tde"
+2021-09-10 10:05:07.655 (28512): PackageDatabase: finished
+2021-09-10 10:05:07.655 (28512): Session1: QueryExecute: OK, Elapsed time:0.082s, Compilation time:0.000s, Execution time:0.082s
+2021-09-10 10:05:07.655 (23484): tdeserver: close session1, connection=tab.pipe://./pipe/{41148FE8-A3C1-4BC0-BE8E-5E8F763BF744}
+2021-09-10 10:05:07.655 (27484): tdeserver: closing connection=tab.pipe://./pipe/{41148FE8-A3C1-4BC0-BE8E-5E8F763BF744}
+2021-09-10 10:05:07.655 (23484): tdeserver: disconnected connection=tab.pipe://./pipe/{41148FE8-A3C1-4BC0-BE8E-5E8F763BF744}: IPC_NamedPipeConnection::Read(len=16, connection=tab.pipe://./pipe/{41148FE8-A3C1-4BC0-BE8E-5E8F763BF744}): The pipe has been ended.
+2021-09-10 10:05:07.656 (27484): tdeserver: exit (0)
+2021-09-10 10:05:16.130 (27964): -----------------------------------------------------------------------------
+2021-09-10 10:05:16.130 (27964): Initializing fault reporting
+2021-09-10 10:05:16.130 (27964): Fault reporting log pathname: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\performance analysis\tdeserver64-error_29016_21-0910-100516.log
+2021-09-10 10:05:16.133 (27964): Initializing MiniDump
+2021-09-10 10:05:16.133 (27964): Loading 'DbgHelp.dll'
+2021-09-10 10:05:16.133 (27964): Loaded 'C:\WINDOWS\SYSTEM32\dbghelp.dll'
+2021-09-10 10:05:16.133 (27964):   Product Name: Microsoft® Windows® Operating System
+2021-09-10 10:05:16.133 (27964):   File Version: 10.0.18362.1440 (WinBuild.160101.0800)
+2021-09-10 10:05:16.133 (27964):   Product Version: 10.0.18362.1440
+2021-09-10 10:05:16.133 (27964): Finding function 'MiniDumpWriteDump'
+2021-09-10 10:05:16.133 (27964): Success
+2021-09-10 10:05:16.133 (27964): Registering unhandled exception filter
+2021-09-10 10:05:16.133 (27964): -----------------------------------------------------------------------------
+2021-09-10 10:05:16.133 (27964): argv[0]="C:\Program Files\Alteryx\bin\Tableau\tde\tdeserver64.exe"
+2021-09-10 10:05:16.133 (27964): argv[1]="--callback"
+2021-09-10 10:05:16.133 (27964): argv[2]="tab.pipe://./pipe/{41E9E2A1-365F-42D6-ACAB-58E0574C60B3}"
+2021-09-10 10:05:16.133 (27964): argv[3]="--listen"
+2021-09-10 10:05:16.133 (27964): argv[4]="tab.pipe://./pipe/auto"
+2021-09-10 10:05:16.133 (27964): argv[5]="--desktop"
+2021-09-10 10:05:16.133 (27964): argv[6]="--log"
+2021-09-10 10:05:16.133 (27964): argv[7]="C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\performance analysis\DataExtract.log"
+2021-09-10 10:05:16.133 (27964): pid=29016
+2021-09-10 10:05:16.133 (27964): Machine Configuration
+2021-09-10 10:05:16.133 (27964):   Max Descriptors: -1
+2021-09-10 10:05:16.133 (27964): Vectorization Support
+2021-09-10 10:05:16.133 (27964):   Supports SSE:    Yes
+2021-09-10 10:05:16.133 (27964):   Supports SSE2:   Yes
+2021-09-10 10:05:16.133 (27964):   Supports SSE3:   Yes
+2021-09-10 10:05:16.133 (27964):   Supports SSE4.1: Yes
+2021-09-10 10:05:16.133 (27964):   Supports SSE4.2: Yes
+2021-09-10 10:05:16.133 (27964):   Supports AVX:    Yes
+2021-09-10 10:05:16.133 (27964):   Supports AVX2:   Yes
+2021-09-10 10:05:16.133 (27964): Adjusted Values
+2021-09-10 10:05:16.133 (27964):   Physical RAM:              17015201792
+2021-09-10 10:05:16.133 (27964):   CPUs available to process: 8
+2021-09-10 10:05:16.133 (27964):   worker-threads:            8
+2021-09-10 10:05:16.133 (27964):   max-concurrency:           4
+2021-09-10 10:05:16.133 (27964):   query-parallelism:         4
+2021-09-10 10:05:16.133 (27964):   min-query-parallelism:     2
+2021-09-10 10:05:16.133 (27964):   work-buffer-size:          64
+2021-09-10 10:05:16.133 (27964):   TrackingMappedFiles :      1
+2021-09-10 10:05:16.133 (27964):   MemoryMapEntireFile:       1
+2021-09-10 10:05:16.133 (27964):   use-openfile-cache:        1
+2021-09-10 10:05:16.134 (27964): tdeserver: server listening for incoming connections at: tab.pipe://./pipe/{090102D7-3C1B-48E1-89D1-C0B8B062C33D}
+2021-09-10 10:05:16.134 (27964): tdeserver: new connection, connection=tab.pipe://./pipe/{090102D7-3C1B-48E1-89D1-C0B8B062C33D}
+2021-09-10 10:05:16.134 (24900): tdeserver: open session1, connection=tab.pipe://./pipe/{090102D7-3C1B-48E1-89D1-C0B8B062C33D}
+2021-09-10 10:05:16.135 (27912): Session1: QueryExecute:
+2021-09-10 10:05:16.135 (27912): (create database "C:\\OneDrive - Deakin University\\OD\\calle test\\Disun Applications\\Gurobi Applications\\performance analysis\\Time Data Reading.tde")
+2021-09-10 10:05:17.529 (27912): Compiling query with Memory Budget=8200974336 MemoryAvailable=8200974336
+2021-09-10 10:05:17.530 (27912): Session1: QueryExecute: OK, Elapsed time:1.395s, Compilation time:1.395s, Execution time:0.000s
+2021-09-10 10:05:17.530 (20096): Session1: QueryExecute:
+2021-09-10 10:05:17.530 (20096): (create schema [Extract])
+2021-09-10 10:05:17.530 (20096): Compiling query with Memory Budget=8200896512 MemoryAvailable=8200896512
+2021-09-10 10:05:17.568 (20096): Session1: QueryExecute: OK, Elapsed time:0.038s, Compilation time:0.000s, Execution time:0.038s
+2021-09-10 10:05:17.568 (21828): Session1: QueryExecute:
+2021-09-10 10:05:17.568 (21828): (create table [Extract].[Extract])
+2021-09-10 10:05:17.569 (21828): Compiling query with Memory Budget=8200441856 MemoryAvailable=8200441856
+2021-09-10 10:05:17.625 (21828): Session1: QueryExecute: OK, Elapsed time:0.058s, Compilation time:0.000s, Execution time:0.058s
+2021-09-10 10:05:17.626 (24600): Session1: QueryExecute:
+2021-09-10 10:05:17.626 (24600): (create column [Extract].[Extract].[input file] ( ( "collation" "binary" ) ( "compression" "heap" ) ( "factory" "varchar" ) ( "ordinal" "0" ) ( "scale" "1" ) ( "storagewidth" "8" ) ))
+2021-09-10 10:05:17.634 (24600): Compiling query with Memory Budget=8203218944 MemoryAvailable=8203218944
+2021-09-10 10:05:17.712 (24600): Session1: QueryExecute: OK, Elapsed time:0.086s, Compilation time:0.009s, Execution time:0.077s
+2021-09-10 10:05:17.712 (5972): Session1: QueryExecute:
+2021-09-10 10:05:17.712 (5972): (create column [Extract].[Extract].[Scenario] ( ( "collation" "binary" ) ( "compression" "heap" ) ( "factory" "varchar" ) ( "ordinal" "1" ) ( "scale" "1" ) ( "storagewidth" "8" ) ))
+2021-09-10 10:05:17.712 (5972): Compiling query with Memory Budget=8202567680 MemoryAvailable=8202567680
+2021-09-10 10:05:17.749 (5972): Session1: QueryExecute: OK, Elapsed time:0.036s, Compilation time:0.000s, Execution time:0.036s
+2021-09-10 10:05:17.749 (21056): Session1: QueryExecute:
+2021-09-10 10:05:17.749 (21056): (create column [Extract].[Extract].[Name] ( ( "collation" "binary" ) ( "compression" "heap" ) ( "factory" "varchar" ) ( "ordinal" "2" ) ( "scale" "1" ) ( "storagewidth" "8" ) ))
+2021-09-10 10:05:17.749 (21056): Compiling query with Memory Budget=8202207232 MemoryAvailable=8202207232
+2021-09-10 10:05:17.785 (21056): Session1: QueryExecute: OK, Elapsed time:0.036s, Compilation time:0.000s, Execution time:0.036s
+2021-09-10 10:05:17.785 (26628): Session1: QueryExecute:
+2021-09-10 10:05:17.785 (26628): (create column [Extract].[Extract].[Value] ( ( "builtin" "double" ) ( "factory" "builtin" ) ( "ordinal" "3" ) ))
+2021-09-10 10:05:17.785 (26628): Compiling query with Memory Budget=8202002432 MemoryAvailable=8202002432
+2021-09-10 10:05:17.819 (26628): Session1: QueryExecute: OK, Elapsed time:0.034s, Compilation time:0.000s, Execution time:0.034s
+2021-09-10 10:05:17.819 (2320): Session1: QueryExecute:
+2021-09-10 10:05:17.819 (2320): (create column [Extract].[Extract].[Stat_Type] ( ( "collation" "binary" ) ( "compression" "heap" ) ( "factory" "varchar" ) ( "ordinal" "4" ) ( "scale" "2" ) ( "storagewidth" "8" ) ))
+2021-09-10 10:05:17.819 (2320): Compiling query with Memory Budget=8201785344 MemoryAvailable=8201785344
+2021-09-10 10:05:17.853 (2320): Session1: QueryExecute: OK, Elapsed time:0.034s, Compilation time:0.000s, Execution time:0.034s
+2021-09-10 10:05:17.858 (27912): Session1: InsertOpen: table="Extract" schema="Extract"
+2021-09-10 10:05:17.858 (27912):   column[0]="input file"
+2021-09-10 10:05:17.858 (27912):   column[1]="Scenario"
+2021-09-10 10:05:17.858 (27912):   column[2]="Name"
+2021-09-10 10:05:17.858 (27912):   column[3]="Value"
+2021-09-10 10:05:17.858 (27912):   column[4]="Stat_Type"
+2021-09-10 10:05:17.887 (20096): Session1: InsertPutValues: total_calls=1 total_message_size=1435744
+2021-09-10 10:05:18.123 (21828): Session1: InsertCommit: insert_guid=1 total_calls=1 total_message_size=1435744
+2021-09-10 10:05:18.123 (21828): Session1: InsertCommit: OK
+2021-09-10 10:05:18.123 (24600): Session1: InsertClose: insert_guid=1
+2021-09-10 10:05:18.123 (24600): Session1: InsertClose: OK
+2021-09-10 10:05:18.123 (5972): Session1: QueryExecute:
+2021-09-10 10:05:18.123 (5972): (package)
+2021-09-10 10:05:18.124 (5972): Compiling query with Memory Budget=8196718592 MemoryAvailable=8196718592
+2021-09-10 10:05:18.124 (5972): PackageDatabase: in-place package of "C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\performance analysis\Time Data Reading.tde"
+2021-09-10 10:05:18.334 (5972): PackageDatabase: finished
+2021-09-10 10:05:18.334 (5972): Session1: QueryExecute: OK, Elapsed time:0.210s, Compilation time:0.000s, Execution time:0.210s
+2021-09-10 10:05:18.334 (21056): Session1: QueryExecute:
+2021-09-10 10:05:18.334 (21056): (database "C:\\OneDrive - Deakin University\\OD\\calle test\\Disun Applications\\Gurobi Applications\\performance analysis\\Time Data Reading.tde")
+2021-09-10 10:05:18.335 (21056): Compiling query with Memory Budget=8196145152 MemoryAvailable=8196145152
+2021-09-10 10:05:18.335 (21056): Session1: QueryExecute: OK, Elapsed time:0.001s, Compilation time:0.001s, Execution time:0.000s
+2021-09-10 10:05:18.336 (26628): Session1: QueryExecute:
+2021-09-10 10:05:18.336 (26628): (show schemas)
+2021-09-10 10:05:18.336 (26628): Compiling query with Memory Budget=8196132864 MemoryAvailable=8196132864
+2021-09-10 10:05:18.336 (26628): Session1: QueryExecute: OK rowset_guid=2 n_columns=1, Elapsed time:0.001s, Compilation time:0.000s, Execution time:0.001s
+2021-09-10 10:05:18.336 (2320): Session1: RowsetGetValues: rowset_guid=2
+2021-09-10 10:05:18.336 (27912): Session1: RowsetGetValues: rowset_guid=2
+2021-09-10 10:05:18.336 (20096): Session1: RowsetClose: rowset_guid=2
+2021-09-10 10:05:18.336 (21828): Session1: QueryExecute:
+2021-09-10 10:05:18.336 (21828): (show tables [Extract])
+2021-09-10 10:05:18.336 (21828): Compiling query with Memory Budget=8196091904 MemoryAvailable=8196091904
+2021-09-10 10:05:18.338 (21828): Session1: QueryExecute: OK rowset_guid=3 n_columns=1, Elapsed time:0.002s, Compilation time:0.000s, Execution time:0.002s
+2021-09-10 10:05:18.338 (24600): Session1: RowsetGetValues: rowset_guid=3
+2021-09-10 10:05:18.338 (5972): Session1: RowsetGetValues: rowset_guid=3
+2021-09-10 10:05:18.338 (21056): Session1: RowsetClose: rowset_guid=3
+2021-09-10 10:05:18.338 (26628): Session1: QueryExecute:
+2021-09-10 10:05:18.338 (26628): (top (table [Extract].[Extract]) () 0)
+2021-09-10 10:05:18.347 (26628): Compiling query with DOP=4
+2021-09-10 10:05:18.347 (26628): Compiling query with Memory Budget=8195489792 MemoryAvailable=8195489792
+2021-09-10 10:05:18.347 (26628): Session1: QueryExecute: OK rowset_guid=4 n_columns=5, Elapsed time:0.008s, Compilation time:0.008s, Execution time:0.000s
+2021-09-10 10:05:18.348 (2320): Session1: RowsetClose: rowset_guid=4
+2021-09-10 10:05:18.348 (27912): Session1: QueryExecute:
+2021-09-10 10:05:18.348 (27912): (alter column [Extract].[Extract].[input file] ( ( "comparable" "comparable" ) ( "compression" "array" ) ( "storagewidth" "0" ) ) )
+2021-09-10 10:05:18.348 (27912): Compiling query with Memory Budget=8195403776 MemoryAvailable=8195403776
+2021-09-10 10:05:18.383 (27912): Session1: QueryExecute: OK, Elapsed time:0.035s, Compilation time:0.000s, Execution time:0.035s
+2021-09-10 10:05:18.383 (20096): Session1: QueryExecute:
+2021-09-10 10:05:18.383 (20096): (alter column [Extract].[Extract].[Scenario] ( ( "comparable" "comparable" ) ( "compression" "array" ) ( "storagewidth" "0" ) ) )
+2021-09-10 10:05:18.383 (20096): Compiling query with Memory Budget=8195362816 MemoryAvailable=8195362816
+2021-09-10 10:05:18.406 (20096): Session1: QueryExecute: OK, Elapsed time:0.023s, Compilation time:0.000s, Execution time:0.023s
+2021-09-10 10:05:18.407 (21828): Session1: QueryExecute:
+2021-09-10 10:05:18.407 (21828): (alter column [Extract].[Extract].[Name] ( ( "comparable" "comparable" ) ( "compression" "array" ) ( "storagewidth" "0" ) ) )
+2021-09-10 10:05:18.407 (21828): Compiling query with Memory Budget=8195031040 MemoryAvailable=8195031040
+2021-09-10 10:05:18.443 (21828): Session1: QueryExecute: OK, Elapsed time:0.036s, Compilation time:0.000s, Execution time:0.036s
+2021-09-10 10:05:18.443 (24600): Session1: QueryExecute:
+2021-09-10 10:05:18.443 (24600): (alter column [Extract].[Extract].[Value] ( ( "comparable" "comparable" ) ( "compression" "array" ) ( "storagewidth" "0" ) ) )
+2021-09-10 10:05:18.443 (24600): Compiling query with Memory Budget=8194916352 MemoryAvailable=8194916352
+2021-09-10 10:05:18.480 (24600): Session1: QueryExecute: OK, Elapsed time:0.037s, Compilation time:0.000s, Execution time:0.037s
+2021-09-10 10:05:18.481 (5972): Session1: QueryExecute:
+2021-09-10 10:05:18.481 (5972): (alter column [Extract].[Extract].[Stat_Type] ( ( "comparable" "comparable" ) ( "compression" "array" ) ( "storagewidth" "0" ) ) )
+2021-09-10 10:05:18.481 (5972): Compiling query with Memory Budget=8194850816 MemoryAvailable=8194850816
+2021-09-10 10:05:18.513 (5972): Session1: QueryExecute: OK, Elapsed time:0.032s, Compilation time:0.000s, Execution time:0.032s
+2021-09-10 10:05:18.513 (21056): Session1: QueryExecute:
+2021-09-10 10:05:18.513 (21056): (top (table [Extract].[Extract]) () 0)
+2021-09-10 10:05:18.514 (21056): Compiling query with DOP=4
+2021-09-10 10:05:18.514 (21056): Compiling query with Memory Budget=8195616768 MemoryAvailable=8195616768
+2021-09-10 10:05:18.516 (21056): Session1: QueryExecute: OK rowset_guid=5 n_columns=5, Elapsed time:0.003s, Compilation time:0.001s, Execution time:0.002s
+2021-09-10 10:05:18.517 (26628): Session1: RowsetClose: rowset_guid=5
+2021-09-10 10:05:18.517 (2320): Session1: QueryExecute:
+2021-09-10 10:05:18.517 (2320): (sort [Extract].[Extract] ( ( [input file] asc) ( [Stat_Type] asc) ( [Scenario] asc) ( [Name] asc) ( [Value] asc) ) )
+2021-09-10 10:05:18.517 (2320): Compiling query with Memory Budget=8195612672 MemoryAvailable=8195612672
+2021-09-10 10:05:18.636 (2320): Session1: QueryExecute: OK, Elapsed time:0.119s, Compilation time:0.000s, Execution time:0.119s
+2021-09-10 10:05:18.636 (27912): Session1: QueryExecute:
+2021-09-10 10:05:18.636 (27912): (package)
+2021-09-10 10:05:18.636 (27912): Compiling query with Memory Budget=8195276800 MemoryAvailable=8195276800
+2021-09-10 10:05:18.637 (27912): PackageDatabase: in-place package of "C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\performance analysis\Time Data Reading.tde"
+2021-09-10 10:05:18.896 (27912): PackageDatabase: finished
+2021-09-10 10:05:18.896 (27912): Session1: QueryExecute: OK, Elapsed time:0.260s, Compilation time:0.000s, Execution time:0.260s
+2021-09-10 10:05:18.896 (24900): tdeserver: close session1, connection=tab.pipe://./pipe/{090102D7-3C1B-48E1-89D1-C0B8B062C33D}
+2021-09-10 10:05:18.896 (27964): tdeserver: closing connection=tab.pipe://./pipe/{090102D7-3C1B-48E1-89D1-C0B8B062C33D}
+2021-09-10 10:05:18.897 (24900): tdeserver: disconnected connection=tab.pipe://./pipe/{090102D7-3C1B-48E1-89D1-C0B8B062C33D}: IPC_NamedPipeConnection::Read(len=16, connection=tab.pipe://./pipe/{090102D7-3C1B-48E1-89D1-C0B8B062C33D}): The pipe has been ended.
+2021-09-10 10:05:18.897 (27964): tdeserver: exit (0)

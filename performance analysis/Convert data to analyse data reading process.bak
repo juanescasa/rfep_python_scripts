@@ -1,0 +1,456 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2020.4">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="138" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>outputRFEP_v3.xlsx
+Query=`oScenarioStats$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="input file" size="255" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="V_String" />
+            <Field name="Scenario" size="255" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="V_String" />
+            <Field name="number type vehicles" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="number paths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="average stations per path" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="number candidate locations" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time read data (s)" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time calculate parameters (s)" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time generate model (s)" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time optimise model (s)" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time export results (s)" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time Gurobi run (s)" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="number constraints" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="number variables" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="number integer variables" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="number binary variables" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="model fingerprint" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="MIP gap" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="total time" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="node count" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="initial gap" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time first incumbent" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="status" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_read_df_vehicles" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_assignment_df_vehicles" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_read_df_suppliers" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_assigment_df_suppliers" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_read_df_ranges" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_assignment_df_ranges" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_read_df_NodesNodes" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_assignment_df_NodesNodes" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_read_df_SubStations" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_assignment_df_SubStations" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_read_df_VehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_assignment_df_VehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_read_df_NodesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_assignment_df_NodesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_read_df_SuppliersRange" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_assignment_df_SuppliersRange" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_read_df_NodesNodesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_assignment_df_NodesNodesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_sStations" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_sStationsPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_sNodesVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_sStationsVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_sDestinationVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_sOriginVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_sFirstStationVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_sAuxNotFirstStationVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_sNotFirstStationVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_sNodesPotentialNodesOriginalVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_sSequenceNodesNodesVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_sStationsSuppliers" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_pPrice" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_pConsumptionOOP" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_pConsumptionMainRoute" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_pQuantityVehicles" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_pStartInventory" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_end_process" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_read_df_vehicles" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_assignment_df_vehicles" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_read_df_suppliers" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_assigment_df_suppliers" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_read_df_ranges" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_assignment_df_ranges" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_read_df_NodesNodes" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_assignment_df_NodesNodes" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_read_df_SubStations" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_assignment_df_SubStations" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_read_df_VehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_assignment_df_VehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_read_df_NodesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_assignment_df_NodesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_read_df_SuppliersRange" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_assignment_df_SuppliersRange" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_read_df_NodesNodesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_assignment_df_NodesNodesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_sStations" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_sStationsPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_sNodesVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_sStationsVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_sDestinationVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_sOriginVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_sFirstStationVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_sAuxNotFirstStationVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_sNotFirstStationVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_sNodesPotentialNodesOriginalVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_sSequenceNodesNodesVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_sStationsSuppliers" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_pPrice" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_pConsumptionOOP" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_pConsumptionMainRoute" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_pQuantityVehicles" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_pStartInventory" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx|||`oScenarioStats$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="246" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="input file" selected="True" />
+            <SelectField field="Scenario" selected="True" />
+            <SelectField field="time_read_df_vehicles" selected="True" />
+            <SelectField field="time_assignment_df_vehicles" selected="True" />
+            <SelectField field="time_read_df_suppliers" selected="True" />
+            <SelectField field="time_assigment_df_suppliers" selected="True" />
+            <SelectField field="time_read_df_ranges" selected="True" />
+            <SelectField field="time_assignment_df_ranges" selected="True" />
+            <SelectField field="time_read_df_NodesNodes" selected="True" />
+            <SelectField field="time_assignment_df_NodesNodes" selected="True" />
+            <SelectField field="time_read_df_SubStations" selected="True" />
+            <SelectField field="time_assignment_df_SubStations" selected="True" />
+            <SelectField field="time_read_df_VehiclesPaths" selected="True" />
+            <SelectField field="time_assignment_df_VehiclesPaths" selected="True" />
+            <SelectField field="time_read_df_NodesPaths" selected="True" />
+            <SelectField field="time_assignment_df_NodesPaths" selected="True" />
+            <SelectField field="time_read_df_SuppliersRange" selected="True" />
+            <SelectField field="time_assignment_df_SuppliersRange" selected="True" />
+            <SelectField field="time_read_df_NodesNodesPaths" selected="True" />
+            <SelectField field="time_assignment_df_NodesNodesPaths" selected="True" />
+            <SelectField field="time_calculate_sStations" selected="True" />
+            <SelectField field="time_calculate_sStationsPaths" selected="True" />
+            <SelectField field="time_calculate_sNodesVehiclesPaths" selected="True" />
+            <SelectField field="time_calculate_sStationsVehiclesPaths" selected="True" />
+            <SelectField field="time_calculate_sDestinationVehiclesPaths" selected="True" />
+            <SelectField field="time_calculate_sOriginVehiclesPaths" selected="True" />
+            <SelectField field="time_calculate_sFirstStationVehiclesPaths" selected="True" />
+            <SelectField field="time_calculate_sAuxNotFirstStationVehiclesPaths" selected="True" />
+            <SelectField field="time_calculate_sNotFirstStationVehiclesPaths" selected="True" />
+            <SelectField field="time_calculate_sNodesPotentialNodesOriginalVehiclesPaths" selected="True" />
+            <SelectField field="time_calculate_sSequenceNodesNodesVehiclesPaths" selected="True" />
+            <SelectField field="time_calculate_sStationsSuppliers" selected="True" />
+            <SelectField field="time_calculate_pPrice" selected="True" />
+            <SelectField field="time_calculate_pConsumptionOOP" selected="True" />
+            <SelectField field="time_calculate_pConsumptionMainRoute" selected="True" />
+            <SelectField field="time_calculate_pQuantityVehicles" selected="True" />
+            <SelectField field="time_calculate_pStartInventory" selected="True" />
+            <SelectField field="time_end_process" selected="True" />
+            <SelectField field="duration_read_df_vehicles" selected="True" />
+            <SelectField field="duration_assignment_df_vehicles" selected="True" />
+            <SelectField field="duration_read_df_suppliers" selected="True" />
+            <SelectField field="duration_assigment_df_suppliers" selected="True" />
+            <SelectField field="duration_read_df_ranges" selected="True" />
+            <SelectField field="duration_assignment_df_ranges" selected="True" />
+            <SelectField field="duration_read_df_NodesNodes" selected="True" />
+            <SelectField field="duration_assignment_df_NodesNodes" selected="True" />
+            <SelectField field="duration_read_df_SubStations" selected="True" />
+            <SelectField field="duration_assignment_df_SubStations" selected="True" />
+            <SelectField field="duration_read_df_VehiclesPaths" selected="True" />
+            <SelectField field="duration_assignment_df_VehiclesPaths" selected="True" />
+            <SelectField field="duration_read_df_NodesPaths" selected="True" />
+            <SelectField field="duration_assignment_df_NodesPaths" selected="True" />
+            <SelectField field="duration_read_df_SuppliersRange" selected="True" />
+            <SelectField field="duration_assignment_df_SuppliersRange" selected="True" />
+            <SelectField field="duration_read_df_NodesNodesPaths" selected="True" />
+            <SelectField field="duration_assignment_df_NodesNodesPaths" selected="True" />
+            <SelectField field="duration_calculate_sStations" selected="True" />
+            <SelectField field="duration_calculate_sStationsPaths" selected="True" />
+            <SelectField field="duration_calculate_sNodesVehiclesPaths" selected="True" />
+            <SelectField field="duration_calculate_sStationsVehiclesPaths" selected="True" />
+            <SelectField field="duration_calculate_sDestinationVehiclesPaths" selected="True" />
+            <SelectField field="duration_calculate_sOriginVehiclesPaths" selected="True" />
+            <SelectField field="duration_calculate_sFirstStationVehiclesPaths" selected="True" />
+            <SelectField field="duration_calculate_sAuxNotFirstStationVehiclesPaths" selected="True" />
+            <SelectField field="duration_calculate_sNotFirstStationVehiclesPaths" selected="True" />
+            <SelectField field="duration_calculate_sNodesPotentialNodesOriginalVehiclesPaths" selected="True" />
+            <SelectField field="duration_calculate_sSequenceNodesNodesVehiclesPaths" selected="True" />
+            <SelectField field="duration_calculate_sStationsSuppliers" selected="True" />
+            <SelectField field="duration_calculate_pPrice" selected="True" />
+            <SelectField field="duration_calculate_pConsumptionOOP" selected="True" />
+            <SelectField field="duration_calculate_pConsumptionMainRoute" selected="True" />
+            <SelectField field="duration_calculate_pQuantityVehicles" selected="True" />
+            <SelectField field="duration_calculate_pStartInventory" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="366" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>IsNotNull</Operator>
+            <Field>time_read_df_vehicles</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-09-08 15:28:57</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2021-09-08 15:28:57</StartDate>
+              <EndDate>2021-09-08 15:28:57</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!IsNull([time_read_df_vehicles])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
+        <Position x="474" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ErrorWarn>Warn</ErrorWarn>
+          <KeyFields>
+            <Field field="input file" />
+            <Field field="Scenario" />
+          </KeyFields>
+          <DataFields>
+            <Field field="input file" selected="False" />
+            <Field field="Scenario" selected="False" />
+            <Field field="time_read_df_vehicles" selected="True" />
+            <Field field="time_assignment_df_vehicles" selected="True" />
+            <Field field="time_read_df_suppliers" selected="True" />
+            <Field field="time_assigment_df_suppliers" selected="True" />
+            <Field field="time_read_df_ranges" selected="True" />
+            <Field field="time_assignment_df_ranges" selected="True" />
+            <Field field="time_read_df_NodesNodes" selected="True" />
+            <Field field="time_assignment_df_NodesNodes" selected="True" />
+            <Field field="time_read_df_SubStations" selected="True" />
+            <Field field="time_assignment_df_SubStations" selected="True" />
+            <Field field="time_read_df_VehiclesPaths" selected="True" />
+            <Field field="time_assignment_df_VehiclesPaths" selected="True" />
+            <Field field="time_read_df_NodesPaths" selected="True" />
+            <Field field="time_assignment_df_NodesPaths" selected="True" />
+            <Field field="time_read_df_SuppliersRange" selected="True" />
+            <Field field="time_assignment_df_SuppliersRange" selected="True" />
+            <Field field="time_read_df_NodesNodesPaths" selected="True" />
+            <Field field="time_assignment_df_NodesNodesPaths" selected="True" />
+            <Field field="time_calculate_sStations" selected="True" />
+            <Field field="time_calculate_sStationsPaths" selected="True" />
+            <Field field="time_calculate_sNodesVehiclesPaths" selected="True" />
+            <Field field="time_calculate_sStationsVehiclesPaths" selected="True" />
+            <Field field="time_calculate_sDestinationVehiclesPaths" selected="True" />
+            <Field field="time_calculate_sOriginVehiclesPaths" selected="True" />
+            <Field field="time_calculate_sFirstStationVehiclesPaths" selected="True" />
+            <Field field="time_calculate_sAuxNotFirstStationVehiclesPaths" selected="True" />
+            <Field field="time_calculate_sNotFirstStationVehiclesPaths" selected="True" />
+            <Field field="time_calculate_sNodesPotentialNodesOriginalVehiclesPaths" selected="True" />
+            <Field field="time_calculate_sSequenceNodesNodesVehiclesPaths" selected="True" />
+            <Field field="time_calculate_sStationsSuppliers" selected="True" />
+            <Field field="time_calculate_pPrice" selected="True" />
+            <Field field="time_calculate_pConsumptionOOP" selected="True" />
+            <Field field="time_calculate_pConsumptionMainRoute" selected="True" />
+            <Field field="time_calculate_pQuantityVehicles" selected="True" />
+            <Field field="time_calculate_pStartInventory" selected="True" />
+            <Field field="time_end_process" selected="True" />
+            <Field field="duration_read_df_vehicles" selected="True" />
+            <Field field="duration_assignment_df_vehicles" selected="True" />
+            <Field field="duration_read_df_suppliers" selected="True" />
+            <Field field="duration_assigment_df_suppliers" selected="True" />
+            <Field field="duration_read_df_ranges" selected="True" />
+            <Field field="duration_assignment_df_ranges" selected="True" />
+            <Field field="duration_read_df_NodesNodes" selected="True" />
+            <Field field="duration_assignment_df_NodesNodes" selected="True" />
+            <Field field="duration_read_df_SubStations" selected="True" />
+            <Field field="duration_assignment_df_SubStations" selected="True" />
+            <Field field="duration_read_df_VehiclesPaths" selected="True" />
+            <Field field="duration_assignment_df_VehiclesPaths" selected="True" />
+            <Field field="duration_read_df_NodesPaths" selected="True" />
+            <Field field="duration_assignment_df_NodesPaths" selected="True" />
+            <Field field="duration_read_df_SuppliersRange" selected="True" />
+            <Field field="duration_assignment_df_SuppliersRange" selected="True" />
+            <Field field="duration_read_df_NodesNodesPaths" selected="True" />
+            <Field field="duration_assignment_df_NodesNodesPaths" selected="True" />
+            <Field field="duration_calculate_sStations" selected="True" />
+            <Field field="duration_calculate_sStationsPaths" selected="True" />
+            <Field field="duration_calculate_sNodesVehiclesPaths" selected="True" />
+            <Field field="duration_calculate_sStationsVehiclesPaths" selected="True" />
+            <Field field="duration_calculate_sDestinationVehiclesPaths" selected="True" />
+            <Field field="duration_calculate_sOriginVehiclesPaths" selected="True" />
+            <Field field="duration_calculate_sFirstStationVehiclesPaths" selected="True" />
+            <Field field="duration_calculate_sAuxNotFirstStationVehiclesPaths" selected="True" />
+            <Field field="duration_calculate_sNotFirstStationVehiclesPaths" selected="True" />
+            <Field field="duration_calculate_sNodesPotentialNodesOriginalVehiclesPaths" selected="True" />
+            <Field field="duration_calculate_sSequenceNodesNodesVehiclesPaths" selected="True" />
+            <Field field="duration_calculate_sStationsSuppliers" selected="True" />
+            <Field field="duration_calculate_pPrice" selected="True" />
+            <Field field="duration_calculate_pConsumptionOOP" selected="True" />
+            <Field field="duration_calculate_pConsumptionMainRoute" selected="True" />
+            <Field field="duration_calculate_pQuantityVehicles" selected="True" />
+            <Field field="duration_calculate_pStartInventory" selected="True" />
+            <Field field="*Unknown" selected="True" />
+          </DataFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTranspose" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="594" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if Left([Name], 2)=&quot;ti&quot; then&#xA;&quot;time&quot;&#xA;else&#xA;&quot;duration&quot;&#xA;endif" field="Stat_Type" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Stat_Type = if Left([Name], 2)="ti" then
+"time"
+else
+"duration"
+endif
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="690" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File FileFormat="42" MaxRecords="">C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\performance analysis\Time Data Reading.tde</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <OutputOption>Create</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Time Data Reading.tde</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="True" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Convert data to analyse data reading process</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
