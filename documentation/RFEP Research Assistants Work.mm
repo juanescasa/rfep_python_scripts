@@ -1,6 +1,6 @@
 <map version="freeplane 1.6.0">
 <!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
-<node TEXT="RFEP RA work" FOLDED="false" ID="ID_1500781255" CREATED="1631613803875" MODIFIED="1631613825808" STYLE="oval">
+<node TEXT="RFEP Research Assistants work" FOLDED="false" ID="ID_1500781255" CREATED="1631613803875" MODIFIED="1631668225617" STYLE="oval">
 <font SIZE="18"/>
 <hook NAME="MapStyle">
     <properties edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" fit_to_viewport="false"/>
@@ -100,6 +100,10 @@
 <node TEXT="Generator Tables" ID="ID_141511250" CREATED="1631614381909" MODIFIED="1631614386808"/>
 <node TEXT="Data Generation Procedure" ID="ID_380326402" CREATED="1631614407991" MODIFIED="1631614416848"/>
 </node>
+</node>
+<node TEXT="Tasks" ID="ID_1044922794" CREATED="1631614530586" MODIFIED="1631614531859">
+<node TEXT="Watch recordings of explanation of each script" ID="ID_1852150977" CREATED="1631614532146" MODIFIED="1631614541324"/>
+<node TEXT="Implement ideas to improve scripts" ID="ID_1978527992" CREATED="1631614542259" MODIFIED="1631614555116"/>
 </node>
 </node>
 </node>
