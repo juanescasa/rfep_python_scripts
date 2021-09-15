@@ -8,6 +8,7 @@ import pandas as pd
 import read_data_rfep_function as rd_rfep
 import solve_multiple_frvrp
 import time
+import os
 
 #This silence a warning from pandas when assigning elements of DataFrames. 
 #The best option to assign is using iloc, but this makes the code less readable, 
@@ -71,8 +72,12 @@ ls_start_time = []
 ls_start_time.append(("Gen Inititial tables", time.time()))
 
 #Read generator tables
-folder_path = "C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\data\\"
+#folder_path = "C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\data\\"
+folder_path = os.path.join("..", "data")
 #Each scenario generator change this
+
+%##
+
 folder_name = "Generator instance 10000km"
 folder_parent = folder_path + folder_name + '\\'
 

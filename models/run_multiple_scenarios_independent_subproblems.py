@@ -16,12 +16,15 @@ import rfep_model
 import export_solution_rfep
 import time
 import solve_multiple_frvrp
+import os
 
 ls_tables = ['MaeNodes', 'MaeVehicles', 'MaeSuppliers', 'MaeRanges', 'MaePaths', 
              'NodesNodes', 'SubStations', 'VehiclesPaths', 'NodesPaths', 
              'SuppliersRanges', 'NodesNodesPaths']
 
-folder_path = "C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\data\\"
+#folder_path = "C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\data\\"
+folder_path = "..\\data\\"
+
 #Each scenario generator change this
 folder_name = "Path 2000"
 folder_parent = folder_path + folder_name + '\\'
@@ -32,7 +35,7 @@ file_name = "Scenario Map.xlsx"
 sh = 'Run Experiments'
 file = folder_parent + file_name
 df_scenario_map = pd.read_excel(file, sheet_name = sh)
-
+#%%
 di_table_name = {}
 
 output_file = "C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx"
@@ -42,7 +45,7 @@ di_process_events = {"read_data": ("start_read_data", "start_solve_problem"),
                     "export_solution": ("start_export_solution", "end_export_solution")}
 
 di_process_duration_scenario = {}
-
+ 
 #for index_scenario in range(df_scenario_map.shape[0]):
 for index_scenario in range(0,34,1):
 #for index_scenario in [0,1]:
@@ -136,8 +139,8 @@ for index_scenario in range(0,34,1):
     di_event['end_export_solution'] = time.time()
     
     di_process_duration = {process: di_event[di_process_events[process][1]] - \
-                       di_event[di_process_events[process][0]] \
-                       for process in di_process_events}
+                        di_event[di_process_events[process][0]] \
+                        for process in di_process_events}
     
     di_process_duration_scenario[scenario_name]=di_process_duration
     
