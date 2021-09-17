@@ -10,16 +10,7 @@ import solve_multiple_frvrp
 import time
 import os
 
-folder_relative_path = os.path.join("..", "data")
-folder_name = "Path 2000"
-folder_parent = folder_relative_path + folder_name + '\\'
-file_name = "Scenario Map.xlsx"
-file = folder_parent + file_name
-sh = 'Generate Tables'
-df_scenario_map = pd.read_excel(file, sheet_name = sh)
-
 #%%
-
 ls_track_time = ('start_test', time.time())
 ls_tables = ['MaeNodes', 'MaeVehicles', 'MaeSuppliers', 'MaeRanges', 'MaePaths', 
              'NodesNodes', 'SubStations', 'VehiclesPaths', 'NodesPaths', 
@@ -27,6 +18,7 @@ ls_tables = ['MaeNodes', 'MaeVehicles', 'MaeSuppliers', 'MaeRanges', 'MaePaths',
 
 #Read generator tables
 folder_path = "C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\data\\"
+
 #Each scenario generator change this
 folder_name = "Path 2000"
 folder_parent = folder_path + folder_name + '\\'
