@@ -52,7 +52,8 @@ di_table_name = {}
 ls_track_time = ('start_reading', time.time())
 
 di_duration_event_scenario = {} 
-for index_scenario in [0]:
+#for index_scenario in [0]:
+for index_scenario in range(50):    
     for t in ls_tables:
         di_table_name[t]=t+"-"+df_scenario_map[t][index_scenario]
     
@@ -176,7 +177,7 @@ for index_scenario in [0]:
 
 
     output_file = os.path.join("..", "output", "outputRFEP_v3.xlsx")
-    scenario_name = df_scenario_map["COD_SCENARIO"][index_scenario] + "-domain_reduction-2000"
+    scenario_name = df_scenario_map["COD_SCENARIO"][index_scenario] + "-domain_reduction"
    
     total_time = time.time()-start_time
     
