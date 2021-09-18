@@ -3,7 +3,7 @@
 <node TEXT="Scripts RFEP" FOLDED="false" ID="ID_313299805" CREATED="1631597182520" MODIFIED="1631597188695" STYLE="oval">
 <font SIZE="18"/>
 <hook NAME="MapStyle">
-    <properties edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" fit_to_viewport="false" show_note_icons="true"/>
+    <properties fit_to_viewport="false" show_note_icons="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24.0 pt">
@@ -77,11 +77,11 @@
 <node TEXT="output" ID="ID_737622149" CREATED="1628482203174" MODIFIED="1628482204482"/>
 </node>
 <node TEXT="create_scenarios_from_generator" ID="ID_182593659" CREATED="1626688067093" MODIFIED="1627262235240">
-<node TEXT="v1" FOLDED="true" ID="ID_1037982813" CREATED="1626739980460" MODIFIED="1627262235240">
+<node TEXT="v1" ID="ID_1037982813" CREATED="1626739980460" MODIFIED="1627262235240">
 <node TEXT="Path" ID="ID_846055190" CREATED="1626688086597" MODIFIED="1626688089332">
 <node TEXT="C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\models" ID="ID_832681424" CREATED="1626740006497" MODIFIED="1626740006497"/>
 </node>
-<node TEXT="Description" FOLDED="true" ID="ID_1777707866" CREATED="1626688089468" MODIFIED="1626745715972">
+<node TEXT="Description" ID="ID_1777707866" CREATED="1626688089468" MODIFIED="1626745715972">
 <node TEXT="It read csv generator tables and creates csv tables ready to feed the RFEP model" ID="ID_503664975" CREATED="1626740015117" MODIFIED="1626762272211"/>
 <node TEXT="It only uses 2 factors to create scenarios" ID="ID_1730549514" CREATED="1626740054596" MODIFIED="1626762288018">
 <node TEXT="paths" ID="ID_1536725625" CREATED="1626762277554" MODIFIED="1626762279561"/>
@@ -134,7 +134,7 @@
 </node>
 </node>
 </node>
-<node TEXT="Pseudocode" FOLDED="true" ID="ID_609608522" CREATED="1626744738622" MODIFIED="1626744743273">
+<node TEXT="Pseudocode" ID="ID_609608522" CREATED="1626744738622" MODIFIED="1626744743273">
 <node TEXT="Read generator tables" ID="ID_592026054" CREATED="1626744744080" MODIFIED="1626744754937"/>
 <node TEXT="Read scenario map" ID="ID_987514685" CREATED="1626744756550" MODIFIED="1626744760705">
 <node TEXT="It is an excel file that presents the tables defintion of each scenario" ID="ID_952550497" CREATED="1626744762198" MODIFIED="1626744780416"/>
@@ -193,7 +193,7 @@
 </node>
 </node>
 </node>
-<node TEXT="v2" FOLDED="true" ID="ID_1325798441" CREATED="1627533216452" MODIFIED="1631597486066"><richcontent TYPE="NOTE">
+<node TEXT="v2" ID="ID_1325798441" CREATED="1627533216452" MODIFIED="1631597486066"><richcontent TYPE="NOTE">
 
 <html>
   <head>
@@ -205,14 +205,13 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <node TEXT="Description" ID="ID_461428804" CREATED="1627533218251" MODIFIED="1627533222270">
 <node TEXT="Incorporates all factors to generate scenarios" ID="ID_1150793846" CREATED="1627533222517" MODIFIED="1627533230567"/>
 </node>
-<node TEXT="Pseudocode" FOLDED="true" ID="ID_729152486" CREATED="1628482233467" MODIFIED="1628482235527">
-<node TEXT="Table generation" ID="ID_282420319" CREATED="1628482908838" MODIFIED="1628482912150">
-<node TEXT="Create function to export tables" FOLDED="true" ID="ID_1853520939" CREATED="1628482253646" MODIFIED="1628482266658">
+<node TEXT="Pseudocode" ID="ID_729152486" CREATED="1628482233467" MODIFIED="1628482235527">
+<node TEXT="Table generation" FOLDED="true" ID="ID_282420319" CREATED="1628482908838" MODIFIED="1628482912150">
+<node TEXT="Create function to export tables" ID="ID_1853520939" CREATED="1628482253646" MODIFIED="1628482266658">
 <node TEXT="MaeSuppliers" ID="ID_885790166" CREATED="1628482266893" MODIFIED="1628482293052"/>
 <node TEXT="SuppliersRanges" ID="ID_1129544215" CREATED="1628482273177" MODIFIED="1628482282215"/>
 <node TEXT="SubStations" ID="ID_501423413" CREATED="1628482283292" MODIFIED="1628482285748"/>
@@ -226,7 +225,7 @@
 </node>
 </node>
 </node>
-<node TEXT="Read scenario map" ID="ID_391727214" CREATED="1626744756550" MODIFIED="1626744760705">
+<node TEXT="Read scenario map" FOLDED="true" ID="ID_391727214" CREATED="1626744756550" MODIFIED="1626744760705">
 <node TEXT="It is an excel file that presents the tables defintion of each scenario" ID="ID_1413579698" CREATED="1626744762198" MODIFIED="1626744780416"/>
 <node TEXT="There are multiple scenarios that share same tables, therefore I use this common factor to only generate &quot;unique&quot; tables" ID="ID_578260520" CREATED="1626744780686" MODIFIED="1626744949161"/>
 <node TEXT="There could be repeated tables depending on the data" ID="ID_1873657573" CREATED="1626744950934" MODIFIED="1626744982559"/>
@@ -252,7 +251,7 @@
 <node TEXT="Less paths, likely less nodes" ID="ID_634258965" CREATED="1626740307094" MODIFIED="1626740414573"/>
 </node>
 <node TEXT="Tables that depend on" ID="ID_922996083" CREATED="1628482631247" MODIFIED="1628482641906">
-<node TEXT="factors" FOLDED="true" ID="ID_1221117881" CREATED="1628482682195" MODIFIED="1628482683497">
+<node TEXT="factors" ID="ID_1221117881" CREATED="1628482682195" MODIFIED="1628482683497">
 <node TEXT="suppliers" ID="ID_1121155888" CREATED="1628482642447" MODIFIED="1628482724103">
 <icon BUILTIN="flag-yellow"/>
 </node>
@@ -263,14 +262,14 @@
 <icon BUILTIN="flag-pink"/>
 </node>
 </node>
-<node TEXT="tables" FOLDED="true" ID="ID_266418180" CREATED="1628482691310" MODIFIED="1628482692250">
-<node TEXT="SubStations" FOLDED="true" ID="ID_168706580" CREATED="1626740284820" MODIFIED="1628482742378">
+<node TEXT="tables" ID="ID_266418180" CREATED="1628482691310" MODIFIED="1628482692250">
+<node TEXT="SubStations" ID="ID_168706580" CREATED="1626740284820" MODIFIED="1628482742378">
 <icon BUILTIN="flag-yellow"/>
 <icon BUILTIN="flag-green"/>
 <icon BUILTIN="flag-pink"/>
 <node TEXT="Less paths, likely less stations" ID="ID_1300471756" CREATED="1626740294325" MODIFIED="1626740418030"/>
 </node>
-<node TEXT="SupplierRanges" FOLDED="true" ID="ID_25884035" CREATED="1626740380741" MODIFIED="1628482729730">
+<node TEXT="SupplierRanges" ID="ID_25884035" CREATED="1626740380741" MODIFIED="1628482729730">
 <icon BUILTIN="flag-yellow"/>
 <node TEXT="Less suppliers, then less suppliers ranges" ID="ID_1879608955" CREATED="1626740445798" MODIFIED="1626740483361"/>
 </node>

@@ -25,7 +25,7 @@ import export_solution_rfep
 import read_data_rfep_function as rd_rfep
 import reduce_stations_path
 
-start_time = time.time()
+
 
 #%%
 ls_track_time = ('start_test', time.time())
@@ -53,7 +53,8 @@ ls_track_time = ('start_reading', time.time())
 
 di_duration_event_scenario = {} 
 #for index_scenario in [0]:
-for index_scenario in range(50):    
+for index_scenario in range(50):
+    start_time = time.time()    
     for t in ls_tables:
         di_table_name[t]=t+"-"+df_scenario_map[t][index_scenario]
     

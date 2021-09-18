@@ -76,8 +76,6 @@ ls_start_time.append(("Gen Inititial tables", time.time()))
 folder_path = os.path.join("..", "data")
 #Each scenario generator change this
 
-%##
-
 folder_name = "Generator instance 10000km"
 folder_parent = folder_path + folder_name + '\\'
 
