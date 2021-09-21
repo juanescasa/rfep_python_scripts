@@ -17,7 +17,7 @@ ls_tables = ['MaeNodes', 'MaeVehicles', 'MaeSuppliers', 'MaeRanges', 'MaePaths',
              'SuppliersRanges', 'NodesNodesPaths']
 
 #Read generator tables
-folder_path = "C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\data\\"
+folder_path = "..\data\\"
 
 #Each scenario generator change this
 folder_name = "Path 2000"
