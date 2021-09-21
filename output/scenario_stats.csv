@@ -1,0 +1,1 @@
+﻿current time,scenario,number type vehicles,number paths,average stations per path,number candidate locations,total time,time Gurobi run (s),number constraints,number variables,number integer variables,number binary variables,MIP gap,node count,initial gap,time first incumbent,status,machine,solution algorithm

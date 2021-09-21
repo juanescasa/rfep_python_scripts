@@ -7,7 +7,7 @@ Created on Tue Sep 21 14:50:00 2021
 import pandas as pd
 import read_data_rfep_function as rd_rfep
 import rfep_model
-import export_solution_rfep
+import export_solution_rfep_csv
 import time
 
 ls_tables = ['MaeNodes', 'MaeVehicles', 'MaeSuppliers', 'MaeRanges', 'MaePaths', 
@@ -29,7 +29,7 @@ df_scenario_map = pd.read_excel(file, sheet_name = sh)
 di_table_name = {}
 
 output_file = "C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx"
-
+solution_algorithm="RFEP"
 
 #for index_scenario in range(df_scenario_map.shape[0]):
 #for index_scenario in range(23,150,1):
@@ -40,7 +40,7 @@ for index_scenario in [0]:
     for t in ls_tables:
         di_table_name[t]=t+"-"+df_scenario_map[t][index_scenario]
     
-    scenario_name = df_scenario_map["COD_SCENARIO"][index_scenario]
+    scenario_name = df_scenario_map["COD_SCENARIO"][index_scenario] + "-toy"
     
     #Read tables of the scenario and build the model
     data_rfep = rd_rfep.read_data_rfep(folder_child, di_table_name, 
@@ -117,20 +117,41 @@ for index_scenario in [0]:
     
     total_time = time.time()-start_time
     
-    # osvRefuelQuantity = output_rfep[23]
-    # osvRefuel= output_rfep[24]
-    # osvQuantityUnitsCapacity= output_rfep[25]
-    # osvLocate= output_rfep[26]
-    # osvQuantityPurchasedRange= output_rfep[27]
-    
-    # print("Bin Refuel")
-    # print(osvRefuel)
-    # print("Qty Units fo capacity")
-    # print(osvQuantityUnitsCapacity)
-    # print('location var')
-    # print(osvLocate)
-    # print('purcahse in range')
-    # print(osvQuantityPurchasedRange)
+    export_solution_rfep_csv.export_solution_rfep(excel_input_file = file,
+            excel_output_file = output_file,
+            solution_algorithm = solution_algorithm,
+            scenario_name = scenario_name,
+            output_solve = output_rfep,
+            total_time = total_time,
+            b_domain_reduction = False,
+            b_print_solution_detail = True,
+            b_print_location = True,
+            b_print_statistics = True,
+            b_retrieve_solve_ouput = True,
+            # sVehiclesPaths = sVehiclesPaths,
+            # sOriginalStationsPotential = sOriginalStationsPotential,
+            # sSequenceNodesNodesVehiclesPaths = sSequenceNodesNodesVehiclesPaths,
+            # sStationsPaths = sStationsPaths,
+            # sOriginalStationsOwn = sOriginalStationsOwn,
+            # sStationsVehiclesPaths = sStationsVehiclesPaths,
+            # sSuppliersRanges = sSuppliersRanges,
+            # pStartInventory = pStartInventory,
+            # pConsumptionRate = pConsumptionRate,
+            # pDistance = pDistance,
+            # pSubDistance = pSubDistance,
+            # pConsumptionMainRoute = pConsumptionMainRoute,
+            # pDistanceOOP = pDistanceOOP,
+            # pConsumptionOOP = pConsumptionOOP,
+            # pQuantityVehicles = pQuantityVehicles,
+            # pVariableCost = pVariableCost,
+            # pOpportunityCost = pOpportunityCost,
+            # pLocationCost = pLocationCost,
+            # pStationCapacity = pStationCapacity,
+            # pStationUnitCapacity = pStationUnitCapacity,
+            # pCostUnitCapacity = pCostUnitCapacity,
+            # pPrice = pPrice,
+            # pDiscount = pDiscount,
+            )
     
     
     

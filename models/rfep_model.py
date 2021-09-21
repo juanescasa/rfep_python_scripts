@@ -289,11 +289,14 @@ def solve_rfep(sNodesVehiclesPaths,
             
         oTotalCost = oTotalRefuellingCost + oTotalLocationCost - oTotalDiscount
         
-        #n_vehicles=len(df_vehicles_paths['COD_VEHICLE'].unique())
-        #n_paths=len(df_vehicles_paths['COD_PATH'].unique())
-        #n_avg_stations_path = df_nodes_paths.groupby('COD_PATH')['COD_NODE1'].count().subtract(2).mean()
-        #n_candidate_locations = len(sOriginalStationsPotential)
-        
+        #Calculate scenario size features
+        n_vehicles = len({v for (i,v,p) in sOriginVehiclesPaths})
+        n_paths = len({p for (i,v,p) in sOriginVehiclesPaths})
+        n_vehicles_paths = len(sOriginVehiclesPaths)
+        n_stations_vehicles_paths = len(sStationsVehiclesPaths)
+        n_avg_stations_path = n_stations_vehicles_paths/n_vehicles_paths
+        n_candidate_locations = len(sOriginalStationsPotential)
+        #Calculate scenario stats
         n_constraints = m.NumConstrs
         n_variables = m.Numvars
         n_integer_variables = m.NumIntVars
@@ -345,9 +348,17 @@ def solve_rfep(sNodesVehiclesPaths,
                 osvRefuel,
                 osvQuantityUnitsCapacity,
                 osvLocate,
-                osvQuantityPurchasedRange)   
+                osvQuantityPurchasedRange,
+                n_vehicles,
+                n_paths,
+                n_avg_stations_path,
+                n_candidate_locations)   
     else:
         return(0,
+                0,
+                0,
+                0,
+                0,
                 0,
                 0,
                 0,

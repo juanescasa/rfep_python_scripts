@@ -11,10 +11,15 @@ Created on Tue Jun 22 17:13:19 2021
 @author: calle
 """
 import openpyxl
+import csv
+# importing datetime module for now() 
+import datetime
+import platform
 
 def export_solution_rfep(excel_input_file,
                          excel_output_file,
                         scenario_name,
+                        solution_algorithm,
                         output_solve = (),
                         b_domain_reduction = False,
                         b_print_solution_detail = False,
@@ -62,8 +67,11 @@ def export_solution_rfep(excel_input_file,
     :param di_process_events_read: dictionary that holds the duration of each process in the data reading
     :return: this function does not return anything, it just prints.
     """
-        
-      #Assign the stats of the solution to variables with name (code readability)
+      
+    # using now() to get current time 
+    current_time = datetime.datetime.now()   
+    machine = platform.uname()[1]
+    #Assign the stats of the solution to variables with name (code readability)
     if b_retrieve_solve_ouput:
         status = output_solve[0]
         ovInventory = output_solve[1]
@@ -88,135 +96,145 @@ def export_solution_rfep(excel_input_file,
         model_nodeCount = output_solve[20]
         model_initial_gap = output_solve[21]
         model_time_first_incumbent = output_solve[22]
+        n_vehicles = output_solve[28]
+        n_paths = output_solve[29]
+        n_avg_stations_path = output_solve[30]
+        n_candidate_locations = output_solve[31]
   
       
     #excel_file must be the complete path
-    output_file = excel_output_file
+    #output_file = excel_output_file
     #Open Excel workbook
-    workbook = openpyxl.load_workbook(output_file)
-    scenario = scenario_name
+    #workbook = openpyxl.load_workbook(output_file)
+    #scenario = scenario_name
       
   
       
            
-    if b_print_solution_detail and model_time_first_incumbent >0:
+    # if b_print_solution_detail and model_time_first_incumbent >0:
           
-          sheet_name = 'oNodesNodesVehiclesPaths'
-          ws = workbook[sheet_name]
-          index_row = ws.max_row    
-          for (i,j,v,p) in sSequenceNodesNodesVehiclesPaths:
-             if (j,p) in sStationsPaths:
-                    index_row=index_row +1
-                    ws.cell(row=index_row, column = 1, value=scenario)
-                    ws.cell(row=index_row, column = 2, value=i)
-                    ws.cell(row=index_row, column = 3, value=j)
-                    ws.cell(row=index_row, column = 4, value=v)
-                    ws.cell(row=index_row, column = 5, value=p)
-                    ws.cell(row=index_row, column = 6, value=ovInventory[j,v,p])
-                    ws.cell(row=index_row, column = 7, value=ovRefuelQuantity[j,v,p])
-                    ws.cell(row=index_row, column = 8, value=ovRefuel[j,v,p])
-                    ws.cell(row=index_row, column = 9, value=pStartInventory[v,p])
-                    ws.cell(row=index_row, column = 10, value=pConsumptionRate[v])
-                    #if a domain reduction procedure was applied, the distance 
-                    #changed of domain
-                    if b_domain_reduction:
-                        ws.cell(row=index_row, column = 11, value=pSubDistance[i,j,v,p])
-                    else:
-                        ws.cell(row=index_row, column = 11, value=pDistance[i,j,p])   
+    #       sheet_name = 'oNodesNodesVehiclesPaths'
+    #       ws = workbook[sheet_name]
+    #       index_row = ws.max_row    
+    #       for (i,j,v,p) in sSequenceNodesNodesVehiclesPaths:
+    #          if (j,p) in sStationsPaths:
+    #                 index_row=index_row +1
+    #                 ws.cell(row=index_row, column = 1, value=scenario)
+    #                 ws.cell(row=index_row, column = 2, value=i)
+    #                 ws.cell(row=index_row, column = 3, value=j)
+    #                 ws.cell(row=index_row, column = 4, value=v)
+    #                 ws.cell(row=index_row, column = 5, value=p)
+    #                 ws.cell(row=index_row, column = 6, value=ovInventory[j,v,p])
+    #                 ws.cell(row=index_row, column = 7, value=ovRefuelQuantity[j,v,p])
+    #                 ws.cell(row=index_row, column = 8, value=ovRefuel[j,v,p])
+    #                 ws.cell(row=index_row, column = 9, value=pStartInventory[v,p])
+    #                 ws.cell(row=index_row, column = 10, value=pConsumptionRate[v])
+    #                 #if a domain reduction procedure was applied, the distance 
+    #                 #changed of domain
+    #                 if b_domain_reduction:
+    #                     ws.cell(row=index_row, column = 11, value=pSubDistance[i,j,v,p])
+    #                 else:
+    #                     ws.cell(row=index_row, column = 11, value=pDistance[i,j,p])   
                     
-                    #trhe distance changed of index after the domain reduction. So the original distance wont fit
-                    #
+    #                 #trhe distance changed of index after the domain reduction. So the original distance wont fit
+    #                 #
                     
-                    ws.cell(row=index_row, column = 12, value=pConsumptionMainRoute[i,j,v,p])
-                    ws.cell(row=index_row, column = 13, value=pDistanceOOP[j,p])
-                    ws.cell(row=index_row, column = 14, value=pConsumptionOOP[j,v,p])
-                    ws.cell(row=index_row, column = 15, value=pPrice[j])
-                    ws.cell(row=index_row, column = 16, value=0) #this is a placeholder in case I need this to run single corridor
-                    ws.cell(row=index_row, column = 17, value=pQuantityVehicles[v,p])
-                    ws.cell(row=index_row, column = 18, value=pVariableCost[v])
-                    ws.cell(row=index_row, column = 19, value=pOpportunityCost[v])
-                    ws.cell(row=index_row, column = 20, value=excel_input_file)
+    #                 ws.cell(row=index_row, column = 12, value=pConsumptionMainRoute[i,j,v,p])
+    #                 ws.cell(row=index_row, column = 13, value=pDistanceOOP[j,p])
+    #                 ws.cell(row=index_row, column = 14, value=pConsumptionOOP[j,v,p])
+    #                 ws.cell(row=index_row, column = 15, value=pPrice[j])
+    #                 ws.cell(row=index_row, column = 16, value=0) #this is a placeholder in case I need this to run single corridor
+    #                 ws.cell(row=index_row, column = 17, value=pQuantityVehicles[v,p])
+    #                 ws.cell(row=index_row, column = 18, value=pVariableCost[v])
+    #                 ws.cell(row=index_row, column = 19, value=pOpportunityCost[v])
+    #                 ws.cell(row=index_row, column = 20, value=excel_input_file)
                         
-        #Print location variables
-    if b_print_location and model_time_first_incumbent >0:
+      ##  Print location variables
+    # if b_print_location and model_time_first_incumbent >0:
           
-          sheet_name = 'oOriginalStationsOwn'
-          ws = workbook[sheet_name]
-          index_row = ws.max_row    
+    #       sheet_name = 'oOriginalStationsOwn'
+    #       ws = workbook[sheet_name]
+    #       index_row = ws.max_row    
             
-          for i in sOriginalStationsOwn:
-             index_row = index_row+1
-             ws.cell(row=index_row, column = 1, value = scenario)
-             ws.cell(row=index_row, column = 2, value = i)
-             if i in sOriginalStationsPotential:
-                    ws.cell(row=index_row, column = 3, value = ovLocate[i])
-                    ws.cell(row=index_row, column = 7, value = pLocationCost[i])
-             else:
-                    ws.cell(row=index_row, column = 3, value = 0)
-                    ws.cell(row=index_row, column = 7, value = 0)
-             ws.cell(row=index_row, column = 4, value = ovQuantityUnitsCapacity[i])
-             ws.cell(row=index_row, column = 5, value = pStationCapacity[i])
-             ws.cell(row=index_row, column = 6, value = pStationUnitCapacity[i])
-             ws.cell(row=index_row, column = 8, value = pCostUnitCapacity[i])
-             ws.cell(row=index_row, column = 9, value = excel_input_file)
-    #Print total cost
-    if b_retrieve_solve_ouput:
-        if model_time_first_incumbent >0:
-            sheet_name = 'oTotalCost'
-            ws = workbook[sheet_name]
-            index_row = ws.max_row + 1
-            ws.cell(row = index_row, column = 1, value = scenario)
-            ws.cell(row = index_row, column = 2, value = oTotalRefuellingCost)
-            ws.cell(row = index_row, column = 3, value = oTotalLocationCost)
-            ws.cell(row = index_row, column = 4, value = oTotalDiscount)
-            ws.cell(row = index_row, column = 5, value = oTotalCost)
-            ws.cell(row = index_row, column = 6, value = excel_input_file)
+          # for i in sOriginalStationsOwn:
+          #    index_row = index_row+1
+          #    ws.cell(row=index_row, column = 1, value = scenario)
+          #    ws.cell(row=index_row, column = 2, value = i)
+          #    if i in sOriginalStationsPotential:
+          #           ws.cell(row=index_row, column = 3, value = ovLocate[i])
+          #           ws.cell(row=index_row, column = 7, value = pLocationCost[i])
+          #    else:
+          #           ws.cell(row=index_row, column = 3, value = 0)
+          #           ws.cell(row=index_row, column = 7, value = 0)
+          #    ws.cell(row=index_row, column = 4, value = ovQuantityUnitsCapacity[i])
+          #    ws.cell(row=index_row, column = 5, value = pStationCapacity[i])
+          #    ws.cell(row=index_row, column = 6, value = pStationUnitCapacity[i])
+          #    ws.cell(row=index_row, column = 8, value = pCostUnitCapacity[i])
+          #    ws.cell(row=index_row, column = 9, value = excel_input_file)
+    # #Print total cost
+    # if b_retrieve_solve_ouput:
+    #     if model_time_first_incumbent >0:
+    #         sheet_name = 'oTotalCost'
+    #         ws = workbook[sheet_name]
+    #         index_row = ws.max_row + 1
+    #         ws.cell(row = index_row, column = 1, value = scenario)
+    #         ws.cell(row = index_row, column = 2, value = oTotalRefuellingCost)
+    #         ws.cell(row = index_row, column = 3, value = oTotalLocationCost)
+    #         ws.cell(row = index_row, column = 4, value = oTotalDiscount)
+    #         ws.cell(row = index_row, column = 5, value = oTotalCost)
+    #         ws.cell(row = index_row, column = 6, value = excel_input_file)
 
         
     if b_print_statistics:
-        #calculate statistics
-        n_vehicles = len({v for (v,p) in sVehiclesPaths})
-        n_paths = len({p for (v,p) in sVehiclesPaths})
-        n_avg_stations_path = len(sStationsPaths)/n_paths
-        n_candidate_locations = len(sOriginalStationsPotential)
-        
-        #print solution statistics
-        sheet_name = 'oScenarioStats'
-        ws = workbook[sheet_name]
-        index_row = ws.max_row + 1
-        ws.cell(row = index_row, column = 1, value = excel_input_file)
-        ws.cell(row = index_row, column = 2, value = scenario_name)
-        ws.cell(row = index_row, column = 3, value = n_vehicles)
-        ws.cell(row = index_row, column = 4, value = n_paths)
-        ws.cell(row = index_row, column = 5, value = n_avg_stations_path)
-        ws.cell(row = index_row, column = 6, value = n_candidate_locations)
-        
-        ws.cell(row = index_row, column = 19, value = total_time)
+                         
+        statistics_tuple =(current_time,
+                        scenario_name,
+                        n_vehicles,
+                        n_paths,
+                        n_avg_stations_path,
+                        n_candidate_locations,
+                        total_time,
+                        model_runtime,
+                        n_constraints,
+                        n_variables,
+                        n_integer_variables,
+                        n_binary_variables,
+                        model_MIPGap,
+                        model_nodeCount,
+                        model_initial_gap,
+                        model_time_first_incumbent,
+                        status,
+                        machine,
+                        solution_algorithm)
+        file_name = "..\\output\\scenario_stats.csv"
+        with open(file_name, "a", newline = "") as f:
+            cw = csv.writer(f, delimiter=",")
+            cw.writerow(statistics_tuple)
           
-        if b_retrieve_solve_ouput:                
-            ws.cell(row = index_row, column = 12, value = model_runtime)
-            ws.cell(row = index_row, column = 13, value = n_constraints)
-            ws.cell(row = index_row, column = 14, value = n_variables)
-            ws.cell(row = index_row, column = 15, value = n_integer_variables)
-            ws.cell(row = index_row, column = 16, value = n_binary_variables)
-            ws.cell(row = index_row, column = 17, value = model_fingerprint)
-            ws.cell(row = index_row, column = 18, value = model_MIPGap)
+        # if b_retrieve_solve_ouput:                
+        #     ws.cell(row = index_row, column = 12, value = model_runtime)
+        #     ws.cell(row = index_row, column = 13, value = n_constraints)
+        #     ws.cell(row = index_row, column = 14, value = n_variables)
+        #     ws.cell(row = index_row, column = 15, value = n_integer_variables)
+        #     ws.cell(row = index_row, column = 16, value = n_binary_variables)
+        #     ws.cell(row = index_row, column = 17, value = model_fingerprint)
+        #     ws.cell(row = index_row, column = 18, value = model_MIPGap)
             
-            ws.cell(row = index_row, column = 20, value = model_nodeCount)
-            ws.cell(row = index_row, column = 21, value = model_initial_gap)
-            ws.cell(row = index_row, column = 22, value = model_time_first_incumbent)
-            ws.cell(row = index_row, column = 23, value = status)
-        if b_print_read_stats:
-            aux=23
-            for event in di_event_read:
-                aux+=1
-                ws.cell(row = index_row, column = aux, value = di_event_read[event])
-            for process in di_process_duration_read:
-                aux+=1
-                ws.cell(row = index_row, column = aux, value = di_process_duration_read[process])
-         #after printing read stats, next column is number 94       
+        #     ws.cell(row = index_row, column = 20, value = model_nodeCount)
+        #     ws.cell(row = index_row, column = 21, value = model_initial_gap)
+        #     ws.cell(row = index_row, column = 22, value = model_time_first_incumbent)
+        #     ws.cell(row = index_row, column = 23, value = status)
+        # if b_print_read_stats:
+        #     aux=23
+        #     for event in di_event_read:
+        #         aux+=1
+        #         ws.cell(row = index_row, column = aux, value = di_event_read[event])
+        #     for process in di_process_duration_read:
+        #         aux+=1
+        #         ws.cell(row = index_row, column = aux, value = di_process_duration_read[process])
+        #  #after printing read stats, next column is number 94       
           
-    workbook.save(output_file)
+    #workbook.save(output_file)
     
         
-    
+
