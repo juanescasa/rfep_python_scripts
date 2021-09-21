@@ -73,10 +73,10 @@ ls_start_time.append(("Gen Inititial tables", time.time()))
 
 #Read generator tables
 #folder_path = "C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\data\\"
-folder_path = os.path.join("..", "data")
+folder_path = "..\\data\\"
 #Each scenario generator change this
 
-folder_name = "Generator instance 10000km"
+folder_name = "Toy instance"
 folder_parent = folder_path + folder_name + '\\'
 
 ls_tables = ['MaeNodes', 'MaeVehicles', 'MaeSuppliers', 'MaeRanges', 'MaePaths', 
@@ -395,7 +395,7 @@ for index_scenario in range(df_scenario_map.shape[0]):
                            for i in df_substations['COD_NODE']}
     
     for row in range(df_substations.shape[0]):
-        i = df_substations['COD_NODE'][row]       
+        i = df_substations['COD_NODE'][row]
         df_substations['pLocationCost'][row] = di_location_cost[i]
         df_substations['pStationCapacity'][row] = di_station_capacity[i]
         df_substations['pStationUnitCapacity'][row] = di_station_unit_capacity[i]

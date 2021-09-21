@@ -11,11 +11,12 @@ import random
 
 di_event={}
 di_event['start_print_iteratively'] = time.time()
-rows = 10000
+rows = 10
 
 for row in range(rows):
     tuple1 = (random.randint(1,3), "", random.randint(1,3), random.randint(1,3))
-    with open("output_test7.csv", "a", newline = "") as f:
+    "newline makes that there are not spaces with the following line"
+    with open("output_test7.csv", "w", newline = "") as f:
         cw = csv.writer(f, delimiter=",")
         cw.writerow(tuple1)
 
@@ -26,7 +27,7 @@ for row in range(rows):
     tuple2 = (random.randint(1,3), random.randint(1,3), random.randint(1,3))
     ls_tuples.append(tuple2) 
 
-with open("output_test5.csv", "a", newline = "") as f:
+with open("output_test5.csv", "w", newline = "") as f:
     cw = csv.writer(f, delimiter=",")
     cw.writerows(ls_tuples)
 
@@ -39,5 +40,24 @@ di_process_duration = {process: di_event[di_process_events[process][1]] - \
                        di_event[di_process_events[process][0]] \
                        for process in di_process_events}
 
+#print dictionaries
+header = ['process', 'duration']
+with open('process_duration_iter_vs_mem.cv', 'w', newline = "") as f:
+    cw = csv.writer(f, delimiter = "," )
+    cw.writerow(header)
+    for key in di_process_duration:
+        cw.writerow([key, di_process_duration[key]])
 
+#print dictionaries with tuple keys
+
+di_quantity = {('st1', 'viva'):10,
+                ('st2', 'gecs'):100,
+                ('st3', 'terp'):5}
+
+header2 = ['station', 'supplier', 'quantity']
+with open('dic_tuple_index_print.cv', 'w', newline = "") as f:
+    cw = csv.writer(f, delimiter = "," )
+    cw.writerow(header2)
+    for key in di_quantity:
+        cw.writerow([key[0], key[1], di_quantity[key]])
 

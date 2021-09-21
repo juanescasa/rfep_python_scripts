@@ -2,9 +2,9 @@ COD_NODE,COD_SUPPLIER,isPotential,pPriceOriginal,pLocationCost,pStationCapacity,
 Bailey Reserve St,VIVA,0,1.3,0,0,0,0
 Chadstone St,VIVA,0,1.35,0,0,0,0
 Core St,BP,0,1.29,0,0,0,0
-Deakin St,OWN,1,0.7,1087,93783,9378,119
+Deakin St,OWN,1,0.7,943,81395,8139,103
 Monash St,BP,0,1.35,0,0,0,0
-Mount Waverly St,OWN,0,1.1,0,93783,9378,119
+Mount Waverly St,OWN,0,1.1,0,81395,8139,103
 Noble Park St,VIVA,0,1.4,0,0,0,0
-Powell Reserve St,OWN,0,1.12,0,93783,9378,119
-Primrose St,OWN,0,0.8,0,93783,9378,119
+Powell Reserve St,OWN,0,1.12,0,81395,8139,103
+Primrose St,OWN,0,0.8,0,81395,8139,103

@@ -87,8 +87,20 @@ def solve_rfep(sNodesVehiclesPaths,
                 isONtotalRefuellingCost= False,
                 isONtotalLocationCost= False,
                 isONtotalDiscount= False,
-                timeLimit = 86400
+                timeLimit = 86400,
+                retrieveSolutionDetail = True,
                 ):
+    """
+    Parameters
+    ----------
+    retrieveSolutionDetail : when it is False it reduces the output from the funciton.
+    
+    timeLimit : limit gurobi run in seconds
+
+    
+    -----
+    
+    """
 
     m = gp.Model()
     m.Params.timeLimit = timeLimit
@@ -208,40 +220,51 @@ def solve_rfep(sNodesVehiclesPaths,
         sys.exit()
     
     if m._n_incumbents > 0:
+        
         if isONvInventory:
-            ovInventory = m.getAttr('x', vInventory)
+            ovInventory = m.getAttr('x', vInventory)            
         else:
-            ovInventory = 0
+            ovInventory = {}            
             
         if isONvRefuelQuantity:
             ovRefuelQuantity = m.getAttr('x', vRefuelQuantity)
+            osvRefuelQuantity = {(i,v,p): ovRefuelQuantity[i,v,p] for (i,v,p) in sStationsVehiclesPaths if ovRefuelQuantity[i,v,p]>0}
         else:
-            ovRefuelQuantity = 0    
+            ovRefuelQuantity = {}    
             
         if isONvRefuel:
             ovRefuel = m.getAttr('x', vRefuel)
+            osvRefuel = {(i,v,p): ovRefuel[i,v,p] for (i,v,p) in sStationsVehiclesPaths if ovRefuel[i,v,p]>0}
         else:
-            ovRefuel = 0
-        
+            ovRefuel = {}
+            osvRefuel = {}
+            
         if isONvQuantityUnitsCapacity:
             ovQuantityUnitsCapacity = m.getAttr('x', vQuantityUnitsCapacity)
+            osvQuantityUnitsCapacity = {i: ovQuantityUnitsCapacity[i] for i in sOriginalStationsOwn if ovQuantityUnitsCapacity[i]>0}
         else:
-            ovQuantityUnitsCapacity = 0
+            ovQuantityUnitsCapacity = {}
+            osvQuantityUnitsCapacity = {}
         
         if isONvLocate:
             ovLocate = m.getAttr('x', vLocate)
+            osvLocate = {i: ovLocate[i] for i in sOriginalStationsPotential if ovLocate[i]>0}
         else:
-            ovLocate = 0
+            ovLocate = {}
+            osvLocate = {}
         
         if isONvQuantityPurchasedRange:
             ovQuantityPurchased = m.getAttr('x', vQuantityPurchased)
+            #I do not need to summarize this. This dictionary should be always >0            
         else:
-            ovQuantityPurchased = 0
+            ovQuantityPurchased = {}
         
         if isONvQuantityPurchasedRange:
             ovQuantityPurchasedRange = m.getAttr('x', vQuantityPurchasedRange)
+            osvQuantityPurchasedRange = {(l,g): ovQuantityPurchasedRange[l,g] for (l,g) in sSuppliersRanges if ovQuantityPurchasedRange[l,g]>0}            
         else:
-            ovQuantityPurchasedRange = 0
+            ovQuantityPurchasedRange = {}
+            osvQuantityPurchasedRange = {}
             
         if isONvPurchasedRange:
             ovPurchasedRange = m.getAttr('x', vPurchasedRange)
@@ -282,6 +305,18 @@ def solve_rfep(sNodesVehiclesPaths,
         model_initial_gap = m._initial_gap
         model_time_first_incumbent = m._time_first_incumbent  
         
+        #This block reduce the size of the output to only decision variables
+        if not retrieveSolutionDetail:
+            ovInventory = {}
+            ovRefuelQuantity = {}
+            ovRefuel = {}
+            ovQuantityUnitsCapacity = {}
+            ovLocate = {}
+            #This survives since it is small
+            #ovQuantityPurchased = {}
+            ovQuantityPurchasedRange = {}
+            ovPurchasedRange = {}
+            
             
         return(status,
                 ovInventory,
@@ -305,9 +340,19 @@ def solve_rfep(sNodesVehiclesPaths,
                 model_MIPGap,
                 model_nodeCount,
                 model_initial_gap,
-                model_time_first_incumbent)
+                model_time_first_incumbent,
+                osvRefuelQuantity,
+                osvRefuel,
+                osvQuantityUnitsCapacity,
+                osvLocate,
+                osvQuantityPurchasedRange)   
     else:
         return(0,
+                0,
+                0,
+                0,
+                0,
+                0,
                 0,
                 0,
                 0,
