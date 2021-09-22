@@ -18,16 +18,16 @@ import platform
 
 def export_solution_rfep(excel_input_file,
                          excel_output_file,
-                        scenario_name,
-                        solution_algorithm,
-                        output_solve = (),
+                        ls_scenario_name = [],
+                        ls_solution_algorithm = [],
+                        ls_output_solve = [],
                         b_domain_reduction = False,
                         b_print_solution_detail = False,
                         b_print_location = False,
                         b_print_statistics = False,
                         b_print_read_stats = False,
                         b_retrieve_solve_ouput = True,                        
-                        total_time=0,
+                        ls_total_time=[],
                         di_event_read = {},
                         di_process_duration_read = {},
                         sVehiclesPaths = [],
@@ -72,34 +72,34 @@ def export_solution_rfep(excel_input_file,
     current_time = datetime.datetime.now()   
     machine = platform.uname()[1]
     #Assign the stats of the solution to variables with name (code readability)
-    if b_retrieve_solve_ouput:
-        status = output_solve[0]
-        ovInventory = output_solve[1]
-        ovRefuelQuantity = output_solve[2]
-        ovRefuel = output_solve[3]
-        ovQuantityUnitsCapacity = output_solve[4]
-        ovLocate = output_solve[5]
-        ovQuantityPurchased = output_solve[6]
-        ovQuantityPurchasedRange = output_solve[7]
-        ovPurchasedRange = output_solve[8]
-        oTotalRefuellingCost = output_solve[9]
-        oTotalLocationCost = output_solve[10]
-        oTotalDiscount = output_solve[11]
-        oTotalCost = output_solve[12]
-        n_constraints = output_solve[13]
-        n_variables = output_solve[14]
-        n_integer_variables = output_solve[15]
-        n_binary_variables = output_solve[16]
-        model_fingerprint = output_solve[17]
-        model_runtime = output_solve[18]
-        model_MIPGap = output_solve[19]
-        model_nodeCount = output_solve[20]
-        model_initial_gap = output_solve[21]
-        model_time_first_incumbent = output_solve[22]
-        n_vehicles = output_solve[28]
-        n_paths = output_solve[29]
-        n_avg_stations_path = output_solve[30]
-        n_candidate_locations = output_solve[31]
+    # if b_retrieve_solve_ouput:
+    #     status = output_solve[0]
+    #     ovInventory = output_solve[1]
+    #     ovRefuelQuantity = output_solve[2]
+    #     ovRefuel = output_solve[3]
+    #     ovQuantityUnitsCapacity = output_solve[4]
+    #     ovLocate = output_solve[5]
+    #     ovQuantityPurchased = output_solve[6]
+    #     ovQuantityPurchasedRange = output_solve[7]
+    #     ovPurchasedRange = output_solve[8]
+    #     oTotalRefuellingCost = output_solve[9]
+    #     oTotalLocationCost = output_solve[10]
+    #     oTotalDiscount = output_solve[11]
+    #     oTotalCost = output_solve[12]
+    #     n_constraints = output_solve[13]
+    #     n_variables = output_solve[14]
+    #     n_integer_variables = output_solve[15]
+    #     n_binary_variables = output_solve[16]
+    #     model_fingerprint = output_solve[17]
+    #     model_runtime = output_solve[18]
+    #     model_MIPGap = output_solve[19]
+    #     model_nodeCount = output_solve[20]
+    #     model_initial_gap = output_solve[21]
+    #     model_time_first_incumbent = output_solve[22]
+    #     n_vehicles = output_solve[28]
+    #     n_paths = output_solve[29]
+    #     n_avg_stations_path = output_solve[30]
+    #     n_candidate_locations = output_solve[31]
   
       
     #excel_file must be the complete path
@@ -187,37 +187,53 @@ def export_solution_rfep(excel_input_file,
         
     if b_print_statistics:
         if b_retrieve_solve_ouput: 
-            statistics_tuple =(current_time,
-                            scenario_name,
-                            n_vehicles,
-                            n_paths,
-                            n_avg_stations_path,
-                            n_candidate_locations,
-                            total_time,
-                            model_runtime,
-                            n_constraints,
-                            n_variables,
-                            n_integer_variables,
-                            n_binary_variables,
-                            model_MIPGap,
-                            model_nodeCount,
-                            model_initial_gap,
-                            model_time_first_incumbent,
-                            status,
+            for index_run in range(len(ls_total_time)):
+                file_name = "..\\output\\scenario_stats.csv"
+                with open(file_name, "a", newline = "") as f:
+                    cw = csv.writer(f, delimiter=",")
+                    cw.writerow((current_time,
+                            ls_scenario_name[index_run],
+                            #n_vehicles
+                            ls_output_solve[index_run][28],
+                            #n_paths
+                            ls_output_solve[index_run][29],
+                            #n_avg_stations_path                   
+                            ls_output_solve[index_run][30],
+                            #n_candidate_locations
+                            ls_output_solve[index_run][30],
+                            ls_total_time[index_run],
+                            #model_runtime
+                            ls_output_solve[index_run][18],
+                            #n_constraints,
+                            ls_output_solve[index_run][13],
+                            #n_variables
+                            ls_output_solve[index_run][14],
+                            #n_integer_variables
+                            ls_output_solve[index_run][15],
+                            #n_binary_variables
+                            ls_output_solve[index_run][16],
+                            #model_nodeCount
+                            ls_output_solve[index_run][20],
+                            #model_initial_gap
+                            ls_output_solve[index_run][21],
+                            #model_time_first_incumbent
+                            ls_output_solve[index_run][22],
+                            #status
+                            ls_output_solve[index_run][0],
                             machine,
-                            solution_algorithm)
-            file_name = "..\\output\\scenario_stats.csv"
-            with open(file_name, "a", newline = "") as f:
-                cw = csv.writer(f, delimiter=",")
-                cw.writerow(statistics_tuple)
+                            ls_solution_algorithm[index_run]))
         else:
-            statistics_tuple =(current_time,
-                            scenario_name,
+            for index_run in range(len(ls_total_time)):
+                file_name = "..\\output\\scenario_stats.csv"
+                with open(file_name, "a", newline = "") as f:
+                    cw = csv.writer(f, delimiter=",")
+                    cw.writerow((current_time,
+                            ls_scenario_name[index_run],
                             "",
                             "",
                             "",
                             "",
-                            total_time,
+                            ls_total_time[index_run],
                             "",
                             "",
                             "",
@@ -229,11 +245,7 @@ def export_solution_rfep(excel_input_file,
                             "",
                             "",
                             machine,
-                            solution_algorithm)
-            file_name = "..\\output\\scenario_stats.csv"
-            with open(file_name, "a", newline = "") as f:
-                cw = csv.writer(f, delimiter=",")
-                cw.writerow(statistics_tuple)
+                            ls_solution_algorithm[index_run]))
           
         # if b_retrieve_solve_ouput:                
         #     ws.cell(row = index_row, column = 12, value = model_runtime)

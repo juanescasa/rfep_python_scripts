@@ -27,14 +27,20 @@ file = folder_parent + file_name
 df_scenario_map = pd.read_excel(file, sheet_name = sh)
 
 di_table_name = {}
-
+#%%
 output_file = "C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx"
 solution_algorithm="RFEP"
 
+#Create list to store the results
+li_scenario_name = []
+li_output_rfep = []
+li_total_time = []
+li_solution_algorithm = []
+
 #for index_scenario in range(df_scenario_map.shape[0]):
 #for index_scenario in range(23,150,1):
-#for index_scenario in [0,1]:
-for index_scenario in [0]:
+for index_scenario in [0,1,2,3]:
+#for index_scenario in [0]:
     start_time = time.time()
     #read name of tables of scenario
     for t in ls_tables:
@@ -118,41 +124,47 @@ for index_scenario in [0]:
     total_time = time.time()-start_time
     
     #di_solution_algorithm[]
-    export_solution_rfep_csv.export_solution_rfep(excel_input_file = file,
-            excel_output_file = output_file,
-            solution_algorithm = solution_algorithm,
-            scenario_name = scenario_name,
-            output_solve = output_rfep,
-            total_time = total_time,
-            b_domain_reduction = False,
-            b_print_solution_detail = True,
-            b_print_location = True,
-            b_print_statistics = True,
-            b_retrieve_solve_ouput = False,
-            # sVehiclesPaths = sVehiclesPaths,
-            # sOriginalStationsPotential = sOriginalStationsPotential,
-            # sSequenceNodesNodesVehiclesPaths = sSequenceNodesNodesVehiclesPaths,
-            # sStationsPaths = sStationsPaths,
-            # sOriginalStationsOwn = sOriginalStationsOwn,
-            # sStationsVehiclesPaths = sStationsVehiclesPaths,
-            # sSuppliersRanges = sSuppliersRanges,
-            # pStartInventory = pStartInventory,
-            # pConsumptionRate = pConsumptionRate,
-            # pDistance = pDistance,
-            # pSubDistance = pSubDistance,
-            # pConsumptionMainRoute = pConsumptionMainRoute,
-            # pDistanceOOP = pDistanceOOP,
-            # pConsumptionOOP = pConsumptionOOP,
-            # pQuantityVehicles = pQuantityVehicles,
-            # pVariableCost = pVariableCost,
-            # pOpportunityCost = pOpportunityCost,
-            # pLocationCost = pLocationCost,
-            # pStationCapacity = pStationCapacity,
-            # pStationUnitCapacity = pStationUnitCapacity,
-            # pCostUnitCapacity = pCostUnitCapacity,
-            # pPrice = pPrice,
-            # pDiscount = pDiscount,
-            )
+    li_scenario_name.append(scenario_name)
+    li_output_rfep.append(output_rfep)
+    li_total_time.append(total_time)
+    li_solution_algorithm.append(solution_algorithm)
     
+    
+export_solution_rfep_csv.export_solution_rfep(excel_input_file = file,
+        excel_output_file = output_file,
+        ls_solution_algorithm = li_solution_algorithm,
+        ls_scenario_name = li_scenario_name,
+        ls_output_solve = li_output_rfep,
+        ls_total_time = li_total_time,
+        b_domain_reduction = False,
+        b_print_solution_detail = True,
+        b_print_location = True,
+        b_print_statistics = True,
+        b_retrieve_solve_ouput = True,
+        # sVehiclesPaths = sVehiclesPaths,
+        # sOriginalStationsPotential = sOriginalStationsPotential,
+        # sSequenceNodesNodesVehiclesPaths = sSequenceNodesNodesVehiclesPaths,
+        # sStationsPaths = sStationsPaths,
+        # sOriginalStationsOwn = sOriginalStationsOwn,
+        # sStationsVehiclesPaths = sStationsVehiclesPaths,
+        # sSuppliersRanges = sSuppliersRanges,
+        # pStartInventory = pStartInventory,
+        # pConsumptionRate = pConsumptionRate,
+        # pDistance = pDistance,
+        # pSubDistance = pSubDistance,
+        # pConsumptionMainRoute = pConsumptionMainRoute,
+        # pDistanceOOP = pDistanceOOP,
+        # pConsumptionOOP = pConsumptionOOP,
+        # pQuantityVehicles = pQuantityVehicles,
+        # pVariableCost = pVariableCost,
+        # pOpportunityCost = pOpportunityCost,
+        # pLocationCost = pLocationCost,
+        # pStationCapacity = pStationCapacity,
+        # pStationUnitCapacity = pStationUnitCapacity,
+        # pCostUnitCapacity = pCostUnitCapacity,
+        # pPrice = pPrice,
+        # pDiscount = pDiscount,
+        )
+        
     
     

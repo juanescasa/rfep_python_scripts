@@ -65,8 +65,12 @@ with open('dic_tuple_index_print.cv', 'w', newline = "") as f:
 
 ls_col1 = ['Juan', 'Nico', 'Joha', 'Jime']
 ls_col2 = [1989, 1992, 1989, 1993]
+ls_combine = [ls_col1, ls_col2]
+ls_transpose = zip(*ls_combine)
+
 with open('print_list_col.cv', 'w', newline = "") as f:
     cw = csv.writer(f, delimiter = "," )
-    cw.writerows((ls_col1, ls_col2))
+    cw.writerows(ls_transpose)
+    
 
 
