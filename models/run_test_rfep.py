@@ -117,6 +117,7 @@ for index_scenario in [0]:
     
     total_time = time.time()-start_time
     
+    #di_solution_algorithm[]
     export_solution_rfep_csv.export_solution_rfep(excel_input_file = file,
             excel_output_file = output_file,
             solution_algorithm = solution_algorithm,
@@ -127,7 +128,7 @@ for index_scenario in [0]:
             b_print_solution_detail = True,
             b_print_location = True,
             b_print_statistics = True,
-            b_retrieve_solve_ouput = True,
+            b_retrieve_solve_ouput = False,
             # sVehiclesPaths = sVehiclesPaths,
             # sOriginalStationsPotential = sOriginalStationsPotential,
             # sSequenceNodesNodesVehiclesPaths = sSequenceNodesNodesVehiclesPaths,

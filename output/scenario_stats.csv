@@ -1,1 +1,3 @@
 ﻿current time,scenario,number type vehicles,number paths,average stations per path,number candidate locations,total time,time Gurobi run (s),number constraints,number variables,number integer variables,number binary variables,MIP gap,node count,initial gap,time first incumbent,status,machine,solution algorithm
+2021-09-22 09:11:52.966349,tv1-pa5-ow4-cl2-su3-toy,1,5,14.8,2,0.151594877243042,0.07380294799804688,427,249,84,80,0.0,1.0,0.1396781925710481,0.022939443588256836,2,20L8PC0W2YGL,RFEP
+2021-09-22 09:12:58.628057,tv1-pa5-ow4-cl2-su3-toy,,,,,0.1994612216949463,,,,,,,,,,,20L8PC0W2YGL,RFEP

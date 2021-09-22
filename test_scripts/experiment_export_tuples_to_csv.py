@@ -61,3 +61,12 @@ with open('dic_tuple_index_print.cv', 'w', newline = "") as f:
     for key in di_quantity:
         cw.writerow([key[0], key[1], di_quantity[key]])
 
+#Experimenting exporting lists as columns
+
+ls_col1 = ['Juan', 'Nico', 'Joha', 'Jime']
+ls_col2 = [1989, 1992, 1989, 1993]
+with open('print_list_col.cv', 'w', newline = "") as f:
+    cw = csv.writer(f, delimiter = "," )
+    cw.writerows((ls_col1, ls_col2))
+
+

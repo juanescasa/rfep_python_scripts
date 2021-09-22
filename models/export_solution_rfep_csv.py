@@ -186,30 +186,54 @@ def export_solution_rfep(excel_input_file,
 
         
     if b_print_statistics:
-                         
-        statistics_tuple =(current_time,
-                        scenario_name,
-                        n_vehicles,
-                        n_paths,
-                        n_avg_stations_path,
-                        n_candidate_locations,
-                        total_time,
-                        model_runtime,
-                        n_constraints,
-                        n_variables,
-                        n_integer_variables,
-                        n_binary_variables,
-                        model_MIPGap,
-                        model_nodeCount,
-                        model_initial_gap,
-                        model_time_first_incumbent,
-                        status,
-                        machine,
-                        solution_algorithm)
-        file_name = "..\\output\\scenario_stats.csv"
-        with open(file_name, "a", newline = "") as f:
-            cw = csv.writer(f, delimiter=",")
-            cw.writerow(statistics_tuple)
+        if b_retrieve_solve_ouput: 
+            statistics_tuple =(current_time,
+                            scenario_name,
+                            n_vehicles,
+                            n_paths,
+                            n_avg_stations_path,
+                            n_candidate_locations,
+                            total_time,
+                            model_runtime,
+                            n_constraints,
+                            n_variables,
+                            n_integer_variables,
+                            n_binary_variables,
+                            model_MIPGap,
+                            model_nodeCount,
+                            model_initial_gap,
+                            model_time_first_incumbent,
+                            status,
+                            machine,
+                            solution_algorithm)
+            file_name = "..\\output\\scenario_stats.csv"
+            with open(file_name, "a", newline = "") as f:
+                cw = csv.writer(f, delimiter=",")
+                cw.writerow(statistics_tuple)
+        else:
+            statistics_tuple =(current_time,
+                            scenario_name,
+                            "",
+                            "",
+                            "",
+                            "",
+                            total_time,
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            machine,
+                            solution_algorithm)
+            file_name = "..\\output\\scenario_stats.csv"
+            with open(file_name, "a", newline = "") as f:
+                cw = csv.writer(f, delimiter=",")
+                cw.writerow(statistics_tuple)
           
         # if b_retrieve_solve_ouput:                
         #     ws.cell(row = index_row, column = 12, value = model_runtime)
