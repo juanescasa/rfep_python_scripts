@@ -12,7 +12,6 @@ import rfep_model
 #Activate when debugging
 import openpyxl
 import sys
-import jecs_functions
 import os
 import time
 import export_solution_rfep

@@ -73,7 +73,7 @@ ls_start_time.append(("Gen Inititial tables", time.time()))
 
 #Read generator tables
 #folder_path = "C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\data\\"
-folder_path = os.path.join("..", "data")
+folder_path = "..\\data\\"
 #Each scenario generator change this
 
 folder_name = "Generator instance 10000km"
