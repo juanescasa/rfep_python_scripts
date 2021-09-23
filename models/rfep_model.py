@@ -89,6 +89,7 @@ def solve_rfep(sNodesVehiclesPaths,
                 isONtotalDiscount= False,
                 timeLimit = 86400,
                 retrieveSolutionDetail = True,
+                mip_start = {},
                 ):
     """
     Parameters
@@ -206,6 +207,22 @@ def solve_rfep(sNodesVehiclesPaths,
     m._time_first_incumbent = 0
     m._time_start = time.time()
     
+    #provide mip start value
+    if len(mip_start)>0:
+        for (i,v,p) in mip_start["vRefuel"].keys():
+            vRefuel[i,v,p].Start=mip_start["vRefuel"][i,v,p]
+            vRefuelQuantity[i,v,p].Start=mip_start["vRefuelQuantity"][i,v,p]
+        for (i,v,p) in sNodesVehiclesPaths:
+            vInventory[i,v,p].Start = mip_start["vInventory"][i,v,p]
+        for i in sOriginalStationsOwn:
+            vQuantityUnitsCapacity[i].Start = mip_start["vQuantityUnitsCapacity"][i]
+            if i in sOriginalStationsPotential:
+                vLocate[i].Start = mip_start["vLocate"][i]
+        for l in sSuppliers:
+            vQuantityPurchased[l].Start = mip_start["vQuantityPurchased"][l]
+        for (l,g) in sSuppliersRanges:
+            vPurchasedRange[l,g].Start = mip_start["vPurchasedRange"][l,g]       
+                
     m.optimize(callback_initial_gap)
     #l_time_track.append(('start_export_output', time.time()))
     #Dealing with infeasability

@@ -18,3 +18,6 @@ print (current_time)
 #get the node name
 import platform
 my_system = platform.uname()[1]
+
+empty_dict = {}
+print(len(empty_dict))

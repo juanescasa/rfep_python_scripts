@@ -27,7 +27,6 @@ import reduce_stations_path
 
 
 
-#%%
 ls_track_time = ('start_test', time.time())
 ls_tables = ['MaeNodes', 'MaeVehicles', 'MaeSuppliers', 'MaeRanges', 'MaePaths', 
              'NodesNodes', 'SubStations', 'VehiclesPaths', 'NodesPaths', 
@@ -51,9 +50,10 @@ di_table_name = {}
 
 ls_track_time = ('start_reading', time.time())
 
-di_duration_event_scenario = {} 
-#for index_scenario in [0]:
-for index_scenario in range(50):
+di_duration_event_scenario = {}
+mip_start = {} 
+for index_scenario in [0]:
+#for index_scenario in range(50):
     start_time = time.time()    
     for t in ls_tables:
         di_table_name[t]=t+"-"+df_scenario_map[t][index_scenario]
@@ -175,42 +175,125 @@ for index_scenario in range(50):
                 isONtotalLocationCost = True,
                 isONtotalDiscount = True,
                 timeLimit = 3600)
+    #mip_start=(vRefuel)
+    mip_start["vInventory"]=output_rfep[1]
+    mip_start["vRefuelQuantity"]=output_rfep[23]
+    mip_start["vRefuel"]=output_rfep[24]
+    mip_start["vQuantityUnitsCapacity"]=output_rfep[4]
+    mip_start["vLocate"]=output_rfep[5]
+    mip_start["vQuantityPurchased"]=output_rfep[6]
+    mip_start["vQuantityPurchasedRange"]=output_rfep[7]
+    mip_start["vPurchasedRange"]=output_rfep[8]
 
-
-    output_file = os.path.join("..", "output", "outputRFEP_v3.xlsx")
-    scenario_name = df_scenario_map["COD_SCENARIO"][index_scenario] + "-domain_reduction"
+    
+    
+    output_rfep2 = rfep_model.solve_rfep(
+                sNodesVehiclesPaths = sNodesVehiclesPaths2,
+                sStationsVehiclesPaths = sStationsVehiclesPaths2,
+                sOriginalStationsOwn = data_rfep["sOriginalStationsOwn"],
+                sOriginalStationsPotential = data_rfep["sOriginalStationsPotential"],
+                sSuppliers = data_rfep["sSuppliers"],
+                sSuppliersRanges = data_rfep["sSuppliersRanges"],
+                sOriginVehiclesPaths = data_rfep["sOriginVehiclesPaths"],
+                sDestinationVehiclesPaths = data_rfep["sDestinationVehiclesPaths"],
+                sSequenceNodesNodesVehiclesPaths = sSequenceNodesNodesVehiclesPaths2,
+                sFirstStationVehiclesPaths = sFirstStationVehiclesPaths2,
+                sNotFirstStationVehiclesPaths = sNotFirstStationVehiclesPaths2,
+                sNodesPotentialNodesOriginalVehiclesPaths = sNodesPotentialNodesOriginalVehiclesPaths2,
+                sOriginalStationsMirrorStations = data_rfep["sOriginalStationsMirrorStations"],
+                sStationsSuppliers = data_rfep["sStationsSuppliers"],
+                sSuppliersWithDiscount = data_rfep["sSuppliersWithDiscount"],
+                sRanges = data_rfep["sRanges"],
+                pStartInventory = data_rfep["pStartInventory"],
+                pTargetInventory = data_rfep["pTargetInventory"],
+                pSafetyStock = data_rfep["pSafetyStock"],
+                pTankCapacity = data_rfep["pTankCapacity"],
+                pMinRefuel = data_rfep["pMinRefuel"],
+                pConsumptionMainRoute = pConsumptionMainRoute2,
+                pConsumptionOOP = data_rfep["pConsumptionOOP"],
+                pQuantityVehicles = data_rfep["pQuantityVehicles"],
+                pStationCapacity = data_rfep["pStationCapacity"],
+                pStationUnitCapacity = data_rfep["pStationUnitCapacity"],
+                pMinimumPurchaseQuantity = data_rfep["pMinimumPurchaseQuantity"],
+                pLowerQuantityDiscount = data_rfep["pLowerQuantityDiscount"],
+                pUpperQuantityDiscount = data_rfep["pUpperQuantityDiscount"],
+                pPrice = data_rfep["pPrice"],
+                pOpportunityCost = data_rfep["pOpportunityCost"],
+                pVariableCost = data_rfep["pVariableCost"],
+                pDistanceOOP = data_rfep["pDistanceOOP"],
+                pCostUnitCapacity = data_rfep["pCostUnitCapacity"],
+                pDiscount = data_rfep["pDiscount"],
+                pLocationCost = data_rfep["pLocationCost"],
+                isONvInventory = True,
+                isONvRefuelQuantity = True,
+                isONvRefuel = True,
+                isONvQuantityUnitsCapacity = True,
+                isONvLocate = True,
+                isONvQuantityPurchased = True,
+                isONvQuantityPurchasedRange = True,
+                isONvPurchasedRange = True,
+                isONcInitialInventory = True,
+                isONcTargetInventory = True,
+                isONcMinInventory = True,
+                isONcLogicRefuel1 = True,
+                isONcLogicRefuel2 = True,
+                isONcMaxRefuel = True,
+                isONcInventoryBalance1 = True,
+                isONcInventoryBalance2 = True,
+                isONcInventoryBalance3 = True,
+                isONcLogicLocation = True,
+                isONcLogicLocation2 = True,
+                isONcStationCapacity = True,
+                isONcQuantityPurchased = True,
+                isONcMinimumQuantitySupplier = True,
+                isONcMinQuantityRange = True,
+                isONcMaxQuantityRange = True,
+                isONcUniqueQuantityRange = True,
+                isONcUniqueRange = True,
+                isONtotalRefuellingCost = True,
+                isONtotalLocationCost = True,
+                isONtotalDiscount = True,
+                timeLimit = 3600,
+                mip_start = mip_start)
+    
+    
+    
+    
+    
+    
+    
+    #output_file = os.path.join("..", "output", "outputRFEP_v3.xlsx")
+    scenario_name = df_scenario_map["COD_SCENARIO"][index_scenario] + "lenPath2000"
    
     total_time = time.time()-start_time
     
-    export_solution_rfep.export_solution_rfep(
-                                            excel_input_file = file,
-                                            excel_output_file = output_file,
-                                            scenario_name = scenario_name,
-                                            output_solve = output_rfep,
-                                            total_time = total_time,
-                                            b_domain_reduction = True,
-                                            b_print_solution_detail = False,
-                                            b_print_location = True,
-                                            b_print_statistics = True,
-                                            sVehiclesPaths = data_rfep["sVehiclesPaths"],
-                                            sOriginalStationsPotential = data_rfep["sOriginalStationsPotential"],
-                                            sSequenceNodesNodesVehiclesPaths = sSequenceNodesNodesVehiclesPaths2,
-                                            sStationsPaths = sStationsPaths2,
-                                            sOriginalStationsOwn = data_rfep["sOriginalStationsOwn"],
-                                            sStationsVehiclesPaths = sStationsVehiclesPaths2,
-                                            sSuppliersRanges = data_rfep["sSuppliersRanges"],
-                                            pStartInventory = data_rfep["pStartInventory"],
-                                            pConsumptionRate = data_rfep["pConsumptionRate"],
-                                            pSubDistance = pSubDistance,
-                                            pConsumptionMainRoute = pConsumptionMainRoute2,
-                                            pDistanceOOP = data_rfep["pDistanceOOP"],
-                                            pConsumptionOOP = data_rfep["pConsumptionOOP"],
-                                            pQuantityVehicles = data_rfep["pQuantityVehicles"],
-                                            pVariableCost = data_rfep["pVariableCost"],
-                                            pOpportunityCost = data_rfep["pOpportunityCost"],
-                                            pLocationCost = data_rfep["pLocationCost"],
-                                            pStationCapacity = data_rfep["pStationCapacity"],
-                                            pStationUnitCapacity = data_rfep["pStationUnitCapacity"],
-                                            pCostUnitCapacity = data_rfep["pCostUnitCapacity"],
-                                            pPrice = data_rfep["pPrice"],
-                                            pDiscount = data_rfep["pDiscount"])
+    # export_solution_rfep.export_solution_rfep(                                            
+    #                                         scenario_name = scenario_name,
+    #                                         output_solve = output_rfep,
+    #                                         total_time = total_time,
+    #                                         b_domain_reduction = True,
+    #                                         b_print_solution_detail = False,
+    #                                         b_print_location = True,
+    #                                         b_print_statistics = True,
+    #                                         sVehiclesPaths = data_rfep["sVehiclesPaths"],
+    #                                         sOriginalStationsPotential = data_rfep["sOriginalStationsPotential"],
+    #                                         sSequenceNodesNodesVehiclesPaths = sSequenceNodesNodesVehiclesPaths2,
+    #                                         sStationsPaths = sStationsPaths2,
+    #                                         sOriginalStationsOwn = data_rfep["sOriginalStationsOwn"],
+    #                                         sStationsVehiclesPaths = sStationsVehiclesPaths2,
+    #                                         sSuppliersRanges = data_rfep["sSuppliersRanges"],
+    #                                         pStartInventory = data_rfep["pStartInventory"],
+    #                                         pConsumptionRate = data_rfep["pConsumptionRate"],
+    #                                         pSubDistance = pSubDistance,
+    #                                         pConsumptionMainRoute = pConsumptionMainRoute2,
+    #                                         pDistanceOOP = data_rfep["pDistanceOOP"],
+    #                                         pConsumptionOOP = data_rfep["pConsumptionOOP"],
+    #                                         pQuantityVehicles = data_rfep["pQuantityVehicles"],
+    #                                         pVariableCost = data_rfep["pVariableCost"],
+    #                                         pOpportunityCost = data_rfep["pOpportunityCost"],
+    #                                         pLocationCost = data_rfep["pLocationCost"],
+    #                                         pStationCapacity = data_rfep["pStationCapacity"],
+    #                                         pStationUnitCapacity = data_rfep["pStationUnitCapacity"],
+    #                                         pCostUnitCapacity = data_rfep["pCostUnitCapacity"],
+    #                                         pPrice = data_rfep["pPrice"],
+    #                                         pDiscount = data_rfep["pDiscount"])

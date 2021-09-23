@@ -68,7 +68,7 @@ for index_scenario in [0,1,2,3]:
         sNodesPotentialNodesOriginalVehiclesPaths = data_rfep["sNodesPotentialNodesOriginalVehiclesPaths"],
         sOriginalStationsMirrorStations = data_rfep["sOriginalStationsMirrorStations"],
         sStationsSuppliers = data_rfep["sStationsSuppliers"],
-        sSuppliersWithDiscouexport_solutionnt = data_rfep["sSuppliersWithDiscount"],
+        sSuppliersWithDiscount = data_rfep["sSuppliersWithDiscount"],
         sRanges = data_rfep["sRanges"],
         pStartInventory = data_rfep["pStartInventory"],
         pTargetInventory = data_rfep["pTargetInventory"],
