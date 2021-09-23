@@ -73,4 +73,5 @@ with open('print_list_col.cv', 'w', newline = "") as f:
     cw.writerows(ls_transpose)
     
 
+#I want to see how this line dissapears in spyder when I change the branches
 
