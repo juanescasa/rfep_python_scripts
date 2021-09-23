@@ -16,14 +16,90 @@ import csv
 import datetime
 import platform
 
-def export_solution_rfep(excel_input_file,
-                         excel_output_file,
+def print_stats_solution_complete(file_name, current_time, ls_scenario_name, ls_output_solve, ls_total_time, machine, ls_solution_algorithm):
+    for index_run in range(len(ls_total_time)):
+                with open(file_name, "a", newline = "") as f:
+                    cw = csv.writer(f, delimiter=",")
+                    cw.writerow((current_time,
+                            ls_scenario_name[index_run],
+                            #n_vehicles
+                            ls_output_solve[index_run][25],
+                            #n_paths
+                            ls_output_solve[index_run][26],
+                            #n_avg_stations_path                   
+                            ls_output_solve[index_run][27],
+                            #n_candidate_locations
+                            ls_output_solve[index_run][28],
+                            ls_total_time[index_run],
+                            #model_runtime
+                            ls_output_solve[index_run][18],
+                            #n_constraints,
+                            ls_output_solve[index_run][13],
+                            #n_variables
+                            ls_output_solve[index_run][14],
+                            #n_integer_variables
+                            ls_output_solve[index_run][15],
+                            #n_binary_variables
+                            ls_output_solve[index_run][16],
+                            #mip_gap
+                            ls_output_solve[index_run][19],
+                            #model_nodeCount
+                            ls_output_solve[index_run][20],
+                            #model_initial_gap
+                            ls_output_solve[index_run][21],
+                            #model_time_first_incumbent
+                            ls_output_solve[index_run][22],
+                            #status
+                            ls_output_solve[index_run][0],
+                            machine,
+                            ls_solution_algorithm[index_run],
+                            #total_refuelling_cost
+                            ls_output_solve[index_run][9],
+                            #total_location_cost
+                            ls_output_solve[index_run][10],
+                            #total_discount
+                            ls_output_solve[index_run][11],
+                            #total_cost
+                            ls_output_solve[index_run][12]                       
+                            ))
+    
+def print_stats_solution_summary(file_name, current_time, ls_scenario_name, ls_total_time, machine, ls_solution_algorithm):
+    for index_run in range(len(ls_total_time)):
+                with open(file_name, "a", newline = "") as f:
+                    cw = csv.writer(f, delimiter=",")
+                    cw.writerow((current_time,
+                            ls_scenario_name[index_run],
+                            "",
+                            "",
+                            "",
+                            "",
+                            ls_total_time[index_run],
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            machine,
+                            ls_solution_algorithm[index_run],
+                            "",
+                            "",
+                            "",
+                            ""))
+
+def export_solution_rfep(ls_data_rfep = [],
                         ls_scenario_name = [],
                         ls_solution_algorithm = [],
                         ls_output_solve = [],
                         b_domain_reduction = False,
-                        b_print_solution_detail = False,
+                        b_print_refuelling_detail = False,
+                        b_print_refuelling_summary = False,
                         b_print_location = False,
+                        b_print_location_summary = False,
                         b_print_statistics = False,
                         b_print_read_stats = False,
                         b_retrieve_solve_ouput = True,                        
@@ -67,52 +143,70 @@ def export_solution_rfep(excel_input_file,
     :param di_process_events_read: dictionary that holds the duration of each process in the data reading
     :return: this function does not return anything, it just prints.
     """
-      
+    #retrieve generic parameters
     # using now() to get current time 
     current_time = datetime.datetime.now()   
     machine = platform.uname()[1]
-    #Assign the stats of the solution to variables with name (code readability)
-    # if b_retrieve_solve_ouput:
-    #     status = output_solve[0]
-    #     ovInventory = output_solve[1]
-    #     ovRefuelQuantity = output_solve[2]
-    #     ovRefuel = output_solve[3]
-    #     ovQuantityUnitsCapacity = output_solve[4]
-    #     ovLocate = output_solve[5]
-    #     ovQuantityPurchased = output_solve[6]
-    #     ovQuantityPurchasedRange = output_solve[7]
-    #     ovPurchasedRange = output_solve[8]
-    #     oTotalRefuellingCost = output_solve[9]
-    #     oTotalLocationCost = output_solve[10]
-    #     oTotalDiscount = output_solve[11]
-    #     oTotalCost = output_solve[12]
-    #     n_constraints = output_solve[13]
-    #     n_variables = output_solve[14]
-    #     n_integer_variables = output_solve[15]
-    #     n_binary_variables = output_solve[16]
-    #     model_fingerprint = output_solve[17]
-    #     model_runtime = output_solve[18]
-    #     model_MIPGap = output_solve[19]
-    #     model_nodeCount = output_solve[20]
-    #     model_initial_gap = output_solve[21]
-    #     model_time_first_incumbent = output_solve[22]
-    #     n_vehicles = output_solve[28]
-    #     n_paths = output_solve[29]
-    #     n_avg_stations_path = output_solve[30]
-    #     n_candidate_locations = output_solve[31]
   
-      
-    #excel_file must be the complete path
-    #output_file = excel_output_file
-    #Open Excel workbook
-    #workbook = openpyxl.load_workbook(output_file)
-    #scenario = scenario_name
-      
-  
-      
-           
-    # if b_print_solution_detail and model_time_first_incumbent >0:
-          
+    #if b_print_refuelling_detail and model_time_first_incumbent >0:               
+    if b_print_refuelling_detail:
+        file_name = "..\\output\\o_refuelling_details.csv"
+        for index_run in range(len(ls_total_time)):
+            
+            
+            for (i,j,v,p) in ls_data_rfep[index_run]["sSequenceNodesNodesVehiclesPaths"]:
+                if (j,p) in ls_data_rfep[index_run]["sStationsPaths"]:
+                    if b_domain_reduction:
+                        with open(file_name, "a", newline = "") as f:
+                            cw = csv.writer(f, delimiter=",")
+                            cw.writerow((current_time, ls_scenario_name[index_run], machine,
+                                         ls_solution_algorithm[index_run],
+                                         #indexes, inventory
+                                         i, j, v, p, ls_output_solve[index_run][1][j,v,p],
+                                         #refuel quantity
+                                         ls_output_solve[index_run][2][j,v,p],
+                                         #bin refuel
+                                         ls_output_solve[index_run][3][j,v,p],
+                                         ls_data_rfep[index_run]["pStartInventory"][v,p],
+                                         ls_data_rfep[index_run]["pConsumptionRate"][v],
+                                         ls_data_rfep[index_run]["pSubDistance"][i,j,v,p],
+                                         ls_data_rfep[index_run]["pConsumptionMainRoute"][i,j,v,p],
+                                         ls_data_rfep[index_run]["pDistanceOOP"][j,p],
+                                         ls_data_rfep[index_run]["pConsumptionOOP"][j,v,p],
+                                         ls_data_rfep[index_run]["pPrice"][j],
+                                         #this is a placeholder in case I need this to run single corridor
+                                         #this is the parameter RefuelQuantity for history
+                                         0,
+                                         ls_data_rfep[index_run]["pQuantityVehicles"][v,p],
+                                         ls_data_rfep[index_run]["pVariableCost"][v],
+                                         ls_data_rfep[index_run]["pOpportunityCost"][v]))
+                        
+                    else:
+                        print(ls_output_solve[index_run][1][j,v,p])
+                        with open(file_name, "a", newline = "") as f:
+                            cw = csv.writer(f, delimiter=",")
+                            cw.writerow((current_time, ls_scenario_name[index_run], machine,
+                                         ls_solution_algorithm[index_run],
+                                         #indexes, inventory
+                                         i, j, v, p, ls_output_solve[index_run][1][j,v,p],
+                                         #refuel quantity
+                                         ls_output_solve[index_run][2][j,v,p],
+                                         #bin refuel
+                                         ls_output_solve[index_run][3][j,v,p],
+                                         ls_data_rfep[index_run]["pStartInventory"][v,p],
+                                         ls_data_rfep[index_run]["pConsumptionRate"][v],
+                                         ls_data_rfep[index_run]["pDistance"][i,j,p],
+                                         ls_data_rfep[index_run]["pConsumptionMainRoute"][i,j,v,p],
+                                         ls_data_rfep[index_run]["pDistanceOOP"][j,p],
+                                         ls_data_rfep[index_run]["pConsumptionOOP"][j,v,p],
+                                         ls_data_rfep[index_run]["pPrice"][j],
+                                         #this is a placeholder in case I need this to run single corridor
+                                         #this is the parameter RefuelQuantity for history
+                                         0,
+                                         ls_data_rfep[index_run]["pQuantityVehicles"][v,p],
+                                         ls_data_rfep[index_run]["pVariableCost"][v],
+                                         ls_data_rfep[index_run]["pOpportunityCost"][v]))
+                        
     #       sheet_name = 'oNodesNodesVehiclesPaths'
     #       ws = workbook[sheet_name]
     #       index_row = ws.max_row    
@@ -171,95 +265,69 @@ def export_solution_rfep(excel_input_file,
           #    ws.cell(row=index_row, column = 6, value = pStationUnitCapacity[i])
           #    ws.cell(row=index_row, column = 8, value = pCostUnitCapacity[i])
           #    ws.cell(row=index_row, column = 9, value = excel_input_file)
-    # #Print total cost
-    # if b_retrieve_solve_ouput:
-    #     if model_time_first_incumbent >0:
-    #         sheet_name = 'oTotalCost'
-    #         ws = workbook[sheet_name]
-    #         index_row = ws.max_row + 1
-    #         ws.cell(row = index_row, column = 1, value = scenario)
-    #         ws.cell(row = index_row, column = 2, value = oTotalRefuellingCost)
-    #         ws.cell(row = index_row, column = 3, value = oTotalLocationCost)
-    #         ws.cell(row = index_row, column = 4, value = oTotalDiscount)
-    #         ws.cell(row = index_row, column = 5, value = oTotalCost)
-    #         ws.cell(row = index_row, column = 6, value = excel_input_file)
 
+    if b_print_refuelling_summary:
+        if b_retrieve_solve_ouput:
+            file_name = "..\\output\\o_refuelling_summary.csv"
+            for index_run in range(len(ls_total_time)):
+                
+         
+                sStationsRefuelledVehiclePath = list(ls_output_solve[index_run][23].keys())
+                for (i,v,p) in sStationsRefuelledVehiclePath:
+                    with open(file_name, "a", newline = "") as f:
+                                cw = csv.writer(f, delimiter=",")
+                                cw.writerow((current_time, ls_scenario_name[index_run], machine,
+                                             ls_solution_algorithm[index_run],
+                                             i, v, p, ls_output_solve[index_run][23][i,v,p]))
+                    
+            
+        
+
+    #if b_print_location and model_time_first_incumbent >0:
+    if b_print_location_summary:
+        if b_retrieve_solve_ouput:
+            file_name = "..\\output\\o_location_summary.csv"
+            for index_run in range(len(ls_total_time)):
+                #ovLocate = output_solve[index_run][5]
+                #ovQuantityUnitsCapacity = output_solve[4]
+                sOriginalStationsOwn = list(ls_output_solve[index_run][4].keys())
+                sOwnStationsPotential = list(ls_output_solve[index_run][5].keys())
+                for i in sOriginalStationsOwn:
+                    if i in sOwnStationsPotential:
+                        if (ls_output_solve[index_run][5][i]>0 or ls_output_solve[index_run][4][i])>0:
+                            with open(file_name, "a", newline = "") as f:
+                                cw = csv.writer(f, delimiter=",")
+                                cw.writerow((current_time, ls_scenario_name[index_run],
+                                             machine, ls_solution_algorithm[index_run], i,
+                                             #location
+                                             ls_output_solve[index_run][5][i],
+                                             #units of capacity
+                                             ls_output_solve[index_run][4][i]))
+                    else:
+                       if (ls_output_solve[index_run][4][i])>0:
+                            with open(file_name, "a", newline = "") as f:
+                                cw = csv.writer(f, delimiter=",")
+                                cw.writerow((current_time, ls_scenario_name[index_run],
+                                             machine, ls_solution_algorithm[index_run], i,
+                                             #location
+                                             0,
+                                             #units of capacity
+                                             ls_output_solve[index_run][4][i]))     
+                                         
+                                         
+                        
         
     if b_print_statistics:
-        if b_retrieve_solve_ouput: 
-            for index_run in range(len(ls_total_time)):
-                file_name = "..\\output\\scenario_stats.csv"
-                with open(file_name, "a", newline = "") as f:
-                    cw = csv.writer(f, delimiter=",")
-                    cw.writerow((current_time,
-                            ls_scenario_name[index_run],
-                            #n_vehicles
-                            ls_output_solve[index_run][28],
-                            #n_paths
-                            ls_output_solve[index_run][29],
-                            #n_avg_stations_path                   
-                            ls_output_solve[index_run][30],
-                            #n_candidate_locations
-                            ls_output_solve[index_run][30],
-                            ls_total_time[index_run],
-                            #model_runtime
-                            ls_output_solve[index_run][18],
-                            #n_constraints,
-                            ls_output_solve[index_run][13],
-                            #n_variables
-                            ls_output_solve[index_run][14],
-                            #n_integer_variables
-                            ls_output_solve[index_run][15],
-                            #n_binary_variables
-                            ls_output_solve[index_run][16],
-                            #model_nodeCount
-                            ls_output_solve[index_run][20],
-                            #model_initial_gap
-                            ls_output_solve[index_run][21],
-                            #model_time_first_incumbent
-                            ls_output_solve[index_run][22],
-                            #status
-                            ls_output_solve[index_run][0],
-                            machine,
-                            ls_solution_algorithm[index_run]))
+        file_name = "..\\output\\o_scenario_stats.csv"
+        if b_retrieve_solve_ouput:            
+            print_stats_solution_complete(file_name, current_time, ls_scenario_name, 
+                                          ls_output_solve, ls_total_time, machine, 
+                                          ls_solution_algorithm)
         else:
-            for index_run in range(len(ls_total_time)):
-                file_name = "..\\output\\scenario_stats.csv"
-                with open(file_name, "a", newline = "") as f:
-                    cw = csv.writer(f, delimiter=",")
-                    cw.writerow((current_time,
-                            ls_scenario_name[index_run],
-                            "",
-                            "",
-                            "",
-                            "",
-                            ls_total_time[index_run],
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            machine,
-                            ls_solution_algorithm[index_run]))
-          
-        # if b_retrieve_solve_ouput:                
-        #     ws.cell(row = index_row, column = 12, value = model_runtime)
-        #     ws.cell(row = index_row, column = 13, value = n_constraints)
-        #     ws.cell(row = index_row, column = 14, value = n_variables)
-        #     ws.cell(row = index_row, column = 15, value = n_integer_variables)
-        #     ws.cell(row = index_row, column = 16, value = n_binary_variables)
-        #     ws.cell(row = index_row, column = 17, value = model_fingerprint)
-        #     ws.cell(row = index_row, column = 18, value = model_MIPGap)
+            print_stats_solution_summary(file_name, current_time, ls_scenario_name, 
+                                         ls_total_time, machine, ls_solution_algorithm)
             
-        #     ws.cell(row = index_row, column = 20, value = model_nodeCount)
-        #     ws.cell(row = index_row, column = 21, value = model_initial_gap)
-        #     ws.cell(row = index_row, column = 22, value = model_time_first_incumbent)
-        #     ws.cell(row = index_row, column = 23, value = status)
+          
         # if b_print_read_stats:
         #     aux=23
         #     for event in di_event_read:

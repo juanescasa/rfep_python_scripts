@@ -241,17 +241,13 @@ def solve_rfep(sNodesVehiclesPaths,
             
         if isONvQuantityUnitsCapacity:
             ovQuantityUnitsCapacity = m.getAttr('x', vQuantityUnitsCapacity)
-            osvQuantityUnitsCapacity = {i: ovQuantityUnitsCapacity[i] for i in sOriginalStationsOwn if ovQuantityUnitsCapacity[i]>0}
         else:
-            ovQuantityUnitsCapacity = {}
-            osvQuantityUnitsCapacity = {}
+            ovQuantityUnitsCapacity = {}           
         
         if isONvLocate:
-            ovLocate = m.getAttr('x', vLocate)
-            osvLocate = {i: ovLocate[i] for i in sOriginalStationsPotential if ovLocate[i]>0}
+            ovLocate = m.getAttr('x', vLocate)            
         else:
             ovLocate = {}
-            osvLocate = {}
         
         if isONvQuantityPurchasedRange:
             ovQuantityPurchased = m.getAttr('x', vQuantityPurchased)
@@ -260,11 +256,9 @@ def solve_rfep(sNodesVehiclesPaths,
             ovQuantityPurchased = {}
         
         if isONvQuantityPurchasedRange:
-            ovQuantityPurchasedRange = m.getAttr('x', vQuantityPurchasedRange)
-            osvQuantityPurchasedRange = {(l,g): ovQuantityPurchasedRange[l,g] for (l,g) in sSuppliersRanges if ovQuantityPurchasedRange[l,g]>0}            
+            ovQuantityPurchasedRange = m.getAttr('x', vQuantityPurchasedRange)            
         else:
-            ovQuantityPurchasedRange = {}
-            osvQuantityPurchasedRange = {}
+            ovQuantityPurchasedRange = {}          
             
         if isONvPurchasedRange:
             ovPurchasedRange = m.getAttr('x', vPurchasedRange)
@@ -312,13 +306,7 @@ def solve_rfep(sNodesVehiclesPaths,
         if not retrieveSolutionDetail:
             ovInventory = {}
             ovRefuelQuantity = {}
-            ovRefuel = {}
-            ovQuantityUnitsCapacity = {}
-            ovLocate = {}
-            #This survives since it is small
-            #ovQuantityPurchased = {}
-            ovQuantityPurchasedRange = {}
-            ovPurchasedRange = {}
+            ovRefuel = {}           
             
             
         return(status,
@@ -346,18 +334,12 @@ def solve_rfep(sNodesVehiclesPaths,
                 model_time_first_incumbent,
                 osvRefuelQuantity,
                 osvRefuel,
-                osvQuantityUnitsCapacity,
-                osvLocate,
-                osvQuantityPurchasedRange,
                 n_vehicles,
                 n_paths,
                 n_avg_stations_path,
                 n_candidate_locations)   
     else:
         return(0,
-                0,
-                0,
-                0,
                 0,
                 0,
                 0,

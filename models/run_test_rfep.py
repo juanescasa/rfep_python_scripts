@@ -27,15 +27,16 @@ file = folder_parent + file_name
 df_scenario_map = pd.read_excel(file, sheet_name = sh)
 
 di_table_name = {}
-#%%
+
 output_file = "C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx"
 solution_algorithm="RFEP"
 
 #Create list to store the results
-li_scenario_name = []
-li_output_rfep = []
-li_total_time = []
-li_solution_algorithm = []
+ls_data_rfep = []
+ls_scenario_name = []
+ls_output_rfep = []
+ls_total_time = []
+ls_solution_algorithm = []
 
 #for index_scenario in range(df_scenario_map.shape[0]):
 #for index_scenario in range(23,150,1):
@@ -119,51 +120,29 @@ for index_scenario in [0,1,2,3]:
         isONtotalLocationCost = True,
         isONtotalDiscount = True,
         timeLimit = 3600,
-        retrieveSolutionDetail = False)
+        retrieveSolutionDetail = True)
     
     total_time = time.time()-start_time
+
+    ls_data_rfep.append(data_rfep)
+    ls_scenario_name.append(scenario_name)
+    ls_output_rfep.append(output_rfep)
+    ls_total_time.append(total_time)
+    ls_solution_algorithm.append(solution_algorithm)
     
-    #di_solution_algorithm[]
-    li_scenario_name.append(scenario_name)
-    li_output_rfep.append(output_rfep)
-    li_total_time.append(total_time)
-    li_solution_algorithm.append(solution_algorithm)
     
-    
-export_solution_rfep_csv.export_solution_rfep(excel_input_file = file,
-        excel_output_file = output_file,
-        ls_solution_algorithm = li_solution_algorithm,
-        ls_scenario_name = li_scenario_name,
-        ls_output_solve = li_output_rfep,
-        ls_total_time = li_total_time,
+export_solution_rfep_csv.export_solution_rfep(ls_data_rfep = ls_data_rfep,
+        ls_solution_algorithm = ls_solution_algorithm,
+        ls_scenario_name = ls_scenario_name,
+        ls_output_solve = ls_output_rfep,
+        ls_total_time = ls_total_time,
         b_domain_reduction = False,
-        b_print_solution_detail = True,
+        b_print_refuelling_detail = True,
+        b_print_refuelling_summary = True,        
         b_print_location = True,
+        b_print_location_summary = True,
         b_print_statistics = True,
         b_retrieve_solve_ouput = True,
-        # sVehiclesPaths = sVehiclesPaths,
-        # sOriginalStationsPotential = sOriginalStationsPotential,
-        # sSequenceNodesNodesVehiclesPaths = sSequenceNodesNodesVehiclesPaths,
-        # sStationsPaths = sStationsPaths,
-        # sOriginalStationsOwn = sOriginalStationsOwn,
-        # sStationsVehiclesPaths = sStationsVehiclesPaths,
-        # sSuppliersRanges = sSuppliersRanges,
-        # pStartInventory = pStartInventory,
-        # pConsumptionRate = pConsumptionRate,
-        # pDistance = pDistance,
-        # pSubDistance = pSubDistance,
-        # pConsumptionMainRoute = pConsumptionMainRoute,
-        # pDistanceOOP = pDistanceOOP,
-        # pConsumptionOOP = pConsumptionOOP,
-        # pQuantityVehicles = pQuantityVehicles,
-        # pVariableCost = pVariableCost,
-        # pOpportunityCost = pOpportunityCost,
-        # pLocationCost = pLocationCost,
-        # pStationCapacity = pStationCapacity,
-        # pStationUnitCapacity = pStationUnitCapacity,
-        # pCostUnitCapacity = pCostUnitCapacity,
-        # pPrice = pPrice,
-        # pDiscount = pDiscount,
         )
         
     

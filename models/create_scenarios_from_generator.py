@@ -26,12 +26,12 @@ def export_mae_suppliers(folder, df_substations, df_generator_mae_suppliers, p_l
 def export_suppliers_ranges(folder, df_generator_suppliers_ranges, df_mae_suppliers, p_level, l_level):
     export_string = folder + "SuppliersRanges-pa"+str(p_level) + "-su" + str(l_level) + ".csv"
     df_suppliers_ranges = pd.merge(df_generator_suppliers_ranges, df_mae_suppliers, \
-                                   how = 'inner', on = ['COD_SUPPLIER'])
+                                    how = 'inner', on = ['COD_SUPPLIER'])
     df_suppliers_ranges.to_csv(export_string, index=False)
     return(df_suppliers_ranges)
 
 def export_substations(folder, sr_level_own, sr_level_candidate, df_substations, 
-                       survivor_supplier, l_level, set_valid_l_ow_cl):
+                        survivor_supplier, l_level, set_valid_l_ow_cl):
     df_substations_aux = df_substations.copy()
     for ow_level in sr_level_own:
         for cl_level in sr_level_candidate:
@@ -77,12 +77,12 @@ ls_start_time.append(("Gen Inititial tables", time.time()))
 folder_path = "..\\data\\"
 #Each scenario generator change this
 
-folder_name = "Toy instance"
+folder_name = "Generator instance 6525km-8500paths"
 folder_parent = folder_path + folder_name + '\\'
 
 ls_tables = ['MaeNodes', 'MaeVehicles', 'MaeSuppliers', 'MaeRanges', 'MaePaths', 
-             'NodesNodes', 'SubStations', 'VehiclesPaths', 'NodesPaths', 
-             'SuppliersRanges', 'NodesNodesPaths']
+              'NodesNodes', 'SubStations', 'VehiclesPaths', 'NodesPaths', 
+              'SuppliersRanges', 'NodesNodesPaths']
 di_df_tables = {}
 for t in ls_tables:
     table_name = t
@@ -145,12 +145,12 @@ for p_level in sr_level_paths:
     
     export_string = folder_child + "NodesNodesPaths-pa"+str(p_level) + ".csv"
     df_nodes_nodes_paths = pd.merge(di_df_tables["NodesNodesPaths"], di_cod_path[p_level], how="inner", \
-             on = ["COD_PATH"])
+              on = ["COD_PATH"])
     df_nodes_nodes_paths.to_csv(export_string, index=False)
     
     export_string = folder_child + "NodesPaths-pa"+str(p_level) + ".csv"
     df_nodes_paths = pd.merge(di_df_tables["NodesPaths"], di_cod_path[p_level], how="inner", \
-             on = ["COD_PATH"])
+              on = ["COD_PATH"])
     df_nodes_paths.to_csv(export_string, index=False)
     
     export_string = folder_child + "MaeNodes-pa"+str(p_level) + ".csv"
@@ -179,7 +179,7 @@ for p_level in sr_level_paths:
             df_suppliers_ranges= export_suppliers_ranges(folder_child,di_df_tables["SuppliersRanges"],df_mae_suppliers, p_level, l_level)
             #Create all variations of SubStations
             export_substations(folder_child, sr_level_own, sr_level_candidate, 
-                               df_substations, survivor_supplier, l_level, set_valid_l_ow_cl)
+                                df_substations, survivor_supplier, l_level, set_valid_l_ow_cl)
         if l_level ==2:
             #change BP stations to Viva
             df_substations.loc[(df_substations.COD_SUPPLIER == 'BP'), 'COD_SUPPLIER'] = survivor_supplier
@@ -190,7 +190,7 @@ for p_level in sr_level_paths:
             df_suppliers_ranges= export_suppliers_ranges(folder_child,di_df_tables["SuppliersRanges"],df_mae_suppliers, p_level, l_level)
             #Create all variations of SubStations
             export_substations(folder_child, sr_level_own, sr_level_candidate, 
-                               df_substations, survivor_supplier, l_level, set_valid_l_ow_cl)
+                                df_substations, survivor_supplier, l_level, set_valid_l_ow_cl)
             df_substations = df_substations_aux.copy()
         if l_level ==1:
             df_substations.loc[(df_substations.COD_SUPPLIER == 'BP'), 'COD_SUPPLIER']=survivor_supplier
@@ -230,13 +230,13 @@ for row in range(di_df_tables["VehiclesPaths"].shape[0]):
     if di_vehicle_autonomy[v] < di_max_segment_path[p]:
         di_df_tables["VehiclesPaths"]['isFeasible'][row] = 0
 
-export_string = folder_child + "TestVehiclesPath.csv"
-di_df_tables["VehiclesPaths"].to_csv(export_string, index=False)
+#export_string = folder_child + "TestVehiclesPath.csv"
+#di_df_tables["VehiclesPaths"].to_csv(export_string, index=False)
 
 df_vehicles_paths0 = di_df_tables["VehiclesPaths"][di_df_tables["VehiclesPaths"]['isFeasible']==1]
 df_vehicles_paths0 = df_vehicles_paths0[['COD_VEHICLE', 'COD_PATH', 'Start Inventory', 'Target Inventory', 'pQuantityVehicles']]
-export_string = folder_child + "TestVehiclesPath2.csv"
-df_vehicles_paths0.to_csv(export_string, index=False)
+#export_string = folder_child + "TestVehiclesPath2.csv"
+#df_vehicles_paths0.to_csv(export_string, index=False)
 
 for v_level in sr_level_vehicles:
     for p_level in sr_level_paths:
@@ -261,7 +261,7 @@ for index_scenario in range(df_scenario_map.shape[0]):
         di_table_name[t]=t+"-"+df_scenario_map[t][index_scenario]
     ls_start_time.append(('read_data_scenario', time.time()))
     data_rfep = rd_rfep.read_data_rfep(folder_child, di_table_name, 
-                                       is_to_generate_scenarios=True)
+                                        is_to_generate_scenarios=True)
     
     ls_start_time.append(('redefine_price_scenario', time.time()))
     #Make the price of own stations high, so the model avoid refuelling there. 
@@ -317,8 +317,8 @@ for index_scenario in range(df_scenario_map.shape[0]):
     di_refuel_qty = {(i,v,p): output_multiple_frvrp[(v, p)][2][(i,v,p)] for (i,v,p) in data_rfep["sStationsVehiclesPaths"]}
     
     di_refuel_qty_supplier = {l: sum(di_refuel_qty[i,v,p]*data_rfep["pQuantityVehicles"][v,p]
-                                     for (i,v,p) in data_rfep["sStationsVehiclesPaths"]
-                                     if (i,l) in data_rfep["sStationsSuppliers"]) 
+                                      for (i,v,p) in data_rfep["sStationsVehiclesPaths"]
+                                      if (i,l) in data_rfep["sStationsSuppliers"]) 
                               for l in data_rfep["sSuppliers"]}
     
     factor_min_supplier = {"VIVA": 0.2, "BP": 0.2, "OWN": 0}
@@ -364,8 +364,8 @@ for index_scenario in range(df_scenario_map.shape[0]):
     
     #Calculate the refuelling in each station. Take into account the mirror concept
     di_refuel_qty_station = {i: sum(di_refuel_qty[j,v,p]*data_rfep["pQuantityVehicles"][v,p]
-                                     for (j,v,p) in data_rfep["sStationsVehiclesPaths"]
-                                     if (i,j) in data_rfep["sOriginalStationsMirrorStations"]) 
+                                      for (j,v,p) in data_rfep["sStationsVehiclesPaths"]
+                                      if (i,j) in data_rfep["sOriginalStationsMirrorStations"]) 
                               for i in data_rfep["sOriginalStationsOwn"]}
     
     total_refuel_qty = sum(di_refuel_qty_supplier[l] for l in data_rfep["sSuppliers"])
@@ -387,13 +387,13 @@ for index_scenario in range(df_scenario_map.shape[0]):
         initial_station_capacity = total_refuel_qty
     
     di_station_capacity = {i: max(initial_station_capacity, di_refuel_qty_station[i]) if i in data_rfep["sOriginalStationsOwn"] else 0
-                           for i in df_substations['COD_NODE']}
+                            for i in df_substations['COD_NODE']}
     di_location_cost = {i: initial_station_capacity * capacity_cost if i in ls_potential_stations  else 0
-                           for i in df_substations['COD_NODE']}
+                            for i in df_substations['COD_NODE']}
     di_station_unit_capacity = {i: di_station_capacity[i]*proportion_station_unit_capacity if i in data_rfep["sOriginalStationsOwn"] else 0
-                           for i in df_substations['COD_NODE']}
+                            for i in df_substations['COD_NODE']}
     di_cost_unit_capacity = {i: di_station_unit_capacity[i]*factor_cost_unit_capacity*capacity_cost if i in data_rfep["sOriginalStationsOwn"] else 0
-                           for i in df_substations['COD_NODE']}
+                            for i in df_substations['COD_NODE']}
     
     for row in range(df_substations.shape[0]):
         i = df_substations['COD_NODE'][row]

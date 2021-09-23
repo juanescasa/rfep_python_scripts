@@ -14,13 +14,13 @@ ls_sheets = ["Type of vehicles",
             "Quantity suppliers"]
 #file =  "C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\data\Toy instance\Factors to generate scenarios.xlsx"
 
-folder_path = "C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\data\\"
-folder_name = "Path 2000\\"
+folder_path = "..\data\\"
+folder_name = "Generator instance 6525km-8500paths\\"
 name_file1 = "Factors to generate scenarios.xlsx"
 name_file2 = "Scenario Map.xlsx"
 file_to_import = folder_path + folder_name + name_file1
 file_to_export = folder_path + folder_name + name_file2
-combination_percentage = 0.5
+combination_percentage = 1
 
 
 
