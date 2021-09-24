@@ -95,41 +95,16 @@ def export_solution_rfep(ls_data_rfep = [],
                         ls_scenario_name = [],
                         ls_solution_algorithm = [],
                         ls_output_solve = [],
+                        ls_total_time = [],
                         b_domain_reduction = False,
                         b_print_refuelling_detail = False,
                         b_print_refuelling_summary = False,
                         b_print_location = False,
                         b_print_location_summary = False,
                         b_print_statistics = False,
-                        b_print_read_stats = False,
                         b_retrieve_solve_ouput = True,                        
-                        ls_total_time=[],
                         di_event_read = {},
-                        di_process_duration_read = {},
-                        sVehiclesPaths = [],
-                        sOriginalStationsPotential=[],
-                        sSequenceNodesNodesVehiclesPaths=[],
-                        sDestinationVehiclePath=[],
-                        sStationsPaths=set(),
-                        sOriginalStationsOwn=[],
-                        sStationsVehiclesPaths=[],
-                        sSuppliersRanges=[],
-                        pStartInventory=0,
-                        pConsumptionRate=0,
-                        pDistance=0,
-                        pSubDistance=0,
-                        pConsumptionMainRoute=0,
-                        pDistanceOOP=0,
-                        pConsumptionOOP=0,
-                        pQuantityVehicles=0,
-                        pVariableCost=0,
-                        pOpportunityCost=0,
-                        pLocationCost=0,
-                        pStationCapacity=0,
-                        pStationUnitCapacity=0,
-                        pCostUnitCapacity=0,
-                        pPrice=0,
-                        pDiscount=0):
+                        di_process_duration_read = {}):
     
     """
     export_solution_rfep prints into an excel file the solution of a run of the RFEP
@@ -182,7 +157,6 @@ def export_solution_rfep(ls_data_rfep = [],
                                          ls_data_rfep[index_run]["pOpportunityCost"][v]))
                         
                     else:
-                        print(ls_output_solve[index_run][1][j,v,p])
                         with open(file_name, "a", newline = "") as f:
                             cw = csv.writer(f, delimiter=",")
                             cw.writerow((current_time, ls_scenario_name[index_run], machine,
@@ -207,41 +181,7 @@ def export_solution_rfep(ls_data_rfep = [],
                                          ls_data_rfep[index_run]["pVariableCost"][v],
                                          ls_data_rfep[index_run]["pOpportunityCost"][v]))
                         
-    #       sheet_name = 'oNodesNodesVehiclesPaths'
-    #       ws = workbook[sheet_name]
-    #       index_row = ws.max_row    
-    #       for (i,j,v,p) in sSequenceNodesNodesVehiclesPaths:
-    #          if (j,p) in sStationsPaths:
-    #                 index_row=index_row +1
-    #                 ws.cell(row=index_row, column = 1, value=scenario)
-    #                 ws.cell(row=index_row, column = 2, value=i)
-    #                 ws.cell(row=index_row, column = 3, value=j)
-    #                 ws.cell(row=index_row, column = 4, value=v)
-    #                 ws.cell(row=index_row, column = 5, value=p)
-    #                 ws.cell(row=index_row, column = 6, value=ovInventory[j,v,p])
-    #                 ws.cell(row=index_row, column = 7, value=ovRefuelQuantity[j,v,p])
-    #                 ws.cell(row=index_row, column = 8, value=ovRefuel[j,v,p])
-    #                 ws.cell(row=index_row, column = 9, value=pStartInventory[v,p])
-    #                 ws.cell(row=index_row, column = 10, value=pConsumptionRate[v])
-    #                 #if a domain reduction procedure was applied, the distance 
-    #                 #changed of domain
-    #                 if b_domain_reduction:
-    #                     ws.cell(row=index_row, column = 11, value=pSubDistance[i,j,v,p])
-    #                 else:
-    #                     ws.cell(row=index_row, column = 11, value=pDistance[i,j,p])   
-                    
-    #                 #trhe distance changed of index after the domain reduction. So the original distance wont fit
-    #                 #
-                    
-    #                 ws.cell(row=index_row, column = 12, value=pConsumptionMainRoute[i,j,v,p])
-    #                 ws.cell(row=index_row, column = 13, value=pDistanceOOP[j,p])
-    #                 ws.cell(row=index_row, column = 14, value=pConsumptionOOP[j,v,p])
-    #                 ws.cell(row=index_row, column = 15, value=pPrice[j])
-    #                 ws.cell(row=index_row, column = 16, value=0) #this is a placeholder in case I need this to run single corridor
-    #                 ws.cell(row=index_row, column = 17, value=pQuantityVehicles[v,p])
-    #                 ws.cell(row=index_row, column = 18, value=pVariableCost[v])
-    #                 ws.cell(row=index_row, column = 19, value=pOpportunityCost[v])
-    #                 ws.cell(row=index_row, column = 20, value=excel_input_file)
+
                         
       ##  Print location variables
     # if b_print_location and model_time_first_incumbent >0:
@@ -312,11 +252,9 @@ def export_solution_rfep(ls_data_rfep = [],
                                              #location
                                              0,
                                              #units of capacity
-                                             ls_output_solve[index_run][4][i]))     
+                                             ls_output_solve[index_run][4][i]))                                       
                                          
-                                         
-                        
-        
+                                
     if b_print_statistics:
         file_name = "..\\output\\o_scenario_stats.csv"
         if b_retrieve_solve_ouput:            
@@ -338,7 +276,6 @@ def export_solution_rfep(ls_data_rfep = [],
         #         ws.cell(row = index_row, column = aux, value = di_process_duration_read[process])
         #  #after printing read stats, next column is number 94       
           
-    #workbook.save(output_file)
-    
+
         
 

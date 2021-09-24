@@ -28,7 +28,7 @@ df_scenario_map = pd.read_excel(file, sheet_name = sh)
 
 di_table_name = {}
 
-output_file = "C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3.xlsx"
+
 solution_algorithm="RFEP"
 
 #Create list to store the results

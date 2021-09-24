@@ -19,7 +19,7 @@ import time
 import openpyxl
 #import sys
 import rfep_model
-import export_solution_rfep
+import export_solution_rfep_csv
 #this reads all data for the problem
 #from read_data_rfep import *
 import read_data_rfep_function as rd_rfep
@@ -51,9 +51,17 @@ di_table_name = {}
 ls_track_time = ('start_reading', time.time())
 
 di_duration_event_scenario = {}
+#Create list to store the results
+ls_data_rfep = []
+ls_scenario_name = []
+ls_output_rfep = []
+ls_total_time = []
+ls_solution_algorithm = []
+#create dictionary to store the variables values after the domain reduction
 mip_start = {} 
-for index_scenario in [0]:
+#for index_scenario in [0,1]:
 #for index_scenario in range(50):
+for index_scenario in [16]:
     start_time = time.time()    
     for t in ls_tables:
         di_table_name[t]=t+"-"+df_scenario_map[t][index_scenario]
@@ -97,7 +105,8 @@ for index_scenario in [0]:
                             pOpportunityCost=data_rfep["pOpportunityCost"],
                             pVariableCost=data_rfep["pVariableCost"],
                             pDistanceOOP=data_rfep["pDistanceOOP"])                 
-                     
+    
+    #redefine the sets and parameters after domain reduction               
     sNodesVehiclesPaths2=output_domain_reduction[0]
     sStationsVehiclesPaths2=output_domain_reduction[1]
     sSequenceNodesNodesVehiclesPaths2=output_domain_reduction[2]
@@ -175,7 +184,7 @@ for index_scenario in [0]:
                 isONtotalLocationCost = True,
                 isONtotalDiscount = True,
                 timeLimit = 3600)
-    #mip_start=(vRefuel)
+    #store the value of the variables
     mip_start["vInventory"]=output_rfep[1]
     mip_start["vRefuelQuantity"]=output_rfep[23]
     mip_start["vRefuel"]=output_rfep[24]
@@ -184,22 +193,26 @@ for index_scenario in [0]:
     mip_start["vQuantityPurchased"]=output_rfep[6]
     mip_start["vQuantityPurchasedRange"]=output_rfep[7]
     mip_start["vPurchasedRange"]=output_rfep[8]
-
+    
+    print("Refuelling quantity")
+    print(mip_start["vRefuelQuantity"])
+    print("Refuel Binary")
+    print(mip_start["vRefuelQuantity"])
     
     
     output_rfep2 = rfep_model.solve_rfep(
-                sNodesVehiclesPaths = sNodesVehiclesPaths2,
-                sStationsVehiclesPaths = sStationsVehiclesPaths2,
+                sNodesVehiclesPaths = data_rfep["sNodesVehiclesPaths"],
+                sStationsVehiclesPaths = data_rfep["sStationsVehiclesPaths"],
                 sOriginalStationsOwn = data_rfep["sOriginalStationsOwn"],
                 sOriginalStationsPotential = data_rfep["sOriginalStationsPotential"],
                 sSuppliers = data_rfep["sSuppliers"],
                 sSuppliersRanges = data_rfep["sSuppliersRanges"],
                 sOriginVehiclesPaths = data_rfep["sOriginVehiclesPaths"],
                 sDestinationVehiclesPaths = data_rfep["sDestinationVehiclesPaths"],
-                sSequenceNodesNodesVehiclesPaths = sSequenceNodesNodesVehiclesPaths2,
-                sFirstStationVehiclesPaths = sFirstStationVehiclesPaths2,
-                sNotFirstStationVehiclesPaths = sNotFirstStationVehiclesPaths2,
-                sNodesPotentialNodesOriginalVehiclesPaths = sNodesPotentialNodesOriginalVehiclesPaths2,
+                sSequenceNodesNodesVehiclesPaths = data_rfep["sSequenceNodesNodesVehiclesPaths"],
+                sFirstStationVehiclesPaths = data_rfep["sFirstStationVehiclesPaths"],
+                sNotFirstStationVehiclesPaths = data_rfep["sNotFirstStationVehiclesPaths"],
+                sNodesPotentialNodesOriginalVehiclesPaths = data_rfep["sNodesPotentialNodesOriginalVehiclesPaths"],
                 sOriginalStationsMirrorStations = data_rfep["sOriginalStationsMirrorStations"],
                 sStationsSuppliers = data_rfep["sStationsSuppliers"],
                 sSuppliersWithDiscount = data_rfep["sSuppliersWithDiscount"],
@@ -209,7 +222,7 @@ for index_scenario in [0]:
                 pSafetyStock = data_rfep["pSafetyStock"],
                 pTankCapacity = data_rfep["pTankCapacity"],
                 pMinRefuel = data_rfep["pMinRefuel"],
-                pConsumptionMainRoute = pConsumptionMainRoute2,
+                pConsumptionMainRoute = data_rfep["pConsumptionMainRoute"],
                 pConsumptionOOP = data_rfep["pConsumptionOOP"],
                 pQuantityVehicles = data_rfep["pQuantityVehicles"],
                 pStationCapacity = data_rfep["pStationCapacity"],
@@ -257,43 +270,44 @@ for index_scenario in [0]:
                 mip_start = mip_start)
     
     
+
     
     
-    
-    
-    
-    #output_file = os.path.join("..", "output", "outputRFEP_v3.xlsx")
-    scenario_name = df_scenario_map["COD_SCENARIO"][index_scenario] + "lenPath2000"
-   
     total_time = time.time()-start_time
+    scenario_name = df_scenario_map["COD_SCENARIO"][index_scenario] + "-lenPath2000"
+    solution_algorithm = "drx3-mipstart-RFEP"
     
-    # export_solution_rfep.export_solution_rfep(                                            
-    #                                         scenario_name = scenario_name,
-    #                                         output_solve = output_rfep,
-    #                                         total_time = total_time,
-    #                                         b_domain_reduction = True,
-    #                                         b_print_solution_detail = False,
-    #                                         b_print_location = True,
-    #                                         b_print_statistics = True,
-    #                                         sVehiclesPaths = data_rfep["sVehiclesPaths"],
-    #                                         sOriginalStationsPotential = data_rfep["sOriginalStationsPotential"],
-    #                                         sSequenceNodesNodesVehiclesPaths = sSequenceNodesNodesVehiclesPaths2,
-    #                                         sStationsPaths = sStationsPaths2,
-    #                                         sOriginalStationsOwn = data_rfep["sOriginalStationsOwn"],
-    #                                         sStationsVehiclesPaths = sStationsVehiclesPaths2,
-    #                                         sSuppliersRanges = data_rfep["sSuppliersRanges"],
-    #                                         pStartInventory = data_rfep["pStartInventory"],
-    #                                         pConsumptionRate = data_rfep["pConsumptionRate"],
-    #                                         pSubDistance = pSubDistance,
-    #                                         pConsumptionMainRoute = pConsumptionMainRoute2,
-    #                                         pDistanceOOP = data_rfep["pDistanceOOP"],
-    #                                         pConsumptionOOP = data_rfep["pConsumptionOOP"],
-    #                                         pQuantityVehicles = data_rfep["pQuantityVehicles"],
-    #                                         pVariableCost = data_rfep["pVariableCost"],
-    #                                         pOpportunityCost = data_rfep["pOpportunityCost"],
-    #                                         pLocationCost = data_rfep["pLocationCost"],
-    #                                         pStationCapacity = data_rfep["pStationCapacity"],
-    #                                         pStationUnitCapacity = data_rfep["pStationUnitCapacity"],
-    #                                         pCostUnitCapacity = data_rfep["pCostUnitCapacity"],
-    #                                         pPrice = data_rfep["pPrice"],
-    #                                         pDiscount = data_rfep["pDiscount"])
+    
+    
+    #Create the list to store results, statistics and inputs from the scenarios        
+    ls_output_rfep.append(output_rfep2)
+    ls_scenario_name.append(scenario_name)
+    ls_total_time.append(total_time)
+    ls_solution_algorithm.append(solution_algorithm)
+    #Comment line below when you do not need to export details of the scenario
+    #it just creates the parameters to export with the outputs
+    # data_rfep["sNodesVehiclesPaths"] = sNodesVehiclesPaths2
+    # data_rfep["sStationsVehiclesPaths"] = sStationsVehiclesPaths2
+    # data_rfep["sSequenceNodesNodesVehiclesPaths"] = sSequenceNodesNodesVehiclesPaths2
+    # data_rfep["sFirstStationVehiclesPaths"] = sFirstStationVehiclesPaths2
+    # data_rfep["sNotFirstStationVehiclesPaths"]=sNotFirstStationVehiclesPaths2
+    # data_rfep["sNodesPotentialNodesOriginalVehiclesPaths"]=sNodesPotentialNodesOriginalVehiclesPaths2
+    # data_rfep["sStationsPaths"] = sStationsPaths2
+    # data_rfep["pSubDistance"] = pSubDistance
+    # data_rfep["pConsumptionMainRoute"]=pConsumptionMainRoute2
+    # ls_data_rfep.append(data_rfep)
+    
+export_solution_rfep_csv.export_solution_rfep(#ls_data_rfep = ls_data_rfep,
+        ls_solution_algorithm = ls_solution_algorithm,
+        ls_scenario_name = ls_scenario_name,
+        ls_output_solve = ls_output_rfep,
+        ls_total_time = ls_total_time,
+        b_domain_reduction = True,
+        b_print_refuelling_detail = False,
+        b_print_refuelling_summary = True,        
+        b_print_location = True,
+        b_print_location_summary = True,
+        b_print_statistics = True,
+        b_retrieve_solve_ouput = True,
+        )    
+    

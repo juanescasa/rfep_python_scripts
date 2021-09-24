@@ -209,20 +209,24 @@ def solve_rfep(sNodesVehiclesPaths,
     
     #provide mip start value
     if len(mip_start)>0:
+        #this procedure iterates over the dynamic list defined by the tuples of the dictionaries of the variables
+        #This is required because the mip start may not include all the decision variables of the original problem.
+        #For intance, the mip start could come from a domain reduction procedure. 
         for (i,v,p) in mip_start["vRefuel"].keys():
             vRefuel[i,v,p].Start=mip_start["vRefuel"][i,v,p]
             vRefuelQuantity[i,v,p].Start=mip_start["vRefuelQuantity"][i,v,p]
-        for (i,v,p) in sNodesVehiclesPaths:
+        for (i,v,p) in mip_start["vInventory"].keys():
             vInventory[i,v,p].Start = mip_start["vInventory"][i,v,p]
-        for i in sOriginalStationsOwn:
+        for i in mip_start["vQuantityUnitsCapacity"].keys():
             vQuantityUnitsCapacity[i].Start = mip_start["vQuantityUnitsCapacity"][i]
-            if i in sOriginalStationsPotential:
+            if i in mip_start["vLocate"].keys():
                 vLocate[i].Start = mip_start["vLocate"][i]
         for l in sSuppliers:
             vQuantityPurchased[l].Start = mip_start["vQuantityPurchased"][l]
         for (l,g) in sSuppliersRanges:
             vPurchasedRange[l,g].Start = mip_start["vPurchasedRange"][l,g]       
-                
+    
+    
     m.optimize(callback_initial_gap)
     #l_time_track.append(('start_export_output', time.time()))
     #Dealing with infeasability
@@ -245,13 +249,13 @@ def solve_rfep(sNodesVehiclesPaths,
             
         if isONvRefuelQuantity:
             ovRefuelQuantity = m.getAttr('x', vRefuelQuantity)
-            osvRefuelQuantity = {(i,v,p): ovRefuelQuantity[i,v,p] for (i,v,p) in sStationsVehiclesPaths if ovRefuelQuantity[i,v,p]>0}
+            osvRefuelQuantity = {(i,v,p): ovRefuelQuantity[i,v,p] for (i,v,p) in sStationsVehiclesPaths if ovRefuelQuantity[i,v,p]>0.01}
         else:
             ovRefuelQuantity = {}    
-            
+        #it is greater of 0.1 to avoid precision errors.    
         if isONvRefuel:
             ovRefuel = m.getAttr('x', vRefuel)
-            osvRefuel = {(i,v,p): ovRefuel[i,v,p] for (i,v,p) in sStationsVehiclesPaths if ovRefuel[i,v,p]>0}
+            osvRefuel = {(i,v,p): ovRefuel[i,v,p] for (i,v,p) in sStationsVehiclesPaths if ovRefuel[i,v,p]>0.01}
         else:
             ovRefuel = {}
             osvRefuel = {}
