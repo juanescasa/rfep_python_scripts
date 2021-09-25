@@ -82,6 +82,7 @@ m.addConstrs((vTransport[i,j] <= M[i,j]*vOpen[i,j] for i in sOrigins for j in sD
 #create objective function
 m.setObjective(vTransport.prod(pCost) + vOpen.prod(pOpenCost) , GRB.MINIMIZE)
 
+m.Params.tuneResults = 1
 m.tune()
 for i in range(m.tuneResultCount):
     m.write('tune'+str(i)+'.prm')

@@ -61,7 +61,7 @@ ls_solution_algorithm = []
 mip_start = {} 
 #for index_scenario in [0,1]:
 #for index_scenario in range(50):
-for index_scenario in [16]:
+for index_scenario in range(20):
     start_time = time.time()    
     for t in ls_tables:
         di_table_name[t]=t+"-"+df_scenario_map[t][index_scenario]
@@ -192,13 +192,8 @@ for index_scenario in [16]:
     mip_start["vLocate"]=output_rfep[5]
     mip_start["vQuantityPurchased"]=output_rfep[6]
     mip_start["vQuantityPurchasedRange"]=output_rfep[7]
-    mip_start["vPurchasedRange"]=output_rfep[8]
-    
-    print("Refuelling quantity")
-    print(mip_start["vRefuelQuantity"])
-    print("Refuel Binary")
-    print(mip_start["vRefuelQuantity"])
-    
+    mip_start["vPurchasedRange"]=output_rfep[8]    
+
     
     output_rfep2 = rfep_model.solve_rfep(
                 sNodesVehiclesPaths = data_rfep["sNodesVehiclesPaths"],

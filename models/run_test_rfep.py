@@ -40,7 +40,7 @@ ls_solution_algorithm = []
 
 #for index_scenario in range(df_scenario_map.shape[0]):
 #for index_scenario in range(23,150,1):
-for index_scenario in [0,1,2,3]:
+for index_scenario in [0]:
 #for index_scenario in [0]:
     start_time = time.time()
     #read name of tables of scenario

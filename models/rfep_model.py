@@ -226,6 +226,10 @@ def solve_rfep(sNodesVehiclesPaths,
         for (l,g) in sSuppliersRanges:
             vPurchasedRange[l,g].Start = mip_start["vPurchasedRange"][l,g]       
     
+    #this is executed when I want to tune the model. It is still not working.
+    # m.tune()
+    # for i in range(m.tuneResultCount):
+    #     m.write('tune'+str(i)+'.prm')
     
     m.optimize(callback_initial_gap)
     #l_time_track.append(('start_export_output', time.time()))
