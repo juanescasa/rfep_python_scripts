@@ -320,7 +320,7 @@ def solve_rfep(sNodesVehiclesPaths,
         n_variables = m.Numvars
         n_integer_variables = m.NumIntVars
         n_binary_variables = m.NumBinVars
-        model_fingerprint = m.Fingerprint
+        model_fingerprint = hex(m.Fingerprint & 0xFFFFFFFF)
         model_runtime = m.Runtime
         model_MIPGap = m.Mipgap
         model_nodeCount = m.nodeCount

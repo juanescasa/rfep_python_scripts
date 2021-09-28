@@ -16,6 +16,8 @@ import csv
 import datetime
 import platform
 
+#this function is auxiliary to the main export function. I did it to add readability to the code of the main funciton
+#this fuction is defined to export the stats of solving the rfep
 def print_stats_solution_complete(file_name, current_time, ls_scenario_name, ls_output_solve, ls_total_time, machine, ls_solution_algorithm):
     for index_run in range(len(ls_total_time)):
                 with open(file_name, "a", newline = "") as f:
@@ -60,9 +62,12 @@ def print_stats_solution_complete(file_name, current_time, ls_scenario_name, ls_
                             #total_discount
                             ls_output_solve[index_run][11],
                             #total_cost
-                            ls_output_solve[index_run][12]                       
+                            ls_output_solve[index_run][12],
+                            #fingerprint
+                            ls_output_solve[index_run][17]
                             ))
-    
+
+#This function is defined when the solution to the RFEP does not come from solving an optimization problem
 def print_stats_solution_summary(file_name, current_time, ls_scenario_name, ls_total_time, machine, ls_solution_algorithm):
     for index_run in range(len(ls_total_time)):
                 with open(file_name, "a", newline = "") as f:
@@ -89,8 +94,9 @@ def print_stats_solution_summary(file_name, current_time, ls_scenario_name, ls_t
                             "",
                             "",
                             "",
+                            "",
                             ""))
-
+#this is the main function of this script
 def export_solution_rfep(ls_data_rfep = [],
                         ls_scenario_name = [],
                         ls_solution_algorithm = [],
@@ -99,38 +105,65 @@ def export_solution_rfep(ls_data_rfep = [],
                         b_domain_reduction = False,
                         b_print_refuelling_detail = False,
                         b_print_refuelling_summary = False,
-                        b_print_location = False,
+                        b_print_location_detail = False,
                         b_print_location_summary = False,
+                        b_print_suppliers = False,
                         b_print_statistics = False,
-                        b_retrieve_solve_ouput = True,                        
-                        di_event_read = {},
-                        di_process_duration_read = {}):
+                        b_retrieve_solve_ouput = True):                      
+                        
     
     """
-    export_solution_rfep prints into an excel file the solution of a run of the RFEP
+    export_solution_rfep prints into .csv files the solution of a run of the RFEP. 
+    It can print the detailed solution of the problem or a summarized version on the 
+    output depending on the configuration of all boolean variables.
     
-    :param excel_input_file: input data used to run the scenario. In multiple scenario
-                        runs this file is replaced by the folder of the generated tables                            
-                        
+    Assumptions: it assumes that exists a folder above this script which is called
+    output in which it will print the csv files
+                           
+    :param ls_data_rfep: it is a list that contain all the data related to each scenario. 
+    The index makes reference to a given scenario
+    
+    :param ls_scenario_name: the index of this list is associated to each run.
+    
+    :param ls_solution_algorithm
+    
+    :param ls_output_solve = []
+    
+    :param ls_total_time
+    
+    :param b_domain_reduction
+    
+    :param b_print_detail
+    
+    :param b_print_refuelling_summary
+    
+    :param b_print_location:
+    
+    :param b_print_location_summary:
+    
+    :param b_print_statistics:
+    
     :param b_retrieve_solve_ouput: this param must be True if the RFEP solution comes 
                 directly from solving the RFEP, otherwise (if it comes from heuristic) it should be false.
-    :param di_event_read: dictionary that holds the time in which each event in the data reading process happened
-    :param di_process_events_read: dictionary that holds the duration of each process in the data reading
+    
     :return: this function does not return anything, it just prints.
     """
     #retrieve generic parameters
     # using now() to get current time 
     current_time = datetime.datetime.now()   
+    #retrieve an id for the machine that is running
     machine = platform.uname()[1]
   
     #if b_print_refuelling_detail and model_time_first_incumbent >0:               
     if b_print_refuelling_detail:
         file_name = "..\\output\\o_refuelling_details.csv"
+        #I use ls)total_time as a generic list to get the number of runs that were run
         for index_run in range(len(ls_total_time)):
-            
             
             for (i,j,v,p) in ls_data_rfep[index_run]["sSequenceNodesNodesVehiclesPaths"]:
                 if (j,p) in ls_data_rfep[index_run]["sStationsPaths"]:
+                    #I need to know if the domain was reduced to know which distance parameter should I export
+                    #the distance(i,j,p) or distance(i,j,v,p) that comes from the domain reduction procedure
                     if b_domain_reduction:
                         with open(file_name, "a", newline = "") as f:
                             cw = csv.writer(f, delimiter=",")
@@ -180,32 +213,9 @@ def export_solution_rfep(ls_data_rfep = [],
                                          ls_data_rfep[index_run]["pQuantityVehicles"][v,p],
                                          ls_data_rfep[index_run]["pVariableCost"][v],
                                          ls_data_rfep[index_run]["pOpportunityCost"][v]))
+    
+              
                         
-
-                        
-      ##  Print location variables
-    # if b_print_location and model_time_first_incumbent >0:
-          
-    #       sheet_name = 'oOriginalStationsOwn'
-    #       ws = workbook[sheet_name]
-    #       index_row = ws.max_row    
-            
-          # for i in sOriginalStationsOwn:
-          #    index_row = index_row+1
-          #    ws.cell(row=index_row, column = 1, value = scenario)
-          #    ws.cell(row=index_row, column = 2, value = i)
-          #    if i in sOriginalStationsPotential:
-          #           ws.cell(row=index_row, column = 3, value = ovLocate[i])
-          #           ws.cell(row=index_row, column = 7, value = pLocationCost[i])
-          #    else:
-          #           ws.cell(row=index_row, column = 3, value = 0)
-          #           ws.cell(row=index_row, column = 7, value = 0)
-          #    ws.cell(row=index_row, column = 4, value = ovQuantityUnitsCapacity[i])
-          #    ws.cell(row=index_row, column = 5, value = pStationCapacity[i])
-          #    ws.cell(row=index_row, column = 6, value = pStationUnitCapacity[i])
-          #    ws.cell(row=index_row, column = 8, value = pCostUnitCapacity[i])
-          #    ws.cell(row=index_row, column = 9, value = excel_input_file)
-
     if b_print_refuelling_summary:
         if b_retrieve_solve_ouput:
             file_name = "..\\output\\o_refuelling_summary.csv"
@@ -218,11 +228,30 @@ def export_solution_rfep(ls_data_rfep = [],
                                 cw = csv.writer(f, delimiter=",")
                                 cw.writerow((current_time, ls_scenario_name[index_run], machine,
                                              ls_solution_algorithm[index_run],
-                                             i, v, p, ls_output_solve[index_run][23][i,v,p]))
-                    
+                                             i, v, p, ls_output_solve[index_run][23][i,v,p]))                 
             
         
-
+    di_refuel_qty_station = {i: sum(ls_output_solve[index_run][3][j,v,p]*ls_data_rfep[index_run]["pQuantityVehicles"][v,p]
+                                      for (j,v,p) in ls_data_rfep[index_run]["sStationsVehiclesPaths"]
+                                      if (i,j) in ls_data_rfep[index_run]["sOriginalStationsMirrorStations"]) 
+                              for i in ls_data_rfep[index_run]["sStations"]}
+    if b_print_location_detail:
+        file_name = "..\\output\\o_location_details.csv"
+        for index_run in range(len(ls_total_time)):
+            for i in ls_data_rfep[index_run]["sOriginalStationsOwn"]:
+                with open(file_name, "a", newline = "") as f:
+                             cw = csv.writer(f, delimiter=",")
+                             cw.writerow((current_time, ls_scenario_name[index_run],
+                                          machine, ls_solution_algorithm[index_run], i,
+                                          #location
+                                          ls_output_solve[index_run][5][i] if i in ls_data_rfep[index_run]["sOriginalStationsPotential"] else 0,
+                                          #units of capacity
+                                          ls_output_solve[index_run][4][i] if i in ls_data_rfep[index_run]["sOriginalStationsOwn"] else 0,
+                                          ls_data_rfep[index_run]["pStationCapacity"][i] if i in ls_data_rfep[index_run]["sOriginalStationsOwn"] else 0,
+                                          ls_data_rfep[index_run]["pStationUnitCapacity"][i] if i in ls_data_rfep[index_run]["sOriginalStationsOwn"] else 0,
+                                          ls_data_rfep[index_run]["pLocationCost"][i]  if i in ls_data_rfep[index_run]["sOriginalStationsPotential"] else 0,
+                                          ls_data_rfep[index_run]["pCostUnitCapacity"][i] if i in ls_data_rfep[index_run]["sOriginalStationsOwn"] else 0,
+                                          di_refuel_qty_station[i]))
     #if b_print_location and model_time_first_incumbent >0:
     if b_print_location_summary:
         if b_retrieve_solve_ouput:
@@ -231,30 +260,46 @@ def export_solution_rfep(ls_data_rfep = [],
                 #ovLocate = output_solve[index_run][5]
                 #ovQuantityUnitsCapacity = output_solve[4]
                 sOriginalStationsOwn = list(ls_output_solve[index_run][4].keys())
-                sOwnStationsPotential = list(ls_output_solve[index_run][5].keys())
-                for i in sOriginalStationsOwn:
-                    if i in sOwnStationsPotential:
-                        if (ls_output_solve[index_run][5][i]>0 or ls_output_solve[index_run][4][i])>0:
+                sOriginalStationsPotential = list(ls_output_solve[index_run][5].keys())
+                for i in sOriginalStationsOwn:                    
+                        if ((ls_output_solve[index_run][5][i] if i in sOriginalStationsPotential else 0) > 0 or ls_output_solve[index_run][4][i])>0:
                             with open(file_name, "a", newline = "") as f:
                                 cw = csv.writer(f, delimiter=",")
                                 cw.writerow((current_time, ls_scenario_name[index_run],
                                              machine, ls_solution_algorithm[index_run], i,
                                              #location
-                                             ls_output_solve[index_run][5][i],
+                                             ls_output_solve[index_run][5][i] if i in sOriginalStationsPotential else 0,
                                              #units of capacity
-                                             ls_output_solve[index_run][4][i]))
-                    else:
-                       if (ls_output_solve[index_run][4][i])>0:
-                            with open(file_name, "a", newline = "") as f:
-                                cw = csv.writer(f, delimiter=",")
-                                cw.writerow((current_time, ls_scenario_name[index_run],
-                                             machine, ls_solution_algorithm[index_run], i,
-                                             #location
-                                             0,
-                                             #units of capacity
-                                             ls_output_solve[index_run][4][i]))                                       
-                                         
-                                
+                                             ls_output_solve[index_run][4][i]))                                
+    #print supplier details
+    
+    if b_print_suppliers:
+        
+        if b_retrieve_solve_ouput:
+            file_name = "..\\output\\o_suppliers_details.csv"                       
+            for index_run in range(len(ls_total_time)):
+                for (l,g) in ls_data_rfep[index_run]["sSuppliersRanges"]:
+                    
+                     with open(file_name, "a", newline = "") as f:
+                                    cw = csv.writer(f, delimiter=",")
+                                    cw.writerow((current_time, ls_scenario_name[index_run],
+                                                 machine, ls_solution_algorithm[index_run], l, g,
+                                                 #purchase quantity
+                                                 ls_output_solve[index_run][6][l],
+                                                 #purchase quantity in range
+                                                 ls_output_solve[index_run][7][l,g],
+                                                 #bin purchased in range
+                                                 ls_output_solve[index_run][8][l,g],
+                                                 ls_data_rfep[index_run]["pLowerQuantityDiscount"][l,g],
+                                                 ls_data_rfep[index_run]["pUpperQuantityDiscount"][l,g],
+                                                 ls_data_rfep[index_run]["pDiscount"][l,g]))
+                                                 
+                                                 
+                                                 
+                                                 
+                
+            
+    
     if b_print_statistics:
         file_name = "..\\output\\o_scenario_stats.csv"
         if b_retrieve_solve_ouput:            

@@ -1,0 +1,638 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20183.18.1219.1533                               -->
+<workbook original-version='18.1' source-build='2018.3.2 (20183.18.1219.1533)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='o_scenario_stats2' inline='true' name='federated.1hximtz0r6r0hc1aumc6j0rt3tg7' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='o_scenario_stats2' name='textscan.0zrlt210e3wwvm1fzbze10utpssa'>
+            <connection class='textscan' directory='C:/OneDrive - Deakin University/OD/calle test/Disun Applications/Gurobi Applications/output' filename='o_scenario_stats2.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0zrlt210e3wwvm1fzbze10utpssa' name='o_scenario_stats2.csv' table='[o_scenario_stats2#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+            <column datatype='datetime' name='current time' ordinal='0' />
+            <column datatype='string' name='scenario' ordinal='1' />
+            <column datatype='integer' name='number type vehicles' ordinal='2' />
+            <column datatype='integer' name='number paths' ordinal='3' />
+            <column datatype='real' name='average stations per path' ordinal='4' />
+            <column datatype='integer' name='number candidate locations' ordinal='5' />
+            <column datatype='real' name='total time' ordinal='6' />
+            <column datatype='real' name='time Gurobi run (s)' ordinal='7' />
+            <column datatype='integer' name='number constraints' ordinal='8' />
+            <column datatype='integer' name='number variables' ordinal='9' />
+            <column datatype='integer' name='number integer variables' ordinal='10' />
+            <column datatype='integer' name='number binary variables' ordinal='11' />
+            <column datatype='real' name='MIP gap' ordinal='12' />
+            <column datatype='integer' name='node count' ordinal='13' />
+            <column datatype='real' name='initial gap' ordinal='14' />
+            <column datatype='real' name='time first incumbent' ordinal='15' />
+            <column datatype='integer' name='status' ordinal='16' />
+            <column datatype='string' name='machine' ordinal='17' />
+            <column datatype='string' name='solution algorithm' ordinal='18' />
+            <column datatype='real' name='total refuelling cost' ordinal='19' />
+            <column datatype='real' name='total location cost' ordinal='20' />
+            <column datatype='real' name='total discount' ordinal='21' />
+            <column datatype='real' name='total cost' ordinal='22' />
+            <column datatype='integer' name='fingerprint' ordinal='23' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[o_scenario_stats2.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_AU&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>current time</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[current time]</local-name>
+            <parent-name>[o_scenario_stats2.csv]</parent-name>
+            <remote-alias>current time</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>scenario</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[scenario]</local-name>
+            <parent-name>[o_scenario_stats2.csv]</parent-name>
+            <remote-alias>scenario</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>number type vehicles</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[number type vehicles]</local-name>
+            <parent-name>[o_scenario_stats2.csv]</parent-name>
+            <remote-alias>number type vehicles</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>number paths</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[number paths]</local-name>
+            <parent-name>[o_scenario_stats2.csv]</parent-name>
+            <remote-alias>number paths</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>average stations per path</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[average stations per path]</local-name>
+            <parent-name>[o_scenario_stats2.csv]</parent-name>
+            <remote-alias>average stations per path</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>number candidate locations</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[number candidate locations]</local-name>
+            <parent-name>[o_scenario_stats2.csv]</parent-name>
+            <remote-alias>number candidate locations</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total time</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[total time]</local-name>
+            <parent-name>[o_scenario_stats2.csv]</parent-name>
+            <remote-alias>total time</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>time Gurobi run (s)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[time Gurobi run (s)]</local-name>
+            <parent-name>[o_scenario_stats2.csv]</parent-name>
+            <remote-alias>time Gurobi run (s)</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>number constraints</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[number constraints]</local-name>
+            <parent-name>[o_scenario_stats2.csv]</parent-name>
+            <remote-alias>number constraints</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>number variables</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[number variables]</local-name>
+            <parent-name>[o_scenario_stats2.csv]</parent-name>
+            <remote-alias>number variables</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>number integer variables</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[number integer variables]</local-name>
+            <parent-name>[o_scenario_stats2.csv]</parent-name>
+            <remote-alias>number integer variables</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>number binary variables</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[number binary variables]</local-name>
+            <parent-name>[o_scenario_stats2.csv]</parent-name>
+            <remote-alias>number binary variables</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MIP gap</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[MIP gap]</local-name>
+            <parent-name>[o_scenario_stats2.csv]</parent-name>
+            <remote-alias>MIP gap</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>node count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[node count]</local-name>
+            <parent-name>[o_scenario_stats2.csv]</parent-name>
+            <remote-alias>node count</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>initial gap</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[initial gap]</local-name>
+            <parent-name>[o_scenario_stats2.csv]</parent-name>
+            <remote-alias>initial gap</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>time first incumbent</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[time first incumbent]</local-name>
+            <parent-name>[o_scenario_stats2.csv]</parent-name>
+            <remote-alias>time first incumbent</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>status</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[status]</local-name>
+            <parent-name>[o_scenario_stats2.csv]</parent-name>
+            <remote-alias>status</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>machine</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[machine]</local-name>
+            <parent-name>[o_scenario_stats2.csv]</parent-name>
+            <remote-alias>machine</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>solution algorithm</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[solution algorithm]</local-name>
+            <parent-name>[o_scenario_stats2.csv]</parent-name>
+            <remote-alias>solution algorithm</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total refuelling cost</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[total refuelling cost]</local-name>
+            <parent-name>[o_scenario_stats2.csv]</parent-name>
+            <remote-alias>total refuelling cost</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total location cost</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[total location cost]</local-name>
+            <parent-name>[o_scenario_stats2.csv]</parent-name>
+            <remote-alias>total location cost</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total discount</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[total discount]</local-name>
+            <parent-name>[o_scenario_stats2.csv]</parent-name>
+            <remote-alias>total discount</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total cost</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[total cost]</local-name>
+            <parent-name>[o_scenario_stats2.csv]</parent-name>
+            <remote-alias>total cost</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fingerprint</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[fingerprint]</local-name>
+            <parent-name>[o_scenario_stats2.csv]</parent-name>
+            <remote-alias>fingerprint</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Average Stations Per Path' datatype='real' name='[average stations per path]' role='measure' type='quantitative' />
+      <column aggregation='Hour' caption='Current Time' datatype='datetime' name='[current time]' role='dimension' type='ordinal' />
+      <column caption='Fingerprint' datatype='integer' name='[fingerprint]' role='measure' type='quantitative' />
+      <column caption='Initial Gap' datatype='real' name='[initial gap]' role='measure' type='quantitative' />
+      <column caption='Machine' datatype='string' name='[machine]' role='dimension' type='nominal' />
+      <column caption='Node Count' datatype='integer' name='[node count]' role='measure' type='quantitative' />
+      <column caption='Number Binary Variables' datatype='integer' name='[number binary variables]' role='measure' type='quantitative' />
+      <column caption='Number Candidate Locations' datatype='integer' name='[number candidate locations]' role='measure' type='quantitative' />
+      <column caption='Number Constraints' datatype='integer' name='[number constraints]' role='measure' type='quantitative' />
+      <column caption='Number Integer Variables' datatype='integer' name='[number integer variables]' role='measure' type='quantitative' />
+      <column caption='Number Paths' datatype='integer' name='[number paths]' role='measure' type='quantitative' />
+      <column caption='Number Type Vehicles' datatype='integer' name='[number type vehicles]' role='measure' type='quantitative' />
+      <column caption='Number Variables' datatype='integer' name='[number variables]' role='measure' type='quantitative' />
+      <column caption='Scenario' datatype='string' name='[scenario]' role='dimension' type='nominal' />
+      <column caption='Solution Algorithm' datatype='string' name='[solution algorithm]' role='dimension' type='nominal' />
+      <column caption='Status' datatype='integer' name='[status]' role='measure' type='quantitative' />
+      <column caption='Time First Incumbent' datatype='real' name='[time first incumbent]' role='measure' type='quantitative' />
+      <column caption='Total Cost' datatype='real' name='[total cost]' role='measure' type='quantitative' />
+      <column caption='Total Discount' datatype='real' name='[total discount]' role='measure' type='quantitative' />
+      <column caption='Total Location Cost' datatype='real' name='[total location cost]' role='measure' type='quantitative' />
+      <column caption='Total Refuelling Cost' datatype='real' name='[total refuelling cost]' role='measure' type='quantitative' />
+      <column caption='Total Time' datatype='real' name='[total time]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.274559' measure-ordering='alphabetic' measure-percentage='0.725441' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Australia&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='time per scenario'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='o_scenario_stats2' name='federated.1hximtz0r6r0hc1aumc6j0rt3tg7' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1hximtz0r6r0hc1aumc6j0rt3tg7'>
+            <column-instance column='[total time]' derivation='Avg' name='[avg:total time:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[scenario]' derivation='None' name='[none:scenario:nk]' pivot='key' type='nominal' />
+            <column-instance column='[solution algorithm]' derivation='None' name='[none:solution algorithm:nk]' pivot='key' type='nominal' />
+            <column caption='Scenario' datatype='string' name='[scenario]' role='dimension' type='nominal' />
+            <column caption='Solution Algorithm' datatype='string' name='[solution algorithm]' role='dimension' type='nominal' />
+            <column caption='Total Time' datatype='real' name='[total time]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='height' field='[federated.1hximtz0r6r0hc1aumc6j0rt3tg7].[none:scenario:nk]' value='227' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='pane'>
+                <format attr='minheight' value='508' />
+                <format attr='maxheight' value='508' />
+                <format attr='minwidth' value='1700' />
+                <format attr='maxwidth' value='1700' />
+                <format attr='aspect' value='0' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1hximtz0r6r0hc1aumc6j0rt3tg7].[avg:total time:qk]</rows>
+        <cols>([federated.1hximtz0r6r0hc1aumc6j0rt3tg7].[none:scenario:nk] / [federated.1hximtz0r6r0hc1aumc6j0rt3tg7].[none:solution algorithm:nk])</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='time per scenario'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1hximtz0r6r0hc1aumc6j0rt3tg7].[none:scenario:nk]</field>
+            <field>[federated.1hximtz0r6r0hc1aumc6j0rt3tg7].[none:solution algorithm:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{52EEF116-984B-4D03-980E-70F4C7766A04}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='time per scenario' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>

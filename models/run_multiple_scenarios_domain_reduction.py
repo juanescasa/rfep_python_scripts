@@ -59,9 +59,11 @@ ls_total_time = []
 ls_solution_algorithm = []
 #create dictionary to store the variables values after the domain reduction
 mip_start = {} 
+
+#for index_scenario in range(df_scenario_map.shape[0]):
 #for index_scenario in [0,1]:
 #for index_scenario in range(50):
-for index_scenario in range(20):
+for index_scenario in range(21,33,1):
     start_time = time.time()    
     for t in ls_tables:
         di_table_name[t]=t+"-"+df_scenario_map[t][index_scenario]
@@ -298,7 +300,7 @@ export_solution_rfep_csv.export_solution_rfep(#ls_data_rfep = ls_data_rfep,
         ls_output_solve = ls_output_rfep,
         ls_total_time = ls_total_time,
         b_domain_reduction = True,
-        b_print_refuelling_detail = False,
+        b_print_detail = False,
         b_print_refuelling_summary = True,        
         b_print_location = True,
         b_print_location_summary = True,

@@ -30,6 +30,8 @@ di_table_name = {}
 
 
 solution_algorithm="RFEP"
+b_print_refuelling_detail = True
+
 
 #Create list to store the results
 ls_data_rfep = []
@@ -123,8 +125,10 @@ for index_scenario in [0]:
         retrieveSolutionDetail = True)
     
     total_time = time.time()-start_time
-
-    ls_data_rfep.append(data_rfep)
+    
+    if b_print_refuelling_detail:
+        ls_data_rfep.append(data_rfep)
+        
     ls_scenario_name.append(scenario_name)
     ls_output_rfep.append(output_rfep)
     ls_total_time.append(total_time)
@@ -137,13 +141,13 @@ export_solution_rfep_csv.export_solution_rfep(ls_data_rfep = ls_data_rfep,
         ls_output_solve = ls_output_rfep,
         ls_total_time = ls_total_time,
         b_domain_reduction = False,
-        b_print_refuelling_detail = True,
-        b_print_refuelling_summary = True,        
-        b_print_location = True,
+        b_print_refuelling_detail = b_print_refuelling_detail,
+        b_print_refuelling_summary = True, 
+        b_print_location_detail = True,
         b_print_location_summary = True,
+        b_print_suppliers = True,
         b_print_statistics = True,
-        b_retrieve_solve_ouput = True,
+        b_retrieve_solve_ouput = True
         )
-        
-    
-    
+
+

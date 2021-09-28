@@ -63,7 +63,7 @@
 </stylenode>
 </map_styles>
 </hook>
-<hook NAME="AutomaticEdgeColor" COUNTER="4" RULE="ON_BRANCH_CREATION"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="5" RULE="ON_BRANCH_CREATION"/>
 <node TEXT="Projects" POSITION="right" ID="ID_1617812489" CREATED="1631613827109" MODIFIED="1631613830757">
 <edge COLOR="#ff0000"/>
 <node TEXT="Improve Performance of Data Reading" ID="ID_1091002594" CREATED="1631601371096" MODIFIED="1631613953442">
@@ -74,7 +74,7 @@
 </node>
 <node TEXT="Improve Performance of Export Results" ID="ID_1765671147" CREATED="1631601402776" MODIFIED="1631601429052"/>
 </node>
-<node TEXT="Meetings" POSITION="right" ID="ID_1973362605" CREATED="1631613831117" MODIFIED="1631613836838">
+<node TEXT="Meetings" FOLDED="true" POSITION="right" ID="ID_1973362605" CREATED="1631613831117" MODIFIED="1631613836838">
 <edge COLOR="#0000ff"/>
 <node TEXT="210915 Meeting Research Assistants" FOLDED="true" ID="ID_43151260" CREATED="1631601357232" MODIFIED="1631601367727">
 <node TEXT="Agenda" ID="ID_463215484" CREATED="1631601441352" MODIFIED="1631601515628">
@@ -110,7 +110,7 @@
 </node>
 </node>
 </node>
-<node TEXT="Videos" POSITION="right" ID="ID_1369273303" CREATED="1631945548497" MODIFIED="1631945549690">
+<node TEXT="Videos" FOLDED="true" POSITION="right" ID="ID_1369273303" CREATED="1631945548497" MODIFIED="1631945549690">
 <edge COLOR="#ff00ff"/>
 <node TEXT="Create Generated Scenarios from Generator" FOLDED="true" ID="ID_506483920" CREATED="1631945566762" MODIFIED="1631945596619">
 <node TEXT="Part 1 - Intro" ID="ID_702366680" CREATED="1631946859785" MODIFIED="1631946865875">
@@ -174,6 +174,22 @@
 </node>
 </node>
 <node TEXT="Part 4 - The Dynamic Parameters" ID="ID_315793067" CREATED="1631946871650" MODIFIED="1631946882387"/>
+</node>
+</node>
+<node TEXT="Ideas" FOLDED="true" POSITION="right" ID="ID_1765479289" CREATED="1632713888979" MODIFIED="1632713890499">
+<edge COLOR="#00ffff"/>
+<node TEXT="Ideas to improve the performance of the data reading" ID="ID_38642095" CREATED="1632713890742" MODIFIED="1632713904019">
+<node TEXT="Test" ID="ID_1909201262" CREATED="1629093120629" MODIFIED="1629093122565">
+<node TEXT="Try to read list using list comprehensions instead of for" ID="ID_1172707465" CREATED="1629093162956" MODIFIED="1629093176287"/>
+<node TEXT="Remove unused dataframes" ID="ID_926082788" CREATED="1629093122788" MODIFIED="1629093133910">
+<node TEXT="from the scenario generation" ID="ID_182663759" CREATED="1629093136494" MODIFIED="1629093141133"/>
+<node TEXT="from the read data function" ID="ID_969590917" CREATED="1629093141740" MODIFIED="1629093150301"/>
+</node>
+<node TEXT="Convert for into whiles" ID="ID_1591942628" CREATED="1629093154053" MODIFIED="1629093162263">
+<node TEXT="it was and adivse I saw on the web" ID="ID_1348151892" CREATED="1632714063018" MODIFIED="1632714069683"/>
+</node>
+<node TEXT="Remember that when I was learning python I used another approach to read the data much quicker than using dataframes" ID="ID_456953488" CREATED="1629869428495" MODIFIED="1629869451754"/>
+</node>
 </node>
 </node>
 <node TEXT="Agreements" POSITION="right" ID="ID_1353726954" CREATED="1631613901121" MODIFIED="1631613903434">

@@ -1,0 +1,626 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2020.4">
+  <Nodes>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>outputRFEP_v3 seems to be good for union.xlsx
+Query=`oScenarioStats$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="input file" size="255" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="V_String" />
+            <Field name="Scenario1" size="255" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="V_String" />
+            <Field name="number type vehicles" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="number paths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="average stations per path" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="number candidate locations" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time read data (s)" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time calculate parameters (s)" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time generate model (s)" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time optimise model (s)" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time export results (s)" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time Gurobi run (s)" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="number constraints" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="number variables" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="number integer variables" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="number binary variables" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="model fingerprint" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="MIP gap" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="total time" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="node count" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="initial gap" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time first incumbent" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="status" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_read_df_vehicles" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_assignment_df_vehicles" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_read_df_suppliers" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_assigment_df_suppliers" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_read_df_ranges" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_assignment_df_ranges" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_read_df_NodesNodes" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_assignment_df_NodesNodes" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_read_df_SubStations" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_assignment_df_SubStations" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_read_df_VehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_assignment_df_VehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_read_df_NodesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_assignment_df_NodesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_read_df_SuppliersRange" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_assignment_df_SuppliersRange" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_read_df_NodesNodesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_assignment_df_NodesNodesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_sStations" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_sStationsPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_sNodesVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_sStationsVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_sDestinationVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_sOriginVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_sFirstStationVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_sAuxNotFirstStationVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_sNotFirstStationVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_sNodesPotentialNodesOriginalVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_sSequenceNodesNodesVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_sStationsSuppliers" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_pPrice" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_pConsumptionOOP" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_pConsumptionMainRoute" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_pQuantityVehicles" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_calculate_pStartInventory" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="time_end_process" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_read_df_vehicles" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_assignment_df_vehicles" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_read_df_suppliers" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_assigment_df_suppliers" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_read_df_ranges" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_assignment_df_ranges" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_read_df_NodesNodes" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_assignment_df_NodesNodes" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_read_df_SubStations" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_assignment_df_SubStations" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_read_df_VehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_assignment_df_VehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_read_df_NodesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_assignment_df_NodesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_read_df_SuppliersRange" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_assignment_df_SuppliersRange" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_read_df_NodesNodesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_assignment_df_NodesNodesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_sStations" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_sStationsPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_sNodesVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_sStationsVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_sDestinationVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_sOriginVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_sFirstStationVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_sAuxNotFirstStationVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_sNotFirstStationVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_sNodesPotentialNodesOriginalVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_sSequenceNodesNodesVehiclesPaths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_sStationsSuppliers" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_pPrice" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_pConsumptionOOP" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_pConsumptionMainRoute" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_pQuantityVehicles" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="duration_calculate_pStartInventory" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="solution algorithm" size="255" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="V_String" />
+            <Field name="Path Length" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="Double" />
+            <Field name="Scenario-pre" size="255" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="V_String" />
+            <Field name="Scenario" size="255" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 seems to be good for union.xlsx|||`oScenarioStats$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="510" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <AutoResetMode>Custom</AutoResetMode>
+          <MultiMetaInfo>
+            <MetaInfo name="#1">
+              <RecordInfo>
+                <Field name="current time" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats.csv" type="V_WString" column="1" />
+                <Field name="scenario" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats.csv" type="V_WString" column="2" />
+                <Field name="number type vehicles" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats.csv" type="V_WString" column="3" />
+                <Field name="number paths" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats.csv" type="V_WString" column="4" />
+                <Field name="average stations per path" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats.csv" type="V_WString" column="5" />
+                <Field name="number candidate locations" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats.csv" type="V_WString" column="6" />
+                <Field name="total time" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats.csv" type="V_WString" column="7" />
+                <Field name="time Gurobi run (s)" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats.csv" type="V_WString" column="8" />
+                <Field name="number constraints" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats.csv" type="V_WString" column="9" />
+                <Field name="number variables" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats.csv" type="V_WString" column="10" />
+                <Field name="number integer variables" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats.csv" type="V_WString" column="11" />
+                <Field name="number binary variables" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats.csv" type="V_WString" column="12" />
+                <Field name="MIP gap" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats.csv" type="V_WString" column="13" />
+                <Field name="node count" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats.csv" type="V_WString" column="14" />
+                <Field name="initial gap" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats.csv" type="V_WString" column="15" />
+                <Field name="time first incumbent" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats.csv" type="V_WString" column="16" />
+                <Field name="status" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats.csv" type="V_WString" column="17" />
+                <Field name="machine" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats.csv" type="V_WString" column="18" />
+                <Field name="solution algorithm" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats.csv" type="V_WString" column="19" />
+                <Field name="total refuelling cost" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats.csv" type="V_WString" column="20" />
+                <Field name="total location cost" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats.csv" type="V_WString" column="21" />
+                <Field name="total discount" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats.csv" type="V_WString" column="22" />
+                <Field name="total cost" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats.csv" type="V_WString" column="23" />
+                <Field name="fingerprint" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats.csv" type="V_WString" column="24" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo name="#2">
+              <RecordInfo>
+                <Field name="Scenario" size="255" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oScenarioStats$`" type="V_String" column="2" />
+                <Field name="number type vehicles" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oScenarioStats$`" type="Double" column="3" />
+                <Field name="number paths" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oScenarioStats$`" type="Double" column="4" />
+                <Field name="average stations per path" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oScenarioStats$`" type="Double" column="5" />
+                <Field name="number candidate locations" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oScenarioStats$`" type="Double" column="6" />
+                <Field name="total time" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oScenarioStats$`" type="Double" column="7" />
+                <Field name="time Gurobi run (s)" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oScenarioStats$`" type="Double" column="8" />
+                <Field name="number constraints" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oScenarioStats$`" type="Double" column="9" />
+                <Field name="number variables" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oScenarioStats$`" type="Double" column="10" />
+                <Field name="number integer variables" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oScenarioStats$`" type="Double" column="11" />
+                <Field name="number binary variables" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oScenarioStats$`" type="Double" column="12" />
+                <Field name="MIP gap" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oScenarioStats$`" type="Double" column="13" />
+                <Field name="node count" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oScenarioStats$`" type="Double" column="14" />
+                <Field name="initial gap" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oScenarioStats$`" type="Double" column="15" />
+                <Field name="time first incumbent" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oScenarioStats$`" type="Double" column="16" />
+                <Field name="status" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oScenarioStats$`" type="Double" column="17" />
+                <Field name="solution algorithm" size="255" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oScenarioStats$`" type="V_String" column="19" />
+                <Field name="TotalRefuellingCost" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oTotalCost$`" type="Double" column="20" />
+                <Field name="TotalLocationCost" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oTotalCost$`" type="Double" column="21" />
+                <Field name="TotalDiscount" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oTotalCost$`" type="Double" column="22" />
+                <Field name="TotalCost" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oTotalCost$`" type="Double" column="23" />
+                <Field name="model fingerprint" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oScenarioStats$`" type="Double" column="24" />
+                <Field name="time read data (s)" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oScenarioStats$`" type="Double" column="25" />
+                <Field name="time calculate parameters (s)" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oScenarioStats$`" type="Double" column="26" />
+                <Field name="time generate model (s)" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oScenarioStats$`" type="Double" column="27" />
+                <Field name="time optimise model (s)" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oScenarioStats$`" type="Double" column="28" />
+                <Field name="time export results (s)" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oScenarioStats$`" type="Double" column="29" />
+              </RecordInfo>
+            </MetaInfo>
+          </MultiMetaInfo>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ManualDelayed</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oTotalCost$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>outputRFEP_v3 Analysis for union.xlsx
+Query=`oTotalCost$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Scenario1" size="255" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oTotalCost$`" type="V_String" />
+            <Field name="TotalRefuellingCost" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oTotalCost$`" type="Double" />
+            <Field name="TotalLocationCost" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oTotalCost$`" type="Double" />
+            <Field name="TotalDiscount" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oTotalCost$`" type="Double" />
+            <Field name="TotalCost" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oTotalCost$`" type="Double" />
+            <Field name="input file" size="255" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oTotalCost$`" type="V_String" />
+            <Field name="solution algorithm" size="255" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oTotalCost$`" type="V_String" />
+            <Field name="Path length" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oTotalCost$`" type="Double" />
+            <Field name="Scenario" size="255" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\outputRFEP_v3 Analysis for union.xlsx|||`oTotalCost$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="174" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="solution algorithm" />
+            <Field field="Scenario" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="174" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="solution algorithm" />
+            <Field field="Scenario" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="28" y="4" width="151" height="165" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 7</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="1">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="53" y="53" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats_old.csv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreErrors>False</IgnoreErrors>
+                <AllowShareWrite>False</AllowShareWrite>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>,</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>o_scenario_stats_old.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="current time" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats_old.csv" type="V_WString" />
+                <Field name="scenario" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats_old.csv" type="V_WString" />
+                <Field name="number type vehicles" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats_old.csv" type="V_WString" />
+                <Field name="number paths" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats_old.csv" type="V_WString" />
+                <Field name="average stations per path" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats_old.csv" type="V_WString" />
+                <Field name="number candidate locations" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats_old.csv" type="V_WString" />
+                <Field name="total time" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats_old.csv" type="V_WString" />
+                <Field name="time Gurobi run (s)" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats_old.csv" type="V_WString" />
+                <Field name="number constraints" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats_old.csv" type="V_WString" />
+                <Field name="number variables" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats_old.csv" type="V_WString" />
+                <Field name="number integer variables" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats_old.csv" type="V_WString" />
+                <Field name="number binary variables" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats_old.csv" type="V_WString" />
+                <Field name="MIP gap" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats_old.csv" type="V_WString" />
+                <Field name="node count" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats_old.csv" type="V_WString" />
+                <Field name="initial gap" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats_old.csv" type="V_WString" />
+                <Field name="time first incumbent" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats_old.csv" type="V_WString" />
+                <Field name="status" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats_old.csv" type="V_WString" />
+                <Field name="machine" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats_old.csv" type="V_WString" />
+                <Field name="solution algorithm" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats_old.csv" type="V_WString" />
+                <Field name="total refuelling cost" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats_old.csv" type="V_WString" />
+                <Field name="total location cost" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats_old.csv" type="V_WString" />
+                <Field name="total discount" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats_old.csv" type="V_WString" />
+                <Field name="total cost" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats_old.csv" type="V_WString" />
+                <Field name="fingerprint" size="254" source="File: C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\output\o_scenario_stats_old.csv" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="294" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Scenario" />
+            <Field field="solution algorithm" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Scenario" />
+            <Field field="solution algorithm" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_input file" selected="False" input="Left_" />
+                <SelectField field="Left_Scenario1" selected="False" input="Left_" />
+                <SelectField field="Left_time_read_df_vehicles" selected="False" input="Left_" />
+                <SelectField field="Left_time_assignment_df_vehicles" selected="False" input="Left_" />
+                <SelectField field="Left_time_read_df_suppliers" selected="False" input="Left_" />
+                <SelectField field="Left_time_assigment_df_suppliers" selected="False" input="Left_" />
+                <SelectField field="Left_time_read_df_ranges" selected="False" input="Left_" />
+                <SelectField field="Left_time_assignment_df_ranges" selected="False" input="Left_" />
+                <SelectField field="Left_time_read_df_NodesNodes" selected="False" input="Left_" />
+                <SelectField field="Left_time_assignment_df_NodesNodes" selected="False" input="Left_" />
+                <SelectField field="Left_time_read_df_SubStations" selected="False" input="Left_" />
+                <SelectField field="Left_time_assignment_df_SubStations" selected="False" input="Left_" />
+                <SelectField field="Left_time_read_df_VehiclesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_time_assignment_df_VehiclesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_time_read_df_NodesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_time_assignment_df_NodesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_time_read_df_SuppliersRange" selected="False" input="Left_" />
+                <SelectField field="Left_time_assignment_df_SuppliersRange" selected="False" input="Left_" />
+                <SelectField field="Left_time_read_df_NodesNodesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_time_assignment_df_NodesNodesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_time_calculate_sStations" selected="False" input="Left_" />
+                <SelectField field="Left_time_calculate_sStationsPaths" selected="False" input="Left_" />
+                <SelectField field="Left_time_calculate_sNodesVehiclesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_time_calculate_sStationsVehiclesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_time_calculate_sDestinationVehiclesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_time_calculate_sOriginVehiclesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_time_calculate_sFirstStationVehiclesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_time_calculate_sAuxNotFirstStationVehiclesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_time_calculate_sNotFirstStationVehiclesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_time_calculate_sNodesPotentialNodesOriginalVehiclesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_time_calculate_sSequenceNodesNodesVehiclesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_time_calculate_sStationsSuppliers" selected="False" input="Left_" />
+                <SelectField field="Left_time_calculate_pPrice" selected="False" input="Left_" />
+                <SelectField field="Left_time_calculate_pConsumptionOOP" selected="False" input="Left_" />
+                <SelectField field="Left_time_calculate_pConsumptionMainRoute" selected="False" input="Left_" />
+                <SelectField field="Left_time_calculate_pQuantityVehicles" selected="False" input="Left_" />
+                <SelectField field="Left_time_calculate_pStartInventory" selected="False" input="Left_" />
+                <SelectField field="Left_time_end_process" selected="False" input="Left_" />
+                <SelectField field="Left_duration_read_df_vehicles" selected="False" input="Left_" />
+                <SelectField field="Left_duration_assignment_df_vehicles" selected="False" input="Left_" />
+                <SelectField field="Left_duration_read_df_suppliers" selected="False" input="Left_" />
+                <SelectField field="Left_duration_assigment_df_suppliers" selected="False" input="Left_" />
+                <SelectField field="Left_duration_read_df_ranges" selected="False" input="Left_" />
+                <SelectField field="Left_duration_assignment_df_ranges" selected="False" input="Left_" />
+                <SelectField field="Left_duration_read_df_NodesNodes" selected="False" input="Left_" />
+                <SelectField field="Left_duration_assignment_df_NodesNodes" selected="False" input="Left_" />
+                <SelectField field="Left_duration_read_df_SubStations" selected="False" input="Left_" />
+                <SelectField field="Left_duration_assignment_df_SubStations" selected="False" input="Left_" />
+                <SelectField field="Left_duration_read_df_VehiclesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_duration_assignment_df_VehiclesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_duration_read_df_NodesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_duration_assignment_df_NodesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_duration_read_df_SuppliersRange" selected="False" input="Left_" />
+                <SelectField field="Left_duration_assignment_df_SuppliersRange" selected="False" input="Left_" />
+                <SelectField field="Left_duration_read_df_NodesNodesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_duration_assignment_df_NodesNodesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_duration_calculate_sStations" selected="False" input="Left_" />
+                <SelectField field="Left_duration_calculate_sStationsPaths" selected="False" input="Left_" />
+                <SelectField field="Left_duration_calculate_sNodesVehiclesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_duration_calculate_sStationsVehiclesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_duration_calculate_sDestinationVehiclesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_duration_calculate_sOriginVehiclesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_duration_calculate_sFirstStationVehiclesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_duration_calculate_sAuxNotFirstStationVehiclesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_duration_calculate_sNotFirstStationVehiclesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_duration_calculate_sNodesPotentialNodesOriginalVehiclesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_duration_calculate_sSequenceNodesNodesVehiclesPaths" selected="False" input="Left_" />
+                <SelectField field="Left_duration_calculate_sStationsSuppliers" selected="False" input="Left_" />
+                <SelectField field="Left_duration_calculate_pPrice" selected="False" input="Left_" />
+                <SelectField field="Left_duration_calculate_pConsumptionOOP" selected="False" input="Left_" />
+                <SelectField field="Left_duration_calculate_pConsumptionMainRoute" selected="False" input="Left_" />
+                <SelectField field="Left_duration_calculate_pQuantityVehicles" selected="False" input="Left_" />
+                <SelectField field="Left_duration_calculate_pStartInventory" selected="False" input="Left_" />
+                <SelectField field="Left_Path Length" selected="False" input="Left_" />
+                <SelectField field="Right_Scenario1" selected="False" rename="Right_Scenario1" input="Right_" />
+                <SelectField field="Right_input file" selected="False" rename="Right_input file" input="Right_" />
+                <SelectField field="Right_solution algorithm" selected="False" rename="Right_solution algorithm" input="Right_" />
+                <SelectField field="Right_Path length" selected="False" rename="Right_Path length" input="Right_" />
+                <SelectField field="Right_Scenario" selected="False" rename="Right_Scenario" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="606" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="current time" selected="True" type="WString" size="254" />
+            <SelectField field="number type vehicles" selected="True" type="Int16" size="2" />
+            <SelectField field="number paths" selected="True" type="Int16" size="2" />
+            <SelectField field="average stations per path" selected="True" type="Double" size="8" />
+            <SelectField field="number candidate locations" selected="True" type="Double" size="8" />
+            <SelectField field="total time" selected="True" type="Double" size="8" />
+            <SelectField field="time Gurobi run (s)" selected="True" type="Double" size="8" />
+            <SelectField field="number constraints" selected="True" type="Int64" size="8" />
+            <SelectField field="number variables" selected="True" type="Int64" size="8" />
+            <SelectField field="number integer variables" selected="True" type="Int64" size="8" />
+            <SelectField field="number binary variables" selected="True" type="Int64" size="8" />
+            <SelectField field="MIP gap" selected="True" type="Double" size="8" />
+            <SelectField field="node count" selected="True" type="Int64" size="8" />
+            <SelectField field="initial gap" selected="True" type="Double" size="8" />
+            <SelectField field="time first incumbent" selected="True" type="Double" size="8" />
+            <SelectField field="status" selected="True" type="Int16" size="2" />
+            <SelectField field="total refuelling cost" selected="True" type="Double" size="8" />
+            <SelectField field="total location cost" selected="True" type="Double" size="8" />
+            <SelectField field="total discount" selected="True" type="Double" size="8" />
+            <SelectField field="total cost" selected="True" type="Double" size="8" />
+            <SelectField field="time read data (s)" selected="False" />
+            <SelectField field="time calculate parameters (s)" selected="False" />
+            <SelectField field="time generate model (s)" selected="False" />
+            <SelectField field="time optimise model (s)" selected="False" />
+            <SelectField field="time export results (s)" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="726" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="0">o_scenario_stats2.csv</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <LineEndStyle>CRLF</LineEndStyle>
+            <Delimeter>,</Delimeter>
+            <ForceQuotes>False</ForceQuotes>
+            <HeaderRow>True</HeaderRow>
+            <CodePage>28591</CodePage>
+            <WriteBOM>True</WriteBOM>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>o_scenario_stats2.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Unique" />
+      <Destination ToolID="8" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Unique" />
+      <Destination ToolID="8" Connection="Right" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="8" Connection="Join" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Union Scenario Stats</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
