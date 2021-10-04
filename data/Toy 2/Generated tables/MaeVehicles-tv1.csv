@@ -1,0 +1,2 @@
+COD_VEHICLE,pSafetyStock,pTankCapacity,pConsumptionRate,pMinRefuel,pVariableCost,pOpportunityCost,pStartInventory,pTargetInventory
+2LKM-40L,1,40,2,2,0.5,7,40,20
