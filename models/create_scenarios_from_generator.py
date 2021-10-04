@@ -206,7 +206,10 @@ for p_level in sr_level_paths:
             df_substations = df_substations_aux.copy()
             
          
-    
+    #I think this definition of ranges should be inside the loop of suppliers. 
+    #Since all suppliers has the same ranges, the definition here should not be a problem
+    #I am not going to explore this further.
+    #211004
     export_string = folder_child + "MaeRanges-pa"+str(p_level) + ".csv"
     df_ranges = pd.DataFrame(df_suppliers_ranges["COD_RANGE"].unique(), columns=["COD_RANGE"])
     df_ranges.to_csv(export_string, index=False)  
@@ -247,7 +250,6 @@ for v_level in sr_level_vehicles:
         df_vehicles_paths2 = pd.merge(df_vehicles_paths, di_cod_path[p_level], how = "inner", \
                         on = ["COD_PATH"])
         df_vehicles_paths2.to_csv(export_string, index=False)
-
 
 ls_start_time.append(('read_scenario', time.time()))
 #%%

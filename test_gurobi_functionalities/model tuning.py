@@ -82,10 +82,17 @@ m.addConstrs((vTransport[i,j] <= M[i,j]*vOpen[i,j] for i in sOrigins for j in sD
 #create objective function
 m.setObjective(vTransport.prod(pCost) + vOpen.prod(pOpenCost) , GRB.MINIMIZE)
 
+m.Params.TuneTrials = 10
 m.Params.tuneResults = 1
+
 m.tune()
-for i in range(m.tuneResultCount):
-    m.write('tune'+str(i)+'.prm')
+
+if m.tuneResultCount>0:
+    m.getTuneResult(0)
+    m.write('tune_fctp2.prm')
+    print("I tune something")
+#for i in range(m.tuneResultCount):
+#    m.write('tune'+str(i)+'.prm')
     
 m.optimize()
 print()
@@ -96,3 +103,5 @@ for i in sOrigins:
     for j in sDestinations:
         if solution[i,j]>0:
             print('%s -> %s: %g' % (i, j,  solution[i,j]))
+
+m.write("fctp.mps")

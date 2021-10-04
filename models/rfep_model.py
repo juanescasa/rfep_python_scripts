@@ -212,6 +212,9 @@ def solve_rfep(sNodesVehiclesPaths,
         #this procedure iterates over the dynamic list defined by the tuples of the dictionaries of the variables
         #This is required because the mip start may not include all the decision variables of the original problem.
         #For intance, the mip start could come from a domain reduction procedure. 
+        for (i,v,p) in sStationsVehiclesPaths:
+            vRefuel[i,v,p].Start = 0
+            vRefuelQuantity[i,v,p].Start = 0       
         for (i,v,p) in mip_start["vRefuel"].keys():
             vRefuel[i,v,p].Start=mip_start["vRefuel"][i,v,p]
             vRefuelQuantity[i,v,p].Start=mip_start["vRefuelQuantity"][i,v,p]
@@ -224,7 +227,7 @@ def solve_rfep(sNodesVehiclesPaths,
         for l in sSuppliers:
             vQuantityPurchased[l].Start = mip_start["vQuantityPurchased"][l]
         for (l,g) in sSuppliersRanges:
-            vPurchasedRange[l,g].Start = mip_start["vPurchasedRange"][l,g]       
+            vPurchasedRange[l,g].Start = mip_start["vPurchasedRange"][l,g]
     
     #this is executed when I want to tune the model. It is still not working.
     # m.tune()

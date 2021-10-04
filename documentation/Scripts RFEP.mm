@@ -210,8 +210,8 @@
 <node TEXT="Incorporates all factors to generate scenarios" ID="ID_1150793846" CREATED="1627533222517" MODIFIED="1627533230567"/>
 </node>
 <node TEXT="Pseudocode" ID="ID_729152486" CREATED="1628482233467" MODIFIED="1628482235527">
-<node TEXT="Table generation" FOLDED="true" ID="ID_282420319" CREATED="1628482908838" MODIFIED="1628482912150">
-<node TEXT="Create function to export tables" ID="ID_1853520939" CREATED="1628482253646" MODIFIED="1628482266658">
+<node TEXT="Table generation" ID="ID_282420319" CREATED="1628482908838" MODIFIED="1628482912150">
+<node TEXT="Create function to export tables" FOLDED="true" ID="ID_1853520939" CREATED="1628482253646" MODIFIED="1628482266658">
 <node TEXT="MaeSuppliers" ID="ID_885790166" CREATED="1628482266893" MODIFIED="1628482293052"/>
 <node TEXT="SuppliersRanges" ID="ID_1129544215" CREATED="1628482273177" MODIFIED="1628482282215"/>
 <node TEXT="SubStations" ID="ID_501423413" CREATED="1628482283292" MODIFIED="1628482285748"/>
@@ -233,15 +233,15 @@
 <node TEXT="Read levels of factors" ID="ID_1176402216" CREATED="1626744996510" MODIFIED="1626745001033">
 <node TEXT="I read the different levels I want to give to the factors" ID="ID_611511135" CREATED="1626745001287" MODIFIED="1627262281166"/>
 </node>
-<node TEXT="Read valid combinations own stations * candidate locations" FOLDED="true" ID="ID_1550791942" CREATED="1628482520673" MODIFIED="1628482532215">
+<node TEXT="Read valid combinations own stations * candidate locations" ID="ID_1550791942" CREATED="1628482520673" MODIFIED="1628482532215">
 <node TEXT="There are some combinations of these two factor which are not valid. But this is defined in scenario map. So I make use of it" ID="ID_609825367" CREATED="1628482532469" MODIFIED="1628482558004"/>
 </node>
 <node TEXT="Define survivor supplier" ID="ID_461429048" CREATED="1628482566927" MODIFIED="1628482572824"/>
-<node TEXT="Create generated tables" FOLDED="true" ID="ID_1674124772" CREATED="1626745241462" MODIFIED="1626831497759">
+<node TEXT="Create generated tables" FOLDED="true" ID="ID_1674124772" CREATED="1626745241462" MODIFIED="1633317891161">
 <node TEXT="Tables that depends on the level of vehicles" ID="ID_967959925" CREATED="1626745252441" MODIFIED="1626745269288">
 <node TEXT="MaeVehicles" ID="ID_1214161828" CREATED="1626763791934" MODIFIED="1626763799418"/>
 </node>
-<node TEXT="Tables that depends on the level of paths" ID="ID_961284889" CREATED="1626745269423" MODIFIED="1626745289593">
+<node TEXT="Tables that depends on the level of paths" FOLDED="true" ID="ID_961284889" CREATED="1626745269423" MODIFIED="1626745289593">
 <node TEXT="NodesPaths" ID="ID_1002231025" CREATED="1626740135541" MODIFIED="1626740142104"/>
 <node TEXT="NodesNodesPaths" ID="ID_1090743849" CREATED="1626740563332" MODIFIED="1626740567135"/>
 <node TEXT="MaeNodes" ID="ID_122927250" CREATED="1626740095796" MODIFIED="1626740127856">
@@ -251,7 +251,7 @@
 <node TEXT="Less paths, likely less nodes" ID="ID_634258965" CREATED="1626740307094" MODIFIED="1626740414573"/>
 </node>
 <node TEXT="Tables that depend on" ID="ID_922996083" CREATED="1628482631247" MODIFIED="1628482641906">
-<node TEXT="factors" ID="ID_1221117881" CREATED="1628482682195" MODIFIED="1628482683497">
+<node TEXT="factors" ID="ID_1221117881" CREATED="1628482682195" MODIFIED="1633307980834">
 <node TEXT="suppliers" ID="ID_1121155888" CREATED="1628482642447" MODIFIED="1628482724103">
 <icon BUILTIN="flag-yellow"/>
 </node>
@@ -268,14 +268,15 @@
 <icon BUILTIN="flag-green"/>
 <icon BUILTIN="flag-pink"/>
 <node TEXT="Less paths, likely less stations" ID="ID_1300471756" CREATED="1626740294325" MODIFIED="1626740418030"/>
-</node>
-<node TEXT="SupplierRanges" ID="ID_25884035" CREATED="1626740380741" MODIFIED="1628482729730">
-<icon BUILTIN="flag-yellow"/>
-<node TEXT="Less suppliers, then less suppliers ranges" ID="ID_1879608955" CREATED="1626740445798" MODIFIED="1626740483361"/>
+<node TEXT="own stations and candidate location factors change the column in the table" ID="ID_569173321" CREATED="1633307996973" MODIFIED="1633308019968"/>
 </node>
 <node TEXT="MaeSuppliers" ID="ID_1841238536" CREATED="1626740270653" MODIFIED="1628482729730">
 <icon BUILTIN="flag-yellow"/>
 <node TEXT="Less stations, might reduce the suppliers in the network" ID="ID_780856500" CREATED="1626740286805" MODIFIED="1626740380131"/>
+</node>
+<node TEXT="SupplierRanges" ID="ID_25884035" CREATED="1626740380741" MODIFIED="1628482729730">
+<icon BUILTIN="flag-yellow"/>
+<node TEXT="Less suppliers, then less suppliers ranges" ID="ID_1879608955" CREATED="1626740445798" MODIFIED="1626740483361"/>
 </node>
 </node>
 </node>
@@ -283,7 +284,7 @@
 <node TEXT="Less SuppliersRanges could reduce the number of ranges" ID="ID_152360300" CREATED="1626740488814" MODIFIED="1626740526072"/>
 </node>
 </node>
-<node TEXT="Check feasibility of vehicles_paths" ID="ID_1951884130" CREATED="1628482779652" MODIFIED="1628482795775"/>
+<node TEXT="Check feasibility of vehicles_paths" ID="ID_1951884130" CREATED="1628482779652" MODIFIED="1633317891161"/>
 <node TEXT="Tables that depends on the variation of both: vehicles and paths" ID="ID_291417362" CREATED="1626745289790" MODIFIED="1626745307370">
 <node TEXT="VehiclesPaths" ID="ID_917577602" CREATED="1626763801043" MODIFIED="1626763943214"/>
 </node>

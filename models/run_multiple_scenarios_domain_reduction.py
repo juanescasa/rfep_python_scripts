@@ -36,7 +36,7 @@ ls_tables = ['MaeNodes', 'MaeVehicles', 'MaeSuppliers', 'MaeRanges', 'MaePaths',
 folder_path = "..\data\\"
 
 #Each scenario generator change this
-folder_name = "Path 2000"
+folder_name = "Generator instance 5000km"
 folder_parent = folder_path + folder_name + '\\'
 
 file_name = "Scenario Map.xlsx"
@@ -60,18 +60,22 @@ ls_solution_algorithm = []
 #create dictionary to store the variables values after the domain reduction
 mip_start = {} 
 
+start_time = {}
+total_time = {}
 #for index_scenario in range(df_scenario_map.shape[0]):
-#for index_scenario in [0,1]:
+for index_scenario in [115, 116]:
 #for index_scenario in range(50):
-for index_scenario in range(21,33,1):
-    start_time = time.time()    
+#for index_scenario in range(21,33,1):
+    scenario_name = df_scenario_map["COD_SCENARIO"][index_scenario] + "-lenPath5000"  
     for t in ls_tables:
         di_table_name[t]=t+"-"+df_scenario_map[t][index_scenario]
     
     data_rfep = rd_rfep.read_data_rfep(folder_child, di_table_name, 
                                        is_to_generate_scenarios=False)
     #di_duration_event_scenario[index_scenario] =  data_rfep['di_time_event']
-       
+    
+    
+    start_time["domain_reduction"] = time.time()
     output_domain_reduction = reduce_stations_path.reduce_stations_path(
                             factor_options = 3,
                             factor_price = 2,
@@ -118,7 +122,8 @@ for index_scenario in range(21,33,1):
     sStationsPaths2 = output_domain_reduction[6]
     pSubDistance = output_domain_reduction[7]
     pConsumptionMainRoute2=output_domain_reduction[8]
-
+    
+    #Solve problem given domain reduction
     output_rfep = rfep_model.solve_rfep(
                 sNodesVehiclesPaths = sNodesVehiclesPaths2,
                 sStationsVehiclesPaths = sStationsVehiclesPaths2,
@@ -186,6 +191,15 @@ for index_scenario in range(21,33,1):
                 isONtotalLocationCost = True,
                 isONtotalDiscount = True,
                 timeLimit = 3600)
+    
+    total_time['domain_reduction'] = time.time() - start_time['domain_reduction']
+    solution_algorithm = "drx3-RFEP"
+    ls_output_rfep.append(output_rfep)
+    ls_scenario_name.append(scenario_name)
+    ls_total_time.append(total_time['domain_reduction'])
+    ls_solution_algorithm.append(solution_algorithm)   
+    
+    
     #store the value of the variables
     mip_start["vInventory"]=output_rfep[1]
     mip_start["vRefuelQuantity"]=output_rfep[23]
@@ -264,22 +278,19 @@ for index_scenario in range(21,33,1):
                 isONtotalLocationCost = True,
                 isONtotalDiscount = True,
                 timeLimit = 3600,
-                mip_start = mip_start)
+                mip_start = mip_start)   
+       
     
+    total_time['domain_reduction_mipstart'] = time.time()-start_time['domain_reduction']
     
-
-    
-    
-    total_time = time.time()-start_time
-    scenario_name = df_scenario_map["COD_SCENARIO"][index_scenario] + "-lenPath2000"
-    solution_algorithm = "drx3-mipstart-RFEP"
+    solution_algorithm = "drx3-mipstart0-RFEP"
     
     
     
     #Create the list to store results, statistics and inputs from the scenarios        
     ls_output_rfep.append(output_rfep2)
     ls_scenario_name.append(scenario_name)
-    ls_total_time.append(total_time)
+    ls_total_time.append(total_time['domain_reduction_mipstart'])
     ls_solution_algorithm.append(solution_algorithm)
     #Comment line below when you do not need to export details of the scenario
     #it just creates the parameters to export with the outputs
@@ -293,18 +304,18 @@ for index_scenario in range(21,33,1):
     # data_rfep["pSubDistance"] = pSubDistance
     # data_rfep["pConsumptionMainRoute"]=pConsumptionMainRoute2
     # ls_data_rfep.append(data_rfep)
-    
+
 export_solution_rfep_csv.export_solution_rfep(#ls_data_rfep = ls_data_rfep,
         ls_solution_algorithm = ls_solution_algorithm,
         ls_scenario_name = ls_scenario_name,
         ls_output_solve = ls_output_rfep,
         ls_total_time = ls_total_time,
         b_domain_reduction = True,
-        b_print_detail = False,
+        b_print_refuelling_detail = False,
         b_print_refuelling_summary = True,        
-        b_print_location = True,
+        b_print_location_detail = False,
         b_print_location_summary = True,
         b_print_statistics = True,
         b_retrieve_solve_ouput = True,
-        )    
+        )
     

@@ -231,11 +231,11 @@ def export_solution_rfep(ls_data_rfep = [],
                                              i, v, p, ls_output_solve[index_run][23][i,v,p]))                 
             
         
-    di_refuel_qty_station = {i: sum(ls_output_solve[index_run][3][j,v,p]*ls_data_rfep[index_run]["pQuantityVehicles"][v,p]
+    if b_print_location_detail:
+        di_refuel_qty_station = {i: sum(ls_output_solve[index_run][3][j,v,p]*ls_data_rfep[index_run]["pQuantityVehicles"][v,p]
                                       for (j,v,p) in ls_data_rfep[index_run]["sStationsVehiclesPaths"]
                                       if (i,j) in ls_data_rfep[index_run]["sOriginalStationsMirrorStations"]) 
                               for i in ls_data_rfep[index_run]["sStations"]}
-    if b_print_location_detail:
         file_name = "..\\output\\o_location_details.csv"
         for index_run in range(len(ls_total_time)):
             for i in ls_data_rfep[index_run]["sOriginalStationsOwn"]:
