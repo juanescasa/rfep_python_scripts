@@ -17,6 +17,7 @@ import solve_multiple_frvrp
 import time
 import os
 import random
+import read_dataframes_rfep_function as rd_df_rfep
 
 #This silence a warning from pandas when assigning elements of DataFrames. 
 #The best option to assign is using iloc, but this makes the code less readable, 
@@ -317,150 +318,162 @@ for index_scenario in range(df_scenario_map.shape[0]):
     for t in ls_tables:
         di_table_name[t]=t+"-"+df_scenario_map[t][index_scenario]
     ls_start_time.append(('read_data_scenario', time.time()))
-    data_rfep = rd_rfep.read_data_rfep(folder_child, di_table_name, 
-                                        is_to_generate_scenarios=True)
+    di_df_rfep=rd_df_rfep.read_dataframes_rfep(folder_child, di_table_name)
+    #the substraction of 2 is because the origin and destination
+    df_path_qty_stations = di_df_rfep["NodesPaths"].groupby("COD_PATH", as_index=False)["COD_NODE1"].count()
+    df_path_qty_stations.rename(columns = {'COD_NODE1': 'total_nodes'}, inplace = True)
+    df_path_qty_stations['total_stations_path'] = df_path_qty_stations.apply(lambda row: row.total_nodes -2, axis =1)
+    df_path_node_original = pd.merge(di_df_rfep["NodesPaths"], di_df_rfep["NodesNodes"], how = 'inner', left_on = ['COD_NODE1'], right_on = ['COD_NODE2'])
+    df_path_node_supplier = pd.merge(df_path_node_original, di_df_rfep["SubStations"], how = 'inner', left_on = ['COD_NODE1_y'], right_on = ['COD_NODE'])
+    df_path_supplier1 = df_path_node_supplier.groupby(["COD_PATH", "COD_SUPPLIER"], as_index=False)["COD_NODE1_x"].count()
+    df_path_supplier1.rename(columns = {'COD_NODE1_x':'qty_stations'}, inplace = True )
+    df_path_supplier2 = df_path_supplier1.merge(df_path_qty_stations, how = 'inner', on = ['COD_PATH'])
+    df_path_supplier2['percentage_stations_supplier'] = df_path_supplier2.apply(lambda row: row.qty_stations/row.total_stations_path, axis=1)
     
-    ls_start_time.append(('redefine_price_scenario', time.time()))
-    #Make the price of own stations high, so the model avoid refuelling there. 
-    #So we can calculate an interesting number for minimum refuelling
-    factor_price = 50
-    sSuppliersOwn = ['OWN']
-    sStationsOwn = [i for i in data_rfep["sStations"] for (ii, l) in data_rfep["sStationsSuppliers"] if i==ii if l in sSuppliersOwn]
-    pPrice2 = {i: factor_price*data_rfep["pPrice"][i] if i in sStationsOwn else data_rfep["pPrice"][i] for i in data_rfep["sStations"]}
+    a=1
+    #pd.merge(df_generator_suppliers_ranges, df_mae_suppliers, \
+    #                                how = 'inner', on = ['COD_SUPPLIER'])
+    # ls_start_time.append(('redefine_price_scenario', time.time()))
+    # #Make the price of own stations high, so the model avoid refuelling there. 
+    # #So we can calculate an interesting number for minimum refuelling
+    # factor_price = 50
+    # sSuppliersOwn = ['OWN']
+    # sStationsOwn = [i for i in data_rfep["sStations"] for (ii, l) in data_rfep["sStationsSuppliers"] if i==ii if l in sSuppliersOwn]
+    # pPrice2 = {i: factor_price*data_rfep["pPrice"][i] if i in sStationsOwn else data_rfep["pPrice"][i] for i in data_rfep["sStations"]}
     
-    ls_start_time.append(('solve_multiple_FRVP', time.time()))
+    # ls_start_time.append(('solve_multiple_FRVP', time.time()))
     
-    output_multiple_frvrp = solve_multiple_frvrp.solve_multiple_frvrp(
-        sVehiclesPaths = data_rfep["sVehiclesPaths"],
-        sNodesVehiclesPaths = data_rfep["sNodesVehiclesPaths"],
-        sStationsVehiclesPaths = data_rfep["sStationsVehiclesPaths"],
-        sOriginalStationsOwn = data_rfep["sOriginalStationsOwn"],
-        sOriginalStationsPotential = data_rfep["sOriginalStationsPotential"],
-        sSuppliers = data_rfep["sSuppliers"],
-        sSuppliersRanges = data_rfep["sSuppliersRanges"],
-        sOriginVehiclesPaths = data_rfep["sOriginVehiclesPaths"],
-        sDestinationVehiclesPaths = data_rfep["sDestinationVehiclesPaths"],
-        sSequenceNodesNodesVehiclesPaths = data_rfep["sSequenceNodesNodesVehiclesPaths"],
-        sFirstStationVehiclesPaths = data_rfep["sFirstStationVehiclesPaths"],
-        sNotFirstStationVehiclesPaths = data_rfep["sNotFirstStationVehiclesPaths"],
-        sNodesPotentialNodesOriginalVehiclesPaths = data_rfep["sNodesPotentialNodesOriginalVehiclesPaths"],
-        sOriginalStationsMirrorStations = data_rfep["sOriginalStationsMirrorStations"],
-        sStationsSuppliers = data_rfep["sStationsSuppliers"],
-        sSuppliersWithDiscount = data_rfep["sSuppliersWithDiscount"],
-        sRanges = data_rfep["sRanges"],
-        pStartInventory = data_rfep["pStartInventory"],
-        pTargetInventory = data_rfep["pTargetInventory"],
-        pSafetyStock = data_rfep["pSafetyStock"],
-        pTankCapacity = data_rfep["pTankCapacity"],
-        pMinRefuel = data_rfep["pMinRefuel"],
-        pConsumptionRate = data_rfep["pConsumptionRate"],
-        pDistance = data_rfep["pDistance"],
-        pConsumptionMainRoute = data_rfep["pConsumptionMainRoute"],
-        pConsumptionOOP = data_rfep["pConsumptionOOP"],
-        pQuantityVehicles = data_rfep["pQuantityVehicles"],
-        pPrice = pPrice2,
-        pOpportunityCost = data_rfep["pOpportunityCost"],
-        pVariableCost = data_rfep["pVariableCost"],
-        pDistanceOOP = data_rfep["pDistanceOOP"])
+    # output_multiple_frvrp = solve_multiple_frvrp.solve_multiple_frvrp(
+    #     sVehiclesPaths = data_rfep["sVehiclesPaths"],
+    #     sNodesVehiclesPaths = data_rfep["sNodesVehiclesPaths"],
+    #     sStationsVehiclesPaths = data_rfep["sStationsVehiclesPaths"],
+    #     sOriginalStationsOwn = data_rfep["sOriginalStationsOwn"],
+    #     sOriginalStationsPotential = data_rfep["sOriginalStationsPotential"],
+    #     sSuppliers = data_rfep["sSuppliers"],
+    #     sSuppliersRanges = data_rfep["sSuppliersRanges"],
+    #     sOriginVehiclesPaths = data_rfep["sOriginVehiclesPaths"],
+    #     sDestinationVehiclesPaths = data_rfep["sDestinationVehiclesPaths"],
+    #     sSequenceNodesNodesVehiclesPaths = data_rfep["sSequenceNodesNodesVehiclesPaths"],
+    #     sFirstStationVehiclesPaths = data_rfep["sFirstStationVehiclesPaths"],
+    #     sNotFirstStationVehiclesPaths = data_rfep["sNotFirstStationVehiclesPaths"],
+    #     sNodesPotentialNodesOriginalVehiclesPaths = data_rfep["sNodesPotentialNodesOriginalVehiclesPaths"],
+    #     sOriginalStationsMirrorStations = data_rfep["sOriginalStationsMirrorStations"],
+    #     sStationsSuppliers = data_rfep["sStationsSuppliers"],
+    #     sSuppliersWithDiscount = data_rfep["sSuppliersWithDiscount"],
+    #     sRanges = data_rfep["sRanges"],
+    #     pStartInventory = data_rfep["pStartInventory"],
+    #     pTargetInventory = data_rfep["pTargetInventory"],
+    #     pSafetyStock = data_rfep["pSafetyStock"],
+    #     pTankCapacity = data_rfep["pTankCapacity"],
+    #     pMinRefuel = data_rfep["pMinRefuel"],
+    #     pConsumptionRate = data_rfep["pConsumptionRate"],
+    #     pDistance = data_rfep["pDistance"],
+    #     pConsumptionMainRoute = data_rfep["pConsumptionMainRoute"],
+    #     pConsumptionOOP = data_rfep["pConsumptionOOP"],
+    #     pQuantityVehicles = data_rfep["pQuantityVehicles"],
+    #     pPrice = pPrice2,
+    #     pOpportunityCost = data_rfep["pOpportunityCost"],
+    #     pVariableCost = data_rfep["pVariableCost"],
+    #     pDistanceOOP = data_rfep["pDistanceOOP"])
     
-    ls_start_time.append(('redefine_parameters', time.time()))
+    # ls_start_time.append(('redefine_parameters', time.time()))
     
-    #Calculate refuelling quantity per supplier
+    # #Calculate refuelling quantity per supplier
     
-    #What is output_multiple_frvrp?
-    #It is a dictionary, each key is a combination v,p
-    #Each value is a tuple with all the outputs from solving a version of the rfep, in this case the frvrp
-    #the third element (index=2) of the tuple is the refuelling quantity variable
-    di_refuel_qty = {(i,v,p): output_multiple_frvrp[(v, p)][2][(i,v,p)] for (i,v,p) in data_rfep["sStationsVehiclesPaths"]}
+    # #What is output_multiple_frvrp?
+    # #It is a dictionary, each key is a combination v,p
+    # #Each value is a tuple with all the outputs from solving a version of the rfep, in this case the frvrp
+    # #the third element (index=2) of the tuple is the refuelling quantity variable
+    # di_refuel_qty = {(i,v,p): output_multiple_frvrp[(v, p)][2][(i,v,p)] for (i,v,p) in data_rfep["sStationsVehiclesPaths"]}
     
-    di_refuel_qty_supplier = {l: sum(di_refuel_qty[i,v,p]*data_rfep["pQuantityVehicles"][v,p]
-                                      for (i,v,p) in data_rfep["sStationsVehiclesPaths"]
-                                      if (i,l) in data_rfep["sStationsSuppliers"]) 
-                              for l in data_rfep["sSuppliers"]}
+    # di_refuel_qty_supplier = {l: sum(di_refuel_qty[i,v,p]*data_rfep["pQuantityVehicles"][v,p]
+    #                                   for (i,v,p) in data_rfep["sStationsVehiclesPaths"]
+    #                                   if (i,l) in data_rfep["sStationsSuppliers"]) 
+    #                           for l in data_rfep["sSuppliers"]}
     
-    factor_min_supplier = {"VIVA": 0.2, "BP": 0.2, "OWN": 0}
-    factor_lower_discount_range = {'g1': 0, 'g2': 0.200000001}
-    factor_upper_discount_range= {'g1': 0.2, 'g2': 50}
+    # factor_min_supplier = {"VIVA": 0.2, "BP": 0.2, "OWN": 0}
+    # factor_lower_discount_range = {'g1': 0, 'g2': 0.200000001}
+    # factor_upper_discount_range= {'g1': 0.2, 'g2': 50}
     
-    di_min_refuel_qty = {l: di_refuel_qty_supplier[l] * factor_min_supplier[l] for l in data_rfep["sSuppliers"]}
-    di_lower_qty_discount = {(l,g): di_refuel_qty_supplier[l]*factor_lower_discount_range[g] for (l,g) in data_rfep["sSuppliersRanges"]}
-    di_upper_qty_discount = {(l,g): di_refuel_qty_supplier[l]*factor_upper_discount_range[g] for (l,g) in data_rfep["sSuppliersRanges"]}
+    # di_min_refuel_qty = {l: di_refuel_qty_supplier[l] * factor_min_supplier[l] for l in data_rfep["sSuppliers"]}
+    # di_lower_qty_discount = {(l,g): di_refuel_qty_supplier[l]*factor_lower_discount_range[g] for (l,g) in data_rfep["sSuppliersRanges"]}
+    # di_upper_qty_discount = {(l,g): di_refuel_qty_supplier[l]*factor_upper_discount_range[g] for (l,g) in data_rfep["sSuppliersRanges"]}
     
-    #I must read mae_suppliers from the scenario
-    table_name = "\\" + di_table_name["MaeSuppliers"] + ".csv"
-    table_path = folder_child + table_name
-    df_mae_suppliers = pd.read_csv(table_path)
+    # #I must read mae_suppliers from the scenario
+    # table_name = "\\" + di_table_name["MaeSuppliers"] + ".csv"
+    # table_path = folder_child + table_name
+    # df_mae_suppliers = pd.read_csv(table_path)
     
-    df_mae_suppliers.loc[:,'pMinimumPurchaseQuantity'] = 0.0
+    # df_mae_suppliers.loc[:,'pMinimumPurchaseQuantity'] = 0.0
     
-    for row in range(df_mae_suppliers.shape[0]):
-        l = df_mae_suppliers['COD_SUPPLIER'][row]
-        #iloc is a more efficient method to access data in the dataFrame. 2 is the column pMinimumPurchaseQuantity
-        df_mae_suppliers.iloc[row, 2] = di_min_refuel_qty[l]
+    # for row in range(df_mae_suppliers.shape[0]):
+    #     l = df_mae_suppliers['COD_SUPPLIER'][row]
+    #     #iloc is a more efficient method to access data in the dataFrame. 2 is the column pMinimumPurchaseQuantity
+    #     df_mae_suppliers.iloc[row, 2] = di_min_refuel_qty[l]
     
-    export_string = folder_child + "MaeSuppliers-" + df_scenario_map['COD_SCENARIO'][index_scenario] + ".csv"
-    df_mae_suppliers.to_csv(export_string, index=False)
+    # export_string = folder_child + "MaeSuppliers-" + df_scenario_map['COD_SCENARIO'][index_scenario] + ".csv"
+    # df_mae_suppliers.to_csv(export_string, index=False)
     
-    table_name = "\\" + di_table_name["SuppliersRanges"] + ".csv"
-    table_path = folder_child + table_name
-    df_suppliers_ranges = pd.read_csv(table_path)
+    # table_name = "\\" + di_table_name["SuppliersRanges"] + ".csv"
+    # table_path = folder_child + table_name
+    # df_suppliers_ranges = pd.read_csv(table_path)
     
-    df_suppliers_ranges.loc[:, 'pLowerQuantityDiscount'] = 0.0
-    df_suppliers_ranges.loc[:, 'pUpperQuantityDiscount'] = 0.0
+    # df_suppliers_ranges.loc[:, 'pLowerQuantityDiscount'] = 0.0
+    # df_suppliers_ranges.loc[:, 'pUpperQuantityDiscount'] = 0.0
     
-    for row in range(df_suppliers_ranges.shape[0]):
-        l = df_suppliers_ranges['COD_SUPPLIER'][row]
-        g = df_suppliers_ranges['COD_RANGE'][row]
-        df_suppliers_ranges['pLowerQuantityDiscount'][row] = di_lower_qty_discount[(l,g)]
-        df_suppliers_ranges['pUpperQuantityDiscount'][row] = di_upper_qty_discount[(l,g)]
+    # for row in range(df_suppliers_ranges.shape[0]):
+    #     l = df_suppliers_ranges['COD_SUPPLIER'][row]
+    #     g = df_suppliers_ranges['COD_RANGE'][row]
+    #     df_suppliers_ranges['pLowerQuantityDiscount'][row] = di_lower_qty_discount[(l,g)]
+    #     df_suppliers_ranges['pUpperQuantityDiscount'][row] = di_upper_qty_discount[(l,g)]
     
-    export_string = folder_child + "SuppliersRanges-" + df_scenario_map['COD_SCENARIO'][index_scenario] + ".csv"
-    df_suppliers_ranges.to_csv(export_string, index=False)
+    # export_string = folder_child + "SuppliersRanges-" + df_scenario_map['COD_SCENARIO'][index_scenario] + ".csv"
+    # df_suppliers_ranges.to_csv(export_string, index=False)
     
-    #update substations
+    # #update substations
     
-    #Calculate the refuelling in each station. Take into account the mirror concept
-    di_refuel_qty_station = {i: sum(di_refuel_qty[j,v,p]*data_rfep["pQuantityVehicles"][v,p]
-                                      for (j,v,p) in data_rfep["sStationsVehiclesPaths"]
-                                      if (i,j) in data_rfep["sOriginalStationsMirrorStations"]) 
-                              for i in data_rfep["sOriginalStationsOwn"]}
+    # #Calculate the refuelling in each station. Take into account the mirror concept
+    # di_refuel_qty_station = {i: sum(di_refuel_qty[j,v,p]*data_rfep["pQuantityVehicles"][v,p]
+    #                                   for (j,v,p) in data_rfep["sStationsVehiclesPaths"]
+    #                                   if (i,j) in data_rfep["sOriginalStationsMirrorStations"]) 
+    #                           for i in data_rfep["sOriginalStationsOwn"]}
     
-    total_refuel_qty = sum(di_refuel_qty_supplier[l] for l in data_rfep["sSuppliers"])
+    # total_refuel_qty = sum(di_refuel_qty_supplier[l] for l in data_rfep["sSuppliers"])
     
-    #Count the existing own stations
-    table_name = "\\" + di_table_name["SubStations"] + ".csv"
-    table_path = folder_child + table_name
-    df_substations = pd.read_csv(table_path)
+    # #Count the existing own stations
+    # table_name = "\\" + di_table_name["SubStations"] + ".csv"
+    # table_path = folder_child + table_name
+    # df_substations = pd.read_csv(table_path)
     
-    ls_potential_stations = [i for i in data_rfep["sStations"] for (j, ii, v, p) in data_rfep["sNodesPotentialNodesOriginalVehiclesPaths"] if i==ii]
-    n_own_existing_stations = df_scenario_map["Quantity own stations"][index_scenario] - df_scenario_map["Quantity candidate locations"][index_scenario]
+    # ls_potential_stations = [i for i in data_rfep["sStations"] for (j, ii, v, p) in data_rfep["sNodesPotentialNodesOriginalVehiclesPaths"] if i==ii]
+    # n_own_existing_stations = df_scenario_map["Quantity own stations"][index_scenario] - df_scenario_map["Quantity candidate locations"][index_scenario]
     
-    proportion_own_station = 0.5
-    proportion_station_unit_capacity = 0.1
-    factor_cost_unit_capacity = 1.1
-    if n_own_existing_stations >0:
-        initial_station_capacity = (total_refuel_qty* proportion_own_station)/n_own_existing_stations
-    else:
-        initial_station_capacity = total_refuel_qty
+    # proportion_own_station = 0.5
+    # proportion_station_unit_capacity = 0.1
+    # factor_cost_unit_capacity = 1.1
+    # if n_own_existing_stations >0:
+    #     initial_station_capacity = (total_refuel_qty* proportion_own_station)/n_own_existing_stations
+    # else:
+    #     initial_station_capacity = total_refuel_qty
     
-    di_station_capacity = {i: max(initial_station_capacity, di_refuel_qty_station[i]) if i in data_rfep["sOriginalStationsOwn"] else 0
-                            for i in df_substations['COD_NODE']}
-    di_location_cost = {i: initial_station_capacity * capacity_cost if i in ls_potential_stations  else 0
-                            for i in df_substations['COD_NODE']}
-    di_station_unit_capacity = {i: di_station_capacity[i]*proportion_station_unit_capacity if i in data_rfep["sOriginalStationsOwn"] else 0
-                            for i in df_substations['COD_NODE']}
-    di_cost_unit_capacity = {i: di_station_unit_capacity[i]*factor_cost_unit_capacity*capacity_cost if i in data_rfep["sOriginalStationsOwn"] else 0
-                            for i in df_substations['COD_NODE']}
+    # di_station_capacity = {i: max(initial_station_capacity, di_refuel_qty_station[i]) if i in data_rfep["sOriginalStationsOwn"] else 0
+    #                         for i in df_substations['COD_NODE']}
+    # di_location_cost = {i: initial_station_capacity * capacity_cost if i in ls_potential_stations  else 0
+    #                         for i in df_substations['COD_NODE']}
+    # di_station_unit_capacity = {i: di_station_capacity[i]*proportion_station_unit_capacity if i in data_rfep["sOriginalStationsOwn"] else 0
+    #                         for i in df_substations['COD_NODE']}
+    # di_cost_unit_capacity = {i: di_station_unit_capacity[i]*factor_cost_unit_capacity*capacity_cost if i in data_rfep["sOriginalStationsOwn"] else 0
+    #                         for i in df_substations['COD_NODE']}
     
-    for row in range(df_substations.shape[0]):
-        i = df_substations['COD_NODE'][row]
-        df_substations['pLocationCost'][row] = di_location_cost[i]
-        df_substations['pStationCapacity'][row] = di_station_capacity[i]
-        df_substations['pStationUnitCapacity'][row] = di_station_unit_capacity[i]
-        df_substations['pCostUnitCapacity'][row] = di_cost_unit_capacity[i]
+    # for row in range(df_substations.shape[0]):
+    #     i = df_substations['COD_NODE'][row]
+    #     df_substations['pLocationCost'][row] = di_location_cost[i]
+    #     df_substations['pStationCapacity'][row] = di_station_capacity[i]
+    #     df_substations['pStationUnitCapacity'][row] = di_station_unit_capacity[i]
+    #     df_substations['pCostUnitCapacity'][row] = di_cost_unit_capacity[i]
     
-    export_string = folder_child + "Substations-" + df_scenario_map['COD_SCENARIO'][index_scenario] + ".csv"
-    df_substations.to_csv(export_string, index=False)
+    # export_string = folder_child + "Substations-" + df_scenario_map['COD_SCENARIO'][index_scenario] + ".csv"
+    # df_substations.to_csv(export_string, index=False)
     
-    ls_start_time.append(("finish_scenario_gen", time.time()))
+    # ls_start_time.append(("finish_scenario_gen", time.time()))
 
