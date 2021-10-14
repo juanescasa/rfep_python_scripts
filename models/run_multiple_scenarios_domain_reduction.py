@@ -36,12 +36,13 @@ ls_tables = ['MaeNodes', 'MaeVehicles', 'MaeSuppliers', 'MaeRanges', 'MaePaths',
 folder_path = "..\data\\"
 
 #Each scenario generator change this
-folder_name = "Generator instance 5000km"
+folder_name = "toy 2"
 folder_parent = folder_path + folder_name + '\\'
 
 file_name = "Scenario Map.xlsx"
 file = folder_parent + file_name
-sh = 'Run Experiments'
+#sh = 'Run Experiments'
+sh = 'Run Experiments Simple'
 df_scenario_map = pd.read_excel(file, sheet_name = sh)
 
 folder_child = folder_parent + "Generated tables\\"
@@ -63,10 +64,10 @@ mip_start = {}
 start_time = {}
 total_time = {}
 #for index_scenario in range(df_scenario_map.shape[0]):
-for index_scenario in [115, 116]:
+for index_scenario in [0,1]:
 #for index_scenario in range(50):
 #for index_scenario in range(21,33,1):
-    scenario_name = df_scenario_map["COD_SCENARIO"][index_scenario] + "-lenPath5000"  
+    scenario_name = df_scenario_map["COD_SCENARIO"][index_scenario] + "-lenPath70"  
     for t in ls_tables:
         di_table_name[t]=t+"-"+df_scenario_map[t][index_scenario]
     

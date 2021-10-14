@@ -8,30 +8,31 @@ Implementation of the FRVRP. Based on the formulation in Suzuki 2008.
 A Generic Model of Motor-Carrier Fuel Optimization
 """
 import time
+import numpy as np
 import gurobipy as gp
 from gurobipy import GRB
 
-start_time =time.time()
+start_time = time.time()
 #Define input data
 #Sets
 #Nodes
-sNodes = ['origin', 'st1', 'st2', 'st3', 'destination']
+sNodes = np.array(['origin', 'st1', 'st2', 'st3', 'destination'])
 
 #Stations
-sStations = ['st1', 'st2', 'st3']
+sStations = np.array(['st1', 'st2', 'st3'])
 
 #Origin
-sOrigin = ['origin']
+sOrigin = np.array(['origin'])
 
 #Destination
-sDestination = ['destination']
+sDestination = np.array(['destination'])
 
 #This set is required in the initial inventory constraint
-sOriginFirstStation = [('origin', 'st1')]
+sOriginFirstStation = np.array([('origin', 'st1')])
 
-sSequenceNodesNodes = [('st1', 'st2'), ('st2', 'st3')]
+sSequenceNodesNodes = np.array([('st1', 'st2'), ('st2', 'st3')])
 
-sLastStationDestination = [('st3','destination')]
+sLastStationDestination = np.array([('st3','destination')])
 
 #Parameters
 #Price [$/lt]
@@ -108,5 +109,6 @@ print("Inventory")
 print(ovInventory)
 
 m.write('frvrp_model.lp')
+
 total_time = time.time() - start_time
-print('frvrp takes (s) ' + str(total_time))
+print("numpy frvrp takes (s) " + str(total_time))

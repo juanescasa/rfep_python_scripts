@@ -1,5 +1,3 @@
-COD_SUPPLIER,COD_RANGE,pDiscount,pLowerQuantityDiscount,pUpperQuantityDiscount
-BP,g1,0.0,0.0,14427.338800000001
-BP,g2,0.3,14427.338872136695,3606834.7
-VIVA,g1,0.0,0.0,78863.4168
-VIVA,g2,0.5,78863.4171943171,19715854.200000003
+version https://git-lfs.github.com/spec/v1
+oid sha256:4f5afad4c88f944285081438d98d6890bee830e5f04e1e95ea0d671ab54b3cad
+size 245

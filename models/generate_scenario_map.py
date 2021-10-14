@@ -15,7 +15,7 @@ ls_sheets = ["Type of vehicles",
 #file =  "C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\data\Toy instance\Factors to generate scenarios.xlsx"
 
 folder_path = "..\data\\"
-folder_name = "Generator instance 6525km-8500paths\\"
+folder_name = "Toy 2\\"
 name_file1 = "Factors to generate scenarios.xlsx"
 name_file2 = "Scenario Map.xlsx"
 file_to_import = folder_path + folder_name + name_file1
@@ -120,8 +120,27 @@ df_scenario_map2=pd.DataFrame({"COD_SCENARIO" : ls_col_cod_scenario,
                                 "NodesNodes" : ls_col_NodesNodes,
                                 "NodesNodesPaths" : ls_col_NodesNodesPaths})
 
+df_scenario_map3=pd.DataFrame({"COD_SCENARIO" : ls_col_cod_scenario,
+                                "Type of vehicles" : ls_col_type_vehicles,
+                                "Quantity of paths" : ls_col_quantity_paths,
+                                "Quantity own stations" : ls_col_quantity_own_stations,
+                                "Quantity candidate locations" : ls_col_quantity_candidate_locations,
+                                "Quantity suppliers" : ls_col_quantity_suppliers,
+                                "MaeNodes" : ls_col_MaeNodes,
+                                "MaeSuppliers" : ls_col_MaeSuppliers2,
+                                "MaeVehicles" : ls_col_MaeVehicles,
+                                "MaeRanges" : ls_col_MaeRanges,
+                                "MaePaths" : ls_col_MaePaths,
+                                "SubStations" : ls_col_SubStations,
+                                "NodesPaths" : ls_col_NodesPaths,
+                                "VehiclesPaths" : ls_col_VehiclesPaths,
+                                "SuppliersRanges" : ls_col_SuppliersRanges2,
+                                "NodesNodes" : ls_col_NodesNodes,
+                                "NodesNodesPaths" : ls_col_NodesNodesPaths})
+
 
 
 with pd.ExcelWriter(file_to_export) as writer:  
     df_scenario_map1.to_excel(writer, sheet_name='Generate Tables', index=False)
     df_scenario_map2.to_excel(writer, sheet_name='Run Experiments', index=False)
+    df_scenario_map3.to_excel(writer, sheet_name='Run Experiments Simple', index=False)

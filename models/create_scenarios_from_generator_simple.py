@@ -84,7 +84,6 @@ ls_start_time.append(("Gen Inititial tables", time.time()))
 #folder_path = "C:\OneDrive - Deakin University\OD\calle test\Disun Applications\Gurobi Applications\data\\"
 folder_path = "..\\data\\"
 #Each scenario generator change this
-
 folder_name = "Toy 2"
 folder_parent = folder_path + folder_name + '\\'
 
@@ -261,15 +260,14 @@ for row in range(di_df_tables["VehiclesPaths"].shape[0]):
 df_vehicles_paths0 = di_df_tables["VehiclesPaths"][di_df_tables["VehiclesPaths"]['isFeasible']==1]
 df_vehicles_paths0 = df_vehicles_paths0[['COD_VEHICLE', 'COD_PATH', 'Start Inventory', 'Target Inventory', 'pQuantityVehicles']]
 
+#create the random weight column in dataframe to support the creation of 
+#Quantity of Type of Vehicles in Path later
 df_vehicles_paths0.loc[:, 'randomWeight'] = 0.0
+df_vehicles_paths0.loc[:, 'fuelConsumption'] = 0.0
 for row in range(df_vehicles_paths0.shape[0]):
     df_vehicles_paths0['randomWeight'][row] = random.random()
 
 total_random_weight =  df_vehicles_paths0['randomWeight'].sum()
-
-
-
-
 
 #export_string = folder_child + "TestVehiclesPath2.csv"
 #df_vehicles_paths0.to_csv(export_string, index=False)
@@ -296,6 +294,7 @@ for v_level in sr_level_vehicles:
             if di_quantity_vehicles[v,p]==0:
                 di_quantity_vehicles[v,p] = 1
             df_vehicles_paths2['pQuantityVehicles'][row] = di_quantity_vehicles[v,p]
+            df_vehicles_paths2['fuelConsumption'][row] = di_consumption_vehicle_path[v,p]
         
         #add quantity vehicles to df_vehicles_paths
         #aux_validation = sum(di_fuel_fraction_vehicle_path[v,p] for (v,p) in di_fuel_fraction_vehicle_path.keys())                            
@@ -329,7 +328,60 @@ for index_scenario in range(df_scenario_map.shape[0]):
     df_path_supplier1.rename(columns = {'COD_NODE1_x':'qty_stations'}, inplace = True )
     df_path_supplier2 = df_path_supplier1.merge(df_path_qty_stations, how = 'inner', on = ['COD_PATH'])
     df_path_supplier2['percentage_stations_supplier'] = df_path_supplier2.apply(lambda row: row.qty_stations/row.total_stations_path, axis=1)
+    df_vehicles_paths_suppliers = df_path_supplier2.merge(di_df_rfep["VehiclesPaths"], how = 'inner', on = ['COD_PATH'])
+    df_vehicles_paths_suppliers['consumptionSupplier'] = df_vehicles_paths_suppliers.apply(lambda row: row.fuelConsumption*row.pQuantityVehicles*row.percentage_stations_supplier , axis=1)
+    df_vehicles_paths_suppliers['pMinimumPurchaseQuantity'] = df_vehicles_paths_suppliers.apply(lambda row: row.consumptionSupplier*allocation_min_qty_supplier , axis=1)
     
+    df_suppliers_aux = df_vehicles_paths_suppliers.groupby('COD_SUPPLIER', as_index=False)['pMinimumPurchaseQuantity'].sum()
+    index_own = df_suppliers_aux.index[df_suppliers_aux['COD_SUPPLIER'] == "OWN"]
+
+    df_suppliers_aux.at[index_own, 'pMinimumPurchaseQuantity'] = 0
+    
+    df_mae_suppliers = di_df_rfep['MaeSuppliers'].merge(df_suppliers_aux, how='inner', on = ['COD_SUPPLIER'])
+    
+    export_string = folder_child + "MaeSuppliers-" + df_scenario_map['COD_SCENARIO'][index_scenario] + ".csv"
+    df_mae_suppliers.to_csv(export_string, index=False)
+    
+    #Calculate SuppliersRanges
+    df_suppliers_aux2 = df_vehicles_paths_suppliers.groupby('COD_SUPPLIER', as_index=False)['consumptionSupplier'].sum()
+    di_consumption_supplier = {}
+    for row in range(df_suppliers_aux2.shape[0]):
+        l = df_suppliers_aux2['COD_SUPPLIER'][row]
+        di_consumption_supplier[l] = df_suppliers_aux2['consumptionSupplier'][row]
+    
+    factor_lower_discount_range = {'g1': 0, 'g2': allocation_min_qty_supplier}
+    factor_upper_discount_range= {'g1': allocation_min_qty_supplier, 'g2': 99}
+    #create sSupplierRanges
+    sSuppliersRanges = []
+    for row in range(di_df_rfep["SuppliersRanges"].shape[0]):
+        l = di_df_rfep["SuppliersRanges"]['COD_SUPPLIER'][row]
+        g = di_df_rfep["SuppliersRanges"]['COD_RANGE'][row]
+        sSuppliersRanges.append((l,g))   
+    
+    di_lower_qty_discount = {(l,g): di_consumption_supplier[l]*factor_lower_discount_range[g] for (l,g) in sSuppliersRanges}
+    di_upper_qty_discount = {(l,g): di_consumption_supplier[l]*factor_upper_discount_range[g]-0.01 for (l,g) in sSuppliersRanges}
+    
+    df_suppliers_ranges = di_df_rfep['SuppliersRanges']
+    
+    df_suppliers_ranges.loc[:, 'pLowerQuantityDiscount'] = 0.0
+    df_suppliers_ranges.loc[:, 'pUpperQuantityDiscount'] = 0.0
+    
+    
+    for row in range(df_suppliers_ranges.shape[0]):
+        l = df_suppliers_ranges['COD_SUPPLIER'][row]
+        g = df_suppliers_ranges['COD_RANGE'][row]
+        df_suppliers_ranges['pLowerQuantityDiscount'][row] = di_lower_qty_discount[(l,g)]
+        df_suppliers_ranges['pUpperQuantityDiscount'][row] = di_upper_qty_discount[(l,g)]
+    
+    export_string = folder_child + "SuppliersRanges-" + df_scenario_map['COD_SCENARIO'][index_scenario] + ".csv"
+    df_suppliers_ranges.to_csv(export_string, index=False)
+        
+        
+    
+    
+    
+    
+    #Calculate the discounts using dictionaries       
     a=1
     #pd.merge(df_generator_suppliers_ranges, df_mae_suppliers, \
     #                                how = 'inner', on = ['COD_SUPPLIER'])
